@@ -32,7 +32,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eTq-ZL-Um7">
-                                <rect key="frame" x="20" y="358" width="374" height="435"/>
+                                <rect key="frame" x="20" y="391" width="374" height="402"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="garage" textLabel="a9V-gZ-yMa" style="IBUITableViewCellStyleDefault" id="2QK-XC-YIl">
                                         <rect key="frame" x="0.0" y="28" width="374" height="44"/>
@@ -53,21 +53,31 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recently visited" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LvT-0M-bC6">
+                                <rect key="frame" x="20" y="358" width="374" height="28"/>
+                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LvT-0M-bC6" secondAttribute="trailing" constant="20" id="0SG-YK-Hpy"/>
                             <constraint firstItem="TgF-cZ-kZa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0ge-vA-Wlk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eTq-ZL-Um7" secondAttribute="trailing" constant="20" id="3hM-nj-w0P"/>
+                            <constraint firstItem="LvT-0M-bC6" firstAttribute="top" secondItem="AOh-q4-tVe" secondAttribute="bottom" constant="20" id="KbG-82-gmp"/>
                             <constraint firstItem="TgF-cZ-kZa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="NOd-iI-1qf"/>
-                            <constraint firstItem="eTq-ZL-Um7" firstAttribute="top" secondItem="AOh-q4-tVe" secondAttribute="bottom" constant="20" id="UBW-Vw-qHb"/>
                             <constraint firstItem="TgF-cZ-kZa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UK1-0L-bXo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eTq-ZL-Um7" secondAttribute="bottom" constant="20" id="a2T-jf-SCb"/>
                             <constraint firstItem="AOh-q4-tVe" firstAttribute="top" secondItem="TgF-cZ-kZa" secondAttribute="bottom" constant="20" id="bsC-fC-t6N"/>
                             <constraint firstItem="AOh-q4-tVe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dKE-5Y-RzO"/>
+                            <constraint firstItem="eTq-ZL-Um7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="drj-Zy-kce"/>
                             <constraint firstAttribute="trailing" secondItem="TgF-cZ-kZa" secondAttribute="trailing" id="eFB-8q-ROV"/>
                             <constraint firstItem="NQi-hs-nFg" firstAttribute="top" secondItem="TgF-cZ-kZa" secondAttribute="bottom" constant="100" id="iIt-SC-xrb"/>
                             <constraint firstItem="NQi-hs-nFg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kpX-LC-Q9w"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eTq-ZL-Um7" secondAttribute="bottom" constant="20" id="mVN-wl-6ns"/>
+                            <constraint firstItem="LvT-0M-bC6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="nPY-I7-F6T"/>
+                            <constraint firstItem="eTq-ZL-Um7" firstAttribute="top" secondItem="LvT-0M-bC6" secondAttribute="bottom" constant="5" id="saq-bI-0pp"/>
                             <constraint firstItem="eTq-ZL-Um7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="smM-MK-VVv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AOh-q4-tVe" secondAttribute="bottom" constant="475" id="v4W-7c-Cqx"/>
                             <constraint firstAttribute="trailing" secondItem="AOh-q4-tVe" secondAttribute="trailing" constant="20" id="w6a-zf-oho"/>
