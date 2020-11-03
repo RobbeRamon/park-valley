@@ -8,21 +8,80 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Search View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="ParkValley" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Where are you going?" translatesAutoresizingMaskIntoConstraints="NO" id="TgF-cZ-kZa">
+                                <rect key="frame" x="0.0" y="60" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="new-york-wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="AOh-q4-tVe">
+                                <rect key="frame" x="20" y="136" width="374" height="202"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search nearby garages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQi-hs-nFg">
+                                <rect key="frame" x="46" y="216" width="322" height="42"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eTq-ZL-Um7">
+                                <rect key="frame" x="20" y="358" width="374" height="435"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="garage" textLabel="a9V-gZ-yMa" style="IBUITableViewCellStyleDefault" id="2QK-XC-YIl">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2QK-XC-YIl" id="8CA-7g-xRJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a9V-gZ-yMa">
+                                                    <rect key="frame" x="20" y="0.0" width="334" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TgF-cZ-kZa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0ge-vA-Wlk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eTq-ZL-Um7" secondAttribute="trailing" constant="20" id="3hM-nj-w0P"/>
+                            <constraint firstItem="TgF-cZ-kZa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="NOd-iI-1qf"/>
+                            <constraint firstItem="eTq-ZL-Um7" firstAttribute="top" secondItem="AOh-q4-tVe" secondAttribute="bottom" constant="20" id="UBW-Vw-qHb"/>
+                            <constraint firstItem="TgF-cZ-kZa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UK1-0L-bXo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eTq-ZL-Um7" secondAttribute="bottom" constant="20" id="a2T-jf-SCb"/>
+                            <constraint firstItem="AOh-q4-tVe" firstAttribute="top" secondItem="TgF-cZ-kZa" secondAttribute="bottom" constant="20" id="bsC-fC-t6N"/>
+                            <constraint firstItem="AOh-q4-tVe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dKE-5Y-RzO"/>
+                            <constraint firstAttribute="trailing" secondItem="TgF-cZ-kZa" secondAttribute="trailing" id="eFB-8q-ROV"/>
+                            <constraint firstItem="NQi-hs-nFg" firstAttribute="top" secondItem="TgF-cZ-kZa" secondAttribute="bottom" constant="100" id="iIt-SC-xrb"/>
+                            <constraint firstItem="NQi-hs-nFg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kpX-LC-Q9w"/>
+                            <constraint firstItem="eTq-ZL-Um7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="smM-MK-VVv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AOh-q4-tVe" secondAttribute="bottom" constant="475" id="v4W-7c-Cqx"/>
+                            <constraint firstAttribute="trailing" secondItem="AOh-q4-tVe" secondAttribute="trailing" constant="20" id="w6a-zf-oho"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="TuH-On-i2Y"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="TuH-On-i2Y"/>
+                    <connections>
+                        <outlet property="ivFindNearby" destination="AOh-q4-tVe" id="lnz-dh-0Lb"/>
+                        <outlet property="tvRescentlyVisited" destination="eTq-ZL-Um7" id="6Wp-Ty-oBU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1054" y="104"/>
+            <point key="canvasLocation" x="1053.6231884057972" y="103.79464285714285"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="pz2-LT-Wfz">
@@ -43,6 +102,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="new-york-wallpaper" width="1200" height="783"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
