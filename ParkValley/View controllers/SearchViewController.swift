@@ -11,7 +11,11 @@ class SearchViewController: UIViewController  {
     
     @IBOutlet var ivFindNearby: UIImageView!
     @IBOutlet var tvRescentlyVisited: UITableView!
+    @IBOutlet var sbFind: UISearchBar!
     private var recentlyVisited : [String] = []
+    
+    public var searchResult : String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,3 +110,6 @@ extension SearchViewController: UITableViewDataSource {
     }
     
 }
+
+
+

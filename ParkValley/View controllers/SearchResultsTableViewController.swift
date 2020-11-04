@@ -9,13 +9,18 @@ import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
     
+    @IBOutlet var sbFind: UISearchBar!
+    
     private var results : [String] = []
+    private var currentValue : String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         results.append("New York")
         results.append("Japan")
+        
+        sbFind.becomeFirstResponder()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -23,11 +28,11 @@ class SearchResultsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
