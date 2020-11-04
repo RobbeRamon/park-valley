@@ -20,8 +20,8 @@ class SearchViewController: UIViewController  {
         overlay.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5)
         ivFindNearby.addSubview(overlay)
         
-//        recentlyVisited.append("New York")
-//        recentlyVisited.append("Japan")
+        recentlyVisited.append("New York")
+        recentlyVisited.append("Japan")
         
         tvRescentlyVisited.delegate = self
         tvRescentlyVisited.dataSource = self
