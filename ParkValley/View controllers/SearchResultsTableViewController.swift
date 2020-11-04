@@ -10,6 +10,7 @@ import UIKit
 class SearchResultsTableViewController: UITableViewController {
     
     @IBOutlet var sbFind: UISearchBar!
+    @IBOutlet var tvGarages: UITableView!
     
     private var results : [String] = []
     private var currentValue : String = ""
@@ -17,10 +18,20 @@ class SearchResultsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        results.append("New York")
-        results.append("Japan")
+//        results.append("New York")
+//        results.append("Japan")
         
         sbFind.becomeFirstResponder()
+        
+        if results.isEmpty {
+            let label : UILabel = UILabel()
+            label.text = "Nothing found"
+            label.textAlignment = .center
+            label.textColor = .gray
+        
+            
+            tvGarages.backgroundView = label
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
