@@ -12,8 +12,10 @@ class LoginViewController: UIViewController {
 
     @IBOutlet var btnLogin: UIButton!
     @IBOutlet var viewAnimation: UIView!
+    @IBOutlet var txtEmail: UITextField!
+    @IBOutlet var txtPassword: UITextField!
     
-    var animationView: AnimationView?
+    var pAnimationView: AnimationView?
     var backgroundAnimationView: AnimationView?
     
     override func viewDidLoad() {
@@ -22,17 +24,23 @@ class LoginViewController: UIViewController {
 
     }
     
+    @IBAction func btnLoginClicked(_ sender: UIButton) {
+        let user = User(id: "id", username: txtEmail.text!, token: "token")
+        User.saveToFile(user)
+    }
+    
     
     private func drawUI () {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        
         btnLogin.layer.cornerRadius = 10
 
-        animationView = .init(name:"parking-icon")
-        animationView?.frame = viewAnimation.bounds
-        animationView?.loopMode = .autoReverse
-        viewAnimation.addSubview(animationView!)
-        animationView?.play()
-        
-        viewAnimation.sendSubviewToBack(animationView!)
+        pAnimationView = .init(name:"parking-icon")
+        pAnimationView?.frame = viewAnimation.bounds
+        pAnimationView?.loopMode = .autoReverse
+        viewAnimation.addSubview(pAnimationView!)
+        pAnimationView?.play()
+        viewAnimation.sendSubviewToBack(pAnimationView!)
 
         backgroundAnimationView = .init(name:"login-background")
         backgroundAnimationView?.frame = view.bounds
@@ -43,6 +51,13 @@ class LoginViewController: UIViewController {
         view.sendSubviewToBack(backgroundAnimationView!)
         
     }
+    
+    // MARK: - helper methods
+    
+    private func validate()  {
+        
+    }
+    
     
 
     /*

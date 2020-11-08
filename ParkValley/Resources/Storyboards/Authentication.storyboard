@@ -26,12 +26,15 @@
                                 <rect key="frame" x="20" y="556.5" width="374" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFQ-HI-VOH">
                                 <rect key="frame" x="20" y="620.5" width="374" height="34"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="btnLoginClicked:" destination="V3E-6X-2gB" eventType="touchUpInside" id="IgI-RZ-fxH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTo-ms-Zf7">
                                 <rect key="frame" x="98.5" y="664.5" width="217" height="30"/>
@@ -75,6 +78,8 @@
                     <navigationItem key="navigationItem" title="Login" id="C03-Jw-xx3"/>
                     <connections>
                         <outlet property="btnLogin" destination="HFQ-HI-VOH" id="gFf-mB-rAi"/>
+                        <outlet property="txtEmail" destination="J4G-1u-AaN" id="POJ-hq-59U"/>
+                        <outlet property="txtPassword" destination="Uis-AW-QQm" id="s4t-TK-Ntd"/>
                         <outlet property="viewAnimation" destination="z70-1F-FmX" id="rGo-oA-PBn"/>
                     </connections>
                 </viewController>
