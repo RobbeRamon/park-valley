@@ -1,0 +1,6 @@
+module Pods_ParkValley {
+  umbrella header "Pods-ParkValley-umbrella.h"
+
+  export *
+  module * { export * }
+}

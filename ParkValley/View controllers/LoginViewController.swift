@@ -6,17 +6,42 @@
 //
 
 import UIKit
+import Lottie
 
 class LoginViewController: UIViewController {
 
     @IBOutlet var btnLogin: UIButton!
+    @IBOutlet var viewAnimation: UIView!
+    
+    var animationView: AnimationView?
+    var backgroundAnimationView: AnimationView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        drawUI()
+
+    }
+    
+    
+    private func drawUI () {
         btnLogin.layer.cornerRadius = 10
 
-        // Do any additional setup after loading the view.
+        animationView = .init(name:"parking-icon")
+        animationView?.frame = viewAnimation.bounds
+        animationView?.loopMode = .autoReverse
+        viewAnimation.addSubview(animationView!)
+        animationView?.play()
+        
+        viewAnimation.sendSubviewToBack(animationView!)
+
+        backgroundAnimationView = .init(name:"login-background")
+        backgroundAnimationView?.frame = view.bounds
+        backgroundAnimationView?.loopMode = .loop
+        backgroundAnimationView?.animationSpeed = 0.5
+        view.addSubview(backgroundAnimationView!)
+        backgroundAnimationView?.play()
+        view.sendSubviewToBack(backgroundAnimationView!)
+        
     }
     
 
