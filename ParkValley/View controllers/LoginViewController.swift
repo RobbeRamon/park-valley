@@ -27,6 +27,8 @@ class LoginViewController: UIViewController {
     @IBAction func btnLoginClicked(_ sender: UIButton) {
         let user = User(id: "id", username: txtEmail.text!, token: "token")
         User.saveToFile(user)
+        
+        performSegue(withIdentifier: "sgShowApplication", sender: self)
     }
     
     

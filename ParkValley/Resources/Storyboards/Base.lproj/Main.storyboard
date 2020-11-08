@@ -162,6 +162,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="Application" automaticallyAdjustsScrollViewInsets="NO" id="7qR-su-ea3" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="kKK-Yv-iuu"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pFS-E3-as5">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -301,6 +302,7 @@
                         <outlet property="txtEmail" destination="3Hh-FC-WUy" id="vaE-BI-I5P"/>
                         <outlet property="txtPassword" destination="EwU-XW-Zlb" id="087-L5-oDf"/>
                         <outlet property="viewAnimation" destination="EQX-dF-ohb" id="fou-Fq-VDN"/>
+                        <segue destination="7qR-su-ea3" kind="presentation" identifier="sgShowApplication" modalPresentationStyle="fullScreen" id="MYa-Qq-UaN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ja2-km-rd0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
