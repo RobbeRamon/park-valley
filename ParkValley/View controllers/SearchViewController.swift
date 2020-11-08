@@ -19,6 +19,11 @@ class SearchViewController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        createUI()
+        
+    }
+    
+    private func createUI() {
         
         let overlay: UIView = UIView(frame: CGRect(x: 0, y: 0, width: ivFindNearby.frame.size.width, height: ivFindNearby.frame.size.height))
         overlay.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5)

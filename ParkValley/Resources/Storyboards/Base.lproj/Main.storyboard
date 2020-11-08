@@ -302,7 +302,7 @@
                         <outlet property="txtEmail" destination="3Hh-FC-WUy" id="vaE-BI-I5P"/>
                         <outlet property="txtPassword" destination="EwU-XW-Zlb" id="087-L5-oDf"/>
                         <outlet property="viewAnimation" destination="EQX-dF-ohb" id="fou-Fq-VDN"/>
-                        <segue destination="7qR-su-ea3" kind="presentation" identifier="sgShowApplication" modalPresentationStyle="fullScreen" id="MYa-Qq-UaN"/>
+                        <segue destination="7qR-su-ea3" kind="presentation" identifier="sgShowApplication" modalPresentationStyle="overFullScreen" id="MYa-Qq-UaN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ja2-km-rd0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        drawUI()
+        createUI()
 
     }
     
@@ -32,7 +32,7 @@ class LoginViewController: UIViewController {
     }
     
     
-    private func drawUI () {
+    private func createUI () {
         navigationController?.setNavigationBarHidden(true, animated: true)
         
         btnLogin.layer.cornerRadius = 10
