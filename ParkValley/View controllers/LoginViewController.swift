@@ -33,8 +33,6 @@ class LoginViewController: UIViewController {
     
     
     private func createUI () {
-        navigationController?.setNavigationBarHidden(true, animated: true)
-        
         btnLogin.layer.cornerRadius = 10
 
         pAnimationView = .init(name:"parking-icon")
@@ -52,6 +50,14 @@ class LoginViewController: UIViewController {
         backgroundAnimationView?.play()
         view.sendSubviewToBack(backgroundAnimationView!)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     // MARK: - helper methods
