@@ -1,16 +1,24 @@
 PODS:
+  - Cards (1.4.0):
+    - Player (= 0.13.0)
   - lottie-ios (3.1.9)
+  - Player (0.13.0)
 
 DEPENDENCIES:
+  - Cards
   - lottie-ios
 
 SPEC REPOS:
   trunk:
+    - Cards
     - lottie-ios
+    - Player
 
 SPEC CHECKSUMS:
+  Cards: 45ae6bd0eca7b5e8016d3b6cb30b60b04753f68f
   lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
+  Player: 968d8d07d923bcdd6f7e4091c9e306eb44a5f7a4
 
-PODFILE CHECKSUM: 1e025ce984e8467c84d487e66870e034b11133cb
+PODFILE CHECKSUM: b795e5fc025fecd9f0d3419f5fa935a226f134b2
 
 COCOAPODS: 1.10.0
