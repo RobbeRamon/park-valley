@@ -30,9 +30,6 @@ class TestViewController: UIViewController {
         
         card.hasParallax = true
             
-//        let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "CardContent")
-//        card.shouldPresent(cardContentVC, from: self, fullscreen: false)
-            
         view2.addSubview(card)
     }
     
