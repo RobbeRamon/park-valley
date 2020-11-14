@@ -17,13 +17,7 @@ class MainScreenViewController: UITabBarController {
         let encodedUser = User.loadFromFile()
 
         if encodedUser == nil {
-            //print(encodedUser!)
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let initalViewController = storyboard.instantiateViewController(identifier: "Application")
-//            window?.rootViewController = initalViewController
-//            window?.makeKeyAndVisible()
             print("NOT LOGGED IN")
-            
             performSegue(withIdentifier: "sgShowLogin", sender: self)
         }
     }
