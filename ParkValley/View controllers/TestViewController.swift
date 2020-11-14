@@ -10,6 +10,7 @@ import Cards
 
 class TestViewController: UIViewController {
     @IBOutlet var view2: UIView!
+    @IBOutlet var tgSearchNearby: UITapGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +31,14 @@ class TestViewController: UIViewController {
         
         card.hasParallax = true
             
+        card.gestureRecognizers?.append(tgSearchNearby)
         view2.addSubview(card)
     }
     
-
+    @IBAction func handleSearchNearbyClick(_ sender: UITapGestureRecognizer) {
+        performSegue(withIdentifier: "sgShowSearchGarages", sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 
