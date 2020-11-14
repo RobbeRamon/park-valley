@@ -15,6 +15,7 @@
 		144F56062558025C003D72B4 /* parking-icon.json in Resources */ = {isa = PBXBuildFile; fileRef = 144F56052558025C003D72B4 /* parking-icon.json */; };
 		144F5630255817A7003D72B4 /* login-background.json in Resources */ = {isa = PBXBuildFile; fileRef = 144F562F255817A7003D72B4 /* login-background.json */; };
 		1450D546255349B700F3079C /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1450D545255349B700F3079C /* SearchResultsTableViewController.swift */; };
+		148699AD256020D400A674BF /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148699AC256020D400A674BF /* MainScreenViewController.swift */; };
 		14E65DF22551E444000928A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E65DF12551E444000928A9 /* AppDelegate.swift */; };
 		14E65DF42551E444000928A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E65DF32551E444000928A9 /* SceneDelegate.swift */; };
 		14E65DF92551E444000928A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14E65DF72551E444000928A9 /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		144F56052558025C003D72B4 /* parking-icon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "parking-icon.json"; path = "../../../../../../../../../school/Jaar 3/Semester 1/Native Apps 2 - iOS/animations/parking-icon.json"; sourceTree = "<group>"; };
 		144F562F255817A7003D72B4 /* login-background.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "login-background.json"; path = "../../../../../../../../../school/Jaar 3/Semester 1/Native Apps 2 - iOS/animations/login-background.json"; sourceTree = "<group>"; };
 		1450D545255349B700F3079C /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		148699AC256020D400A674BF /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		14E65DEE2551E444000928A9 /* ParkValley.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkValley.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14E65DF12551E444000928A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14E65DF32551E444000928A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				1450D545255349B700F3079C /* SearchResultsTableViewController.swift */,
 				144F55F42557FA18003D72B4 /* LoginViewController.swift */,
 				1421B782255955F000442146 /* TestViewController.swift */,
+				148699AC256020D400A674BF /* MainScreenViewController.swift */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				144F55E62557E8BC003D72B4 /* Garage.swift in Sources */,
 				14E65E2A2551E675000928A9 /* SearchViewController.swift in Sources */,
 				14E65DF42551E444000928A9 /* SceneDelegate.swift in Sources */,
+				148699AD256020D400A674BF /* MainScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z7i-Mk-P2n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7qR-su-ea3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
@@ -157,10 +157,10 @@
             </objects>
             <point key="canvasLocation" x="2752" y="104"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Screen View Controller-->
         <scene sceneID="pz2-LT-Wfz">
             <objects>
-                <tabBarController storyboardIdentifier="Application" automaticallyAdjustsScrollViewInsets="NO" id="7qR-su-ea3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Application" automaticallyAdjustsScrollViewInsets="NO" id="7qR-su-ea3" customClass="MainScreenViewController" customModule="ParkValley" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="kKK-Yv-iuu"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pFS-E3-as5">
@@ -173,6 +173,7 @@
                         <segue destination="VTc-DI-qBa" kind="relationship" relationship="viewControllers" id="sgK-UC-rRx"/>
                         <segue destination="kRJ-fa-FXu" kind="relationship" relationship="viewControllers" id="jms-Tx-E7m"/>
                         <segue destination="qLy-pm-g6V" kind="relationship" relationship="viewControllers" id="Ad7-rA-rMn"/>
+                        <segue destination="XXg-jX-s1y" kind="presentation" identifier="sgShowLogin" modalPresentationStyle="fullScreen" id="IEa-fi-Dg8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f1B-B2-kok" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -246,9 +247,9 @@
                         <viewLayoutGuide key="safeArea" id="egS-Jl-auv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="egS-Jl-auv" firstAttribute="bottom" secondItem="E73-9T-6xW" secondAttribute="bottom" constant="589" id="554-g5-J3A"/>
                             <constraint firstItem="E73-9T-6xW" firstAttribute="leading" secondItem="egS-Jl-auv" secondAttribute="leading" constant="20" id="OJm-Ul-MkE"/>
                             <constraint firstItem="E73-9T-6xW" firstAttribute="top" secondItem="egS-Jl-auv" secondAttribute="top" constant="20" id="OLT-Lb-8mW"/>
-                            <constraint firstItem="egS-Jl-auv" firstAttribute="bottom" secondItem="E73-9T-6xW" secondAttribute="bottom" constant="589" id="fZ1-pM-SHm"/>
                             <constraint firstItem="egS-Jl-auv" firstAttribute="trailing" secondItem="E73-9T-6xW" secondAttribute="trailing" constant="20" id="pNP-EN-2Xr"/>
                         </constraints>
                     </view>
@@ -303,7 +304,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQX-dF-ohb">
-                                <rect key="frame" x="-175" y="-12" width="764" height="458"/>
+                                <rect key="frame" x="-175" y="-56" width="764" height="502"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jLG-8e-IcL"/>
@@ -456,24 +457,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asv-1K-K0W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2847.826086956522" y="-1315.1785714285713"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="e6j-5C-xZf">
-            <objects>
-                <navigationController storyboardIdentifier="Authentication" automaticallyAdjustsScrollViewInsets="NO" id="z7i-Mk-P2n" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vcw-p5-tkh">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="XXg-jX-s1y" kind="relationship" relationship="rootViewController" id="U2O-9s-XWR"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ifi-4h-UOO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="97" y="-1315"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uCe-S2-nFu">
