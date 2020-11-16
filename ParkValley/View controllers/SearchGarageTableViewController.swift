@@ -19,6 +19,11 @@ class SearchGarageTableViewController: UITableViewController {
         
         sbSearch.becomeFirstResponder()
         
+        let garageModelController = GarageModelController()
+        garageModelController.fetchGarages{(garages) in
+            self.results = garages
+        }
+        
         if results.isEmpty {
             let label : UILabel = UILabel()
             label.text = "Nothing found"
