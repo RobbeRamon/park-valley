@@ -172,7 +172,7 @@
                         <segue destination="YzW-ee-7mL" kind="relationship" relationship="viewControllers" id="iwJ-in-W81"/>
                         <segue destination="VTc-DI-qBa" kind="relationship" relationship="viewControllers" id="sgK-UC-rRx"/>
                         <segue destination="kRJ-fa-FXu" kind="relationship" relationship="viewControllers" id="jms-Tx-E7m"/>
-                        <segue destination="qLy-pm-g6V" kind="relationship" relationship="viewControllers" id="Ad7-rA-rMn"/>
+                        <segue destination="8TN-Nm-u9O" kind="relationship" relationship="viewControllers" id="Ad7-rA-rMn"/>
                         <segue destination="XXg-jX-s1y" kind="presentation" identifier="sgShowLogin" modalPresentationStyle="fullScreen" id="IEa-fi-Dg8"/>
                     </connections>
                 </tabBarController>
@@ -231,7 +231,7 @@
             </objects>
             <point key="canvasLocation" x="1054" y="812"/>
         </scene>
-        <!--Test View Controller-->
+        <!--Search overview-->
         <scene sceneID="gJr-qb-4Xj">
             <objects>
                 <viewController id="qLy-pm-g6V" customClass="TestViewController" customModule="ParkValley" customModuleProvider="target" sceneMemberID="viewController">
@@ -240,7 +240,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E73-9T-6xW">
-                                <rect key="frame" x="20" y="64" width="374" height="160"/>
+                                <rect key="frame" x="20" y="108" width="374" height="155"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <gestureRecognizers/>
                             </view>
@@ -248,17 +248,19 @@
                         <viewLayoutGuide key="safeArea" id="egS-Jl-auv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="egS-Jl-auv" firstAttribute="bottom" secondItem="E73-9T-6xW" secondAttribute="bottom" constant="589" id="554-g5-J3A"/>
+                            <constraint firstItem="egS-Jl-auv" firstAttribute="bottom" secondItem="E73-9T-6xW" secondAttribute="bottom" constant="550" id="554-g5-J3A"/>
                             <constraint firstItem="E73-9T-6xW" firstAttribute="leading" secondItem="egS-Jl-auv" secondAttribute="leading" constant="20" id="OJm-Ul-MkE"/>
                             <constraint firstItem="E73-9T-6xW" firstAttribute="top" secondItem="egS-Jl-auv" secondAttribute="top" constant="20" id="OLT-Lb-8mW"/>
                             <constraint firstItem="egS-Jl-auv" firstAttribute="trailing" secondItem="E73-9T-6xW" secondAttribute="trailing" constant="20" id="pNP-EN-2Xr"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="fkU-ag-6BM"/>
+                    <navigationItem key="navigationItem" title="Search overview" id="U2t-vu-f8I">
+                        <barButtonItem key="backBarButtonItem" title="Overview" id="XHl-Tn-eT8"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tgSearchNearby" destination="Ybv-Rl-yBB" id="FhN-9s-eaW"/>
                         <outlet property="view2" destination="E73-9T-6xW" id="Ux3-LC-DCh"/>
-                        <segue destination="7w5-lJ-e8Y" kind="presentation" identifier="sgShowSearchGarages" modalPresentationStyle="fullScreen" id="cLh-AA-v7W"/>
+                        <segue destination="9t4-tk-uCT" kind="show" identifier="sgShowSearchGarages" id="VCQ-yW-Zrl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fft-hY-gPs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -268,28 +270,41 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1963.7681159420292" y="806.91964285714278"/>
+            <point key="canvasLocation" x="2873.913043478261" y="806.91964285714278"/>
         </scene>
-        <!--Search-->
+        <!--Search garage-->
         <scene sceneID="fsp-kT-s7d">
             <objects>
-                <tableViewController id="9t4-tk-uCT" sceneMemberID="viewController">
+                <tableViewController id="9t4-tk-uCT" customClass="SearchGarageTableViewController" customModule="ParkValley" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="s61-Do-CUk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="ZvZ-wm-Hr7">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Title</string>
+                                <string>Title</string>
+                            </scopeButtonTitles>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="uQn-f1-kfk">
-                                <rect key="frame" x="0.0" y="72" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="garage" textLabel="P5g-sf-DDA" style="IBUITableViewCellStyleDefault" id="uQn-f1-kfk">
+                                <rect key="frame" x="0.0" y="84" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uQn-f1-kfk" id="ZaE-uK-wTA">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="P5g-sf-DDA">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -298,11 +313,14 @@
                             <outlet property="delegate" destination="9t4-tk-uCT" id="A0a-8s-3fY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Search" id="N35-B0-JwB"/>
+                    <navigationItem key="navigationItem" title="Search garage" id="N35-B0-JwB"/>
+                    <connections>
+                        <outlet property="sbSearch" destination="ZvZ-wm-Hr7" id="lJR-OJ-Dej"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iyM-AK-wjO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3660.8695652173915" y="811.60714285714278"/>
+            <point key="canvasLocation" x="3800" y="807"/>
         </scene>
         <!--Login-->
         <scene sceneID="qD4-s0-TmO">
@@ -519,22 +537,23 @@
             <point key="canvasLocation" x="1937.68115942029" y="-1315.1785714285713"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="aqE-BU-oEE">
+        <scene sceneID="fg0-8O-wqY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7w5-lJ-e8Y" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8TN-Nm-u9O" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="fkU-ag-6BM"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f3E-Gx-FUr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NwC-ll-bds">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="9t4-tk-uCT" kind="relationship" relationship="rootViewController" id="pkj-kP-FY2"/>
+                        <segue destination="qLy-pm-g6V" kind="relationship" relationship="rootViewController" id="yzk-mx-fQP"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="032-pc-Aze" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="96S-IK-Iy8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2750.7246376811595" y="811.60714285714278"/>
+            <point key="canvasLocation" x="1963.7681159420292" y="806.91964285714278"/>
         </scene>
     </scenes>
     <resources>
