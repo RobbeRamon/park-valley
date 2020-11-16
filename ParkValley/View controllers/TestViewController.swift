@@ -28,8 +28,8 @@ class TestViewController: UIViewController {
         card.titleSize = 30
         card.textColor = UIColor.white
             
-        
         card.hasParallax = true
+        
             
         card.gestureRecognizers?.append(tgSearchNearby)
         view2.addSubview(card)
