@@ -33,21 +33,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Red garage near city center" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNd-No-Ado">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red garage near city center" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNd-No-Ado">
                                                     <rect key="frame" x="20" y="11" width="211" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Paris" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUA-Vn-og1">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paris" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUA-Vn-og1">
                                                     <rect key="frame" x="20" y="40" width="38" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="RUA-Vn-og1" secondAttribute="trailing" constant="296" id="4xk-L5-ITw"/>
+                                                <constraint firstItem="FNd-No-Ado" firstAttribute="top" secondItem="8CA-7g-xRJ" secondAttribute="topMargin" id="EMI-WO-lxY"/>
+                                                <constraint firstItem="RUA-Vn-og1" firstAttribute="leading" secondItem="8CA-7g-xRJ" secondAttribute="leadingMargin" id="SRS-4E-F6O"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="FNd-No-Ado" secondAttribute="trailing" constant="123" id="TG2-XM-m31"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="RUA-Vn-og1" secondAttribute="bottom" constant="5" id="eaV-9m-K2k"/>
+                                                <constraint firstItem="FNd-No-Ado" firstAttribute="leading" secondItem="8CA-7g-xRJ" secondAttribute="leadingMargin" id="wAH-QK-cTB"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
