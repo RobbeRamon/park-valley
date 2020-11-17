@@ -77,12 +77,8 @@ class SearchGarageTableViewController: UITableViewController {
             
         }
     }
-
-}
-
-extension SearchGarageTableViewController : UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
+    
+    func search(_ searchTerm: String) {
         let group = DispatchGroup()
         
         group.enter()
@@ -94,8 +90,12 @@ extension SearchGarageTableViewController : UISearchBarDelegate {
         group.notify(queue: .main) {
             self.updateUI()
         }
+    }
 
-        
+}
 
+extension SearchGarageTableViewController : UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        search(searchBar.text!)
     }
 }
