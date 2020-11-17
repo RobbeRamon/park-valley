@@ -82,10 +82,10 @@ class SearchGarageTableViewController: UITableViewController {
         let group = DispatchGroup()
         
         group.enter()
-        garageModelController.fetchGarages{(garages) in
+        garageModelController.fetchGarages(searchTerm: searchTerm, completion: {(garages) in
             self.results = garages
             group.leave()
-        }
+        })
         
         group.notify(queue: .main) {
             self.updateUI()

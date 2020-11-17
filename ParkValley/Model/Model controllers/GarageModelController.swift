@@ -9,7 +9,7 @@ import Foundation
 
 class GarageModelController {
     
-    func fetchGarages(completion: @escaping ([Garage]) -> Void) {
+    func fetchGarages(searchTerm: String, completion: @escaping ([Garage]) -> Void) {
         
         
         var components = URLComponents()
@@ -17,6 +17,9 @@ class GarageModelController {
         components.host = "127.0.0.1"
         components.port = 8080
         components.path = "/garages"
+        components.queryItems = [
+            URLQueryItem(name: "city", value: searchTerm)
+        ]
 //        components.queryItems = [
 //            URLQueryItem(name: "Authorization", value: "Bearer i4iGriDa+aWXCKcVlEEvpQ==")
 //        ]
