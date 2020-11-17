@@ -8,9 +8,11 @@
 import Foundation
 
 class User : Codable {
-    var id : String
-    var username : String
-    var token : String
+    var id : String?
+    var username : String?
+    var token : String?
+    
+    init(){}
     
     init(id: String, username: String, token: String) {
         self.id = id

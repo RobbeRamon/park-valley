@@ -14,11 +14,12 @@ class GarageModelController {
         
         var components = URLComponents()
         components.scheme = "http"
-        components.host = "localhost:8080"
+        components.host = "127.0.0.1"
+        components.port = 8080
         components.path = "/garages"
-        components.queryItems = [
-            URLQueryItem(name: "Authorization", value: "Bearer i4iGriDa+aWXCKcVlEEvpQ==")
-        ]
+//        components.queryItems = [
+//            URLQueryItem(name: "Authorization", value: "Bearer i4iGriDa+aWXCKcVlEEvpQ==")
+//        ]
         
         
         let url = components.url!

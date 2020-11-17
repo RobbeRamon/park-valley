@@ -8,12 +8,14 @@
 import Foundation
 
 class Garage : Codable {
-    var id : String
-    var name : String
-    var city : String
-    var latitude : Double
-    var longitude : Double
-    var user : User
+   var id : String?
+   var name : String?
+   var city : String?
+   var latitude : Double?
+   var longitude : Double?
+   var user : User?
+    
+    init(){}
     
     init(id: String, name: String, city: String, latitude: Double, longitude: Double, user: User) {
         self.id = id
