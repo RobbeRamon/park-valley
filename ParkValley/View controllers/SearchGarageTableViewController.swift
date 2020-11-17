@@ -11,27 +11,20 @@ class SearchGarageTableViewController: UITableViewController {
     
     private var results : [Garage] = []
     private var searchTerm : String = ""
+    private var garageModelController : GarageModelController!
+    
     @IBOutlet var sbSearch: UISearchBar!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sbSearch.delegate = self
         
+        sbSearch.delegate = self
         sbSearch.becomeFirstResponder()
         
-        let garageModelController = GarageModelController()
-        garageModelController.fetchGarages{(garages) in
-            self.results = garages
-        }
+        self.garageModelController = GarageModelController()
         
-        if results.isEmpty {
-            let label : UILabel = UILabel()
-            label.text = "Nothing found"
-            label.textAlignment = .center
-            label.textColor = .gray
-            
-            self.tableView.backgroundView = label
-        }
+        updateUI()
     }
 
     // MARK: - Table view data source
@@ -50,8 +43,8 @@ class SearchGarageTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "garage", for: indexPath)
-
-        cell.largeContentTitle = results[indexPath.row].name
+        
+        cell.textLabel?.text = results[indexPath.row].name
 
         return cell
     }
@@ -65,11 +58,44 @@ class SearchGarageTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    func updateUI() {
+        self.tableView.reloadData()
+        
+        
+        if self.results.isEmpty {
+            let label : UILabel = UILabel()
+            label.text = "Nothing found"
+            label.textAlignment = .center
+            label.textColor = .gray
+            
+            self.tableView.backgroundView = label
+        } else {
+            
+            self.tableView.backgroundView = nil
+            
+        }
+    }
 
 }
 
 extension SearchGarageTableViewController : UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print(searchBar.text!)
+        
+        let group = DispatchGroup()
+        
+        group.enter()
+        garageModelController.fetchGarages{(garages) in
+            self.results = garages
+            group.leave()
+        }
+        
+        group.notify(queue: .main) {
+            self.updateUI()
+        }
+
+        
+
     }
 }
