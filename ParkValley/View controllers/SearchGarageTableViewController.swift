@@ -23,6 +23,7 @@ class SearchGarageTableViewController: UITableViewController {
         sbSearch.becomeFirstResponder()
         
         self.garageModelController = GarageModelController()
+        self.tableView.rowHeight = 150
         
         updateUI()
     }
@@ -42,10 +43,11 @@ class SearchGarageTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "garage", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "garage", for: indexPath) as! GarageTableViewCell
         
-        cell.textLabel?.text = results[indexPath.row].name
-
+        let garage = results[indexPath.row]
+        cell.update(with: garage)
+        
         return cell
     }
 
