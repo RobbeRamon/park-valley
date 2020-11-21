@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet var viewAnimation: UIView!
     @IBOutlet var txtEmail: UITextField!
     @IBOutlet var txtPassword: UITextField!
+    @IBOutlet var txtErrorMessage: UILabel!
     
     var pAnimationView: AnimationView?
     var backgroundAnimationView: AnimationView?
@@ -82,6 +83,8 @@ class LoginViewController: UIViewController {
             group.notify(queue: .main) {
                 self.navigateToApplication()
             }
+        } else {
+            txtErrorMessage.isHidden = false
         }
     }
     
