@@ -66,6 +66,9 @@ class LoginViewController: UIViewController {
         let group = DispatchGroup()
         
         if let bearerToken = UserDefaults.standard.string(forKey: "bearer-token") {
+            
+            UserDefaults.standard.removeObject(forKey: "bearer-token")
+            
             group.enter()
             userModelController.fetchUser(token: bearerToken, completion: {(user) in
                 
