@@ -17,20 +17,74 @@ class LoginViewController: UIViewController {
     
     var pAnimationView: AnimationView?
     var backgroundAnimationView: AnimationView?
+    var userModelController: UserModelController!
+    
+    var userToken: UserTokenDTO?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        userModelController = UserModelController()
+        
         createUI()
 
     }
     
     @IBAction func btnLoginClicked(_ sender: UIButton) {
-        let user = User(id: "id", username: txtEmail.text!, token: "token")
-        User.saveToFile(user)
-        
-        performSegue(withIdentifier: "sgShowApplication", sender: self)
+        // let user = User(id: "id", username: txtEmail.text!, token: "token")
+        // User.saveToFile(user)
+        getAndSaveToken()
     }
     
+    /**
+     Get token and save to default storage followed by get user
+     */
+    private func getAndSaveToken() {
+        let group = DispatchGroup()
+        
+        group.enter()
+        userModelController.login(username: txtEmail.text!, password: txtPassword.text!, completion: {(userTokenDTO) in
+            //self.userToken = networkUser
+            
+            if let bearerToken = userTokenDTO?.value {
+                UserDefaults.standard.set(bearerToken, forKey: "bearer-token")
+            }
+            
+            group.leave()
+        })
+        
+        group.notify(queue: .main) {
+            //self.navigateToApplication()
+            self.getAndSaveUser()
+        }
+    }
+    
+    /**
+     Get user and save to file
+     */
+    private func getAndSaveUser() {
+        let group = DispatchGroup()
+        
+        if let bearerToken = UserDefaults.standard.string(forKey: "bearer-token") {
+            group.enter()
+            userModelController.fetchUser(token: bearerToken, completion: {(user) in
+                
+                if let user = user {
+                    User.saveToFile(user)
+                }
+                
+                group.leave()
+            })
+            
+            group.notify(queue: .main) {
+                self.navigateToApplication()
+            }
+        }
+    }
+    
+    private func navigateToApplication() {
+        performSegue(withIdentifier: "sgShowApplication", sender: self)
+    }
     
     private func createUI () {
         btnLogin.layer.cornerRadius = 10

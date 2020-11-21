@@ -16,6 +16,7 @@
 		144F5630255817A7003D72B4 /* login-background.json in Resources */ = {isa = PBXBuildFile; fileRef = 144F562F255817A7003D72B4 /* login-background.json */; };
 		1450D546255349B700F3079C /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1450D545255349B700F3079C /* SearchResultsTableViewController.swift */; };
 		146179D425628FD800EA86D0 /* SearchGarageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146179D325628FD800EA86D0 /* SearchGarageTableViewController.swift */; };
+		146296C7256961DA00ADDA98 /* UserTokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146296C6256961DA00ADDA98 /* UserTokenDTO.swift */; };
 		148699AD256020D400A674BF /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148699AC256020D400A674BF /* MainScreenViewController.swift */; };
 		14AA388E25633282007906DC /* GarageModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AA388D25633282007906DC /* GarageModelController.swift */; };
 		14DB262D2565E15800C53F39 /* GarageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB262C2565E15800C53F39 /* GarageTableViewCell.swift */; };
@@ -27,6 +28,7 @@
 		14E65E092551E445000928A9 /* ParkValleyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E65E082551E445000928A9 /* ParkValleyTests.swift */; };
 		14E65E142551E445000928A9 /* ParkValleyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E65E132551E445000928A9 /* ParkValleyUITests.swift */; };
 		14E65E2A2551E675000928A9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E65E292551E675000928A9 /* SearchViewController.swift */; };
+		14F6BCD2256952B5006E5575 /* UserModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F6BCD1256952B5006E5575 /* UserModelController.swift */; };
 		5D12CCFF1523EED1B9AB0584 /* Pods_ParkValley.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9149D27A443C1452799D9BF /* Pods_ParkValley.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,7 @@
 		144F562F255817A7003D72B4 /* login-background.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "login-background.json"; path = "../../../../../../../../../school/Jaar 3/Semester 1/Native Apps 2 - iOS/animations/login-background.json"; sourceTree = "<group>"; };
 		1450D545255349B700F3079C /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		146179D325628FD800EA86D0 /* SearchGarageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGarageTableViewController.swift; sourceTree = "<group>"; };
+		146296C6256961DA00ADDA98 /* UserTokenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTokenDTO.swift; sourceTree = "<group>"; };
 		148699AC256020D400A674BF /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		14AA388D25633282007906DC /* GarageModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageModelController.swift; sourceTree = "<group>"; };
 		14DB262C2565E15800C53F39 /* GarageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageTableViewCell.swift; sourceTree = "<group>"; };
@@ -75,6 +78,7 @@
 		14E65E132551E445000928A9 /* ParkValleyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkValleyUITests.swift; sourceTree = "<group>"; };
 		14E65E152551E445000928A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14E65E292551E675000928A9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		14F6BCD1256952B5006E5575 /* UserModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelController.swift; sourceTree = "<group>"; };
 		B9149D27A443C1452799D9BF /* Pods_ParkValley.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkValley.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74AF91BA4BDC2E076F59FE8 /* Pods-ParkValley.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkValley.release.xcconfig"; path = "Target Support Files/Pods-ParkValley/Pods-ParkValley.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,10 +119,19 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		146296C5256961C300ADDA98 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				146296C6256961DA00ADDA98 /* UserTokenDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
 		14AA388C2563324D007906DC /* Model controllers */ = {
 			isa = PBXGroup;
 			children = (
 				14AA388D25633282007906DC /* GarageModelController.swift */,
+				14F6BCD1256952B5006E5575 /* UserModelController.swift */,
 			);
 			path = "Model controllers";
 			sourceTree = "<group>";
@@ -195,6 +208,7 @@
 		14E65E252551E5D4000928A9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				146296C5256961C300ADDA98 /* DTO */,
 				14AA388C2563324D007906DC /* Model controllers */,
 				144F55E52557E8BC003D72B4 /* Garage.swift */,
 				144F55EA2557E921003D72B4 /* User.swift */,
@@ -422,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				144F55F52557FA18003D72B4 /* LoginViewController.swift in Sources */,
+				146296C7256961DA00ADDA98 /* UserTokenDTO.swift in Sources */,
 				1450D546255349B700F3079C /* SearchResultsTableViewController.swift in Sources */,
 				14AA388E25633282007906DC /* GarageModelController.swift in Sources */,
 				146179D425628FD800EA86D0 /* SearchGarageTableViewController.swift in Sources */,
@@ -431,6 +446,7 @@
 				144F55E62557E8BC003D72B4 /* Garage.swift in Sources */,
 				14E65E2A2551E675000928A9 /* SearchViewController.swift in Sources */,
 				14E65DF42551E444000928A9 /* SceneDelegate.swift in Sources */,
+				14F6BCD2256952B5006E5575 /* UserModelController.swift in Sources */,
 				14DB262D2565E15800C53F39 /* GarageTableViewCell.swift in Sources */,
 				148699AD256020D400A674BF /* MainScreenViewController.swift in Sources */,
 			);

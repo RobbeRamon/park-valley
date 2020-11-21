@@ -10,17 +10,15 @@ import Foundation
 class User : Codable {
     var id : String?
     var username : String?
-    var token : String?
+    var email : String?
     
     init(){}
     
-    init(id: String, username: String, token: String) {
+    init(id: String, username: String, email: String) {
         self.id = id
         self.username = username
-        self.token = token
+        self.email = email
     }
-    
-
     
     static func saveToFile (_ user: User) {
         
