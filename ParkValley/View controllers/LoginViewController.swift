@@ -14,13 +14,11 @@ class LoginViewController: UIViewController {
     @IBOutlet var viewAnimation: UIView!
     @IBOutlet var txtEmail: UITextField!
     @IBOutlet var txtPassword: UITextField!
-    @IBOutlet var txtErrorMessage: UILabel!
+    @IBOutlet var lblErrorMessage: UILabel!
     
     var pAnimationView: AnimationView?
     var backgroundAnimationView: AnimationView?
     var userModelController: UserModelController!
-    
-    var userToken: UserTokenDTO?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +30,6 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func btnLoginClicked(_ sender: UIButton) {
-        // let user = User(id: "id", username: txtEmail.text!, token: "token")
-        // User.saveToFile(user)
         getAndSaveToken()
     }
     
@@ -45,7 +41,6 @@ class LoginViewController: UIViewController {
         
         group.enter()
         userModelController.login(username: txtEmail.text!, password: txtPassword.text!, completion: {(userTokenDTO) in
-            //self.userToken = networkUser
             
             if let bearerToken = userTokenDTO?.value {
                 UserDefaults.standard.set(bearerToken, forKey: "bearer-token")
@@ -55,7 +50,6 @@ class LoginViewController: UIViewController {
         })
         
         group.notify(queue: .main) {
-            //self.navigateToApplication()
             self.getAndSaveUser()
         }
     }
@@ -84,7 +78,7 @@ class LoginViewController: UIViewController {
                 self.navigateToApplication()
             }
         } else {
-            txtErrorMessage.isHidden = false
+            lblErrorMessage.isHidden = false
         }
     }
     
@@ -109,6 +103,8 @@ class LoginViewController: UIViewController {
         view.addSubview(backgroundAnimationView!)
         backgroundAnimationView?.play()
         view.sendSubviewToBack(backgroundAnimationView!)
+        
+        lblErrorMessage.isHidden = true
         
     }
     
