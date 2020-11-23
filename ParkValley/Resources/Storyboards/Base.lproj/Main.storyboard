@@ -342,32 +342,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tCT-IU-HZL">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zuW-PO-edR">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="241"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="sj4-7p-L41"/>
+                                    <constraint firstAttribute="height" constant="241" id="dYy-EM-3eA"/>
+                                </constraints>
+                            </mapView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new-york-wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="FHM-Ef-4YE">
+                                <rect key="frame" x="40" y="261" width="334" height="185"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="185" id="Lvz-bs-Qry"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHk-rM-JCk">
-                                <rect key="frame" x="186" y="180" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EG4-mQ-XjU">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="plN-fo-rWR"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JSF-Fo-dzh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="tCT-IU-HZL" firstAttribute="leading" secondItem="JSF-Fo-dzh" secondAttribute="leading" id="EJi-o0-vaW"/>
-                            <constraint firstItem="VHk-rM-JCk" firstAttribute="top" secondItem="tCT-IU-HZL" secondAttribute="bottom" constant="20" id="Q0c-V7-lWv"/>
-                            <constraint firstItem="JSF-Fo-dzh" firstAttribute="trailing" secondItem="tCT-IU-HZL" secondAttribute="trailing" id="YTI-Vc-njO"/>
-                            <constraint firstItem="tCT-IU-HZL" firstAttribute="top" secondItem="JSF-Fo-dzh" secondAttribute="top" id="ncO-jR-mei"/>
-                            <constraint firstItem="VHk-rM-JCk" firstAttribute="centerX" secondItem="KFg-CA-qcI" secondAttribute="centerX" id="zdf-WM-3eT"/>
+                            <constraint firstItem="zuW-PO-edR" firstAttribute="top" secondItem="JSF-Fo-dzh" secondAttribute="top" id="3xQ-EL-uF8"/>
+                            <constraint firstItem="zuW-PO-edR" firstAttribute="leading" secondItem="JSF-Fo-dzh" secondAttribute="leading" id="6is-BP-VKj"/>
+                            <constraint firstItem="FHM-Ef-4YE" firstAttribute="top" secondItem="zuW-PO-edR" secondAttribute="bottom" constant="20" id="7X3-gC-avJ"/>
+                            <constraint firstItem="zuW-PO-edR" firstAttribute="trailing" secondItem="JSF-Fo-dzh" secondAttribute="trailing" id="Gfm-9Z-zdT"/>
+                            <constraint firstItem="FHM-Ef-4YE" firstAttribute="leading" secondItem="JSF-Fo-dzh" secondAttribute="leading" constant="40" id="Qn9-mW-Ore"/>
+                            <constraint firstItem="JSF-Fo-dzh" firstAttribute="trailing" secondItem="FHM-Ef-4YE" secondAttribute="trailing" constant="40" id="ZUS-Q4-1BU"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ivImage" destination="tCT-IU-HZL" id="k7I-Ym-TiS"/>
-                        <outlet property="lblName" destination="VHk-rM-JCk" id="LCR-fs-rif"/>
+                        <outlet property="mvMap" destination="zuW-PO-edR" id="r3P-yW-EGq"/>
+                        <outlet property="niName" destination="plN-fo-rWR" id="KjB-wc-Qh8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMF-K0-SgT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
