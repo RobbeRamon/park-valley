@@ -241,15 +241,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="E73-9T-6xW">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E73-9T-6xW">
                                 <rect key="frame" x="20" y="108" width="374" height="155"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="155" id="4gg-oT-S0e"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="egS-Jl-auv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="E73-9T-6xW" firstAttribute="leading" secondItem="egS-Jl-auv" secondAttribute="leading" constant="20" id="BQx-c3-cqI"/>
+                            <constraint firstItem="egS-Jl-auv" firstAttribute="trailing" secondItem="E73-9T-6xW" secondAttribute="trailing" constant="20" id="QUm-K5-JLQ"/>
+                            <constraint firstItem="E73-9T-6xW" firstAttribute="top" secondItem="egS-Jl-auv" secondAttribute="top" constant="20" id="Vc9-d3-ihj"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search overview" id="U2t-vu-f8I">
                         <barButtonItem key="backBarButtonItem" title="Overview" id="XHl-Tn-eT8"/>
@@ -297,9 +304,6 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORW-NT-8nU">
                                             <rect key="frame" x="20" y="20" width="374" height="110"/>
                                             <gestureRecognizers/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="374" id="DSd-bR-Kwy"/>
-                                            </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>
