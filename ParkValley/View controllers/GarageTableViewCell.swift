@@ -11,17 +11,33 @@ import Cards
 class GarageTableViewCell: UITableViewCell {
     @IBOutlet var vwGarage: UIView!
     
-    var card: CardArticle!
+    private var card: CardArticle!
+//    private var gestureRecognizer: UITapGestureRecognizer!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
+            
         card = CardArticle(frame: vwGarage.bounds)
         card.backgroundImage = UIImage(named: "new-york-wallpaper-blurred-darkened")
         card.textColor = UIColor.white
+        card.titleSize = 35
+        card.category = ""
+        card.shadowOpacity = 0
+        
+//        gestureRecognizer = UITapGestureRecognizer()
+        
+        /// Add tab gesture to card
+//        gestureRecognizer.addTarget(self, action: #selector(self.cardClicked(_:forEvent:)))
+//        card.gestureRecognizers?.append(gestureRecognizer)
+        
+        card.isUserInteractionEnabled = true
+        
+        self.contentView.isUserInteractionEnabled = false;
         
         vwGarage.addSubview(card)
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -32,8 +48,11 @@ class GarageTableViewCell: UITableViewCell {
     
     func update(with garage: Garage) {
         card.title = garage.name!
-        card.category = garage.city!
-        card.subtitle = ""
+        card.subtitle = garage.city!
     }
-
+    
+//    @objc func cardClicked(_ sender: Any, forEvent event: UIEvent){
+//
+//    }
+    
 }

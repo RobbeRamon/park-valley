@@ -14,7 +14,7 @@ class SearchGarageTableViewController: UITableViewController {
     private var garageModelController : GarageModelController!
     
     @IBOutlet var sbSearch: UISearchBar!
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,10 +84,13 @@ class SearchGarageTableViewController: UITableViewController {
         let group = DispatchGroup()
         
         group.enter()
-        garageModelController.fetchGarages(searchTerm: searchTerm, completion: {(garages) in
-            self.results = garages
-            group.leave()
-        })
+        
+        if let bearerToken = UserDefaults.standard.string(forKey: "bearer-token") {
+            garageModelController.fetchGarages(searchTerm: searchTerm, token: bearerToken, completion: {(garages) in
+                self.results = garages
+                group.leave()
+            })
+        }
         
         group.notify(queue: .main) {
             self.updateUI()

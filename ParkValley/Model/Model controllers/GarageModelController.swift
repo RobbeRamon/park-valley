@@ -9,25 +9,29 @@ import Foundation
 
 class GarageModelController {
     
-    func fetchGarages(searchTerm: String, completion: @escaping ([Garage]) -> Void) {
+    func fetchGarages(searchTerm: String, token: String, completion: @escaping ([Garage]) -> Void) {
         
         
-        var components = URLComponents()
-        components.scheme = "http"
-        components.host = "127.0.0.1"
-        components.port = 8080
-        components.path = "/garages"
-        components.queryItems = [
-            URLQueryItem(name: "city", value: searchTerm)
-        ]
+//        var components = URLComponents()
+//        components.scheme = "http"
+//        components.host = "127.0.0.1"
+//        components.port = 8080
+//        components.path = "/garages"
+//        components.queryItems = [
+//            URLQueryItem(name: "city", value: searchTerm)
+//        ]
 //        components.queryItems = [
 //            URLQueryItem(name: "Authorization", value: "Bearer i4iGriDa+aWXCKcVlEEvpQ==")
 //        ]
         
         
-        let url = components.url!
+        let url = giveURL(path: "/garages")
         
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             let jsonDecoder = JSONDecoder()
             
             if let data = data,
@@ -43,5 +47,15 @@ class GarageModelController {
         
         task.resume()
         
+    }
+    
+    private func giveURL(path: String) -> URL {
+        var components = URLComponents()
+        components.scheme = "http"
+        components.host = "127.0.0.1"
+        components.port = 8080
+        components.path = path
+        
+        return components.url!
     }
 }
