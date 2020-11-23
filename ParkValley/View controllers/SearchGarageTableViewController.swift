@@ -27,6 +27,16 @@ class SearchGarageTableViewController: UITableViewController {
         
         updateUI()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sgShowDetail" {
+            let indexPath = tableView.indexPathForSelectedRow!
+            let garage = results[indexPath.row]
+            let garageDetailViewController = segue.destination as! GarageDetailViewController
+            
+            garageDetailViewController.garage = garage
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -61,8 +71,8 @@ class SearchGarageTableViewController: UITableViewController {
     }
     */
     
-    
-    func updateUI() {
+    // MARK: - Helper methods
+    private func updateUI() {
         self.tableView.reloadData()
         
         
@@ -80,7 +90,7 @@ class SearchGarageTableViewController: UITableViewController {
         }
     }
     
-    func search(_ searchTerm: String) {
+    private func search(_ searchTerm: String) {
         let group = DispatchGroup()
         
         group.enter()

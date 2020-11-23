@@ -316,7 +316,7 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outlet property="vwGarage" destination="ORW-NT-8nU" id="64f-OZ-Lci"/>
-                                    <segue destination="qEL-yt-n4X" kind="presentation" id="ZHD-ZX-qNj"/>
+                                    <segue destination="qEL-yt-n4X" kind="presentation" identifier="sgShowDetail" id="ZHD-ZX-qNj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -334,20 +334,45 @@
             </objects>
             <point key="canvasLocation" x="3800.0000000000005" y="806.91964285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--Garage Detail View Controller-->
         <scene sceneID="6U7-1I-Iae">
             <objects>
-                <viewController id="qEL-yt-n4X" sceneMemberID="viewController">
+                <viewController id="qEL-yt-n4X" customClass="GarageDetailViewController" customModule="ParkValley" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KFg-CA-qcI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tCT-IU-HZL">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="sj4-7p-L41"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHk-rM-JCk">
+                                <rect key="frame" x="186" y="180" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="JSF-Fo-dzh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tCT-IU-HZL" firstAttribute="leading" secondItem="JSF-Fo-dzh" secondAttribute="leading" id="EJi-o0-vaW"/>
+                            <constraint firstItem="VHk-rM-JCk" firstAttribute="top" secondItem="tCT-IU-HZL" secondAttribute="bottom" constant="20" id="Q0c-V7-lWv"/>
+                            <constraint firstItem="JSF-Fo-dzh" firstAttribute="trailing" secondItem="tCT-IU-HZL" secondAttribute="trailing" id="YTI-Vc-njO"/>
+                            <constraint firstItem="tCT-IU-HZL" firstAttribute="top" secondItem="JSF-Fo-dzh" secondAttribute="top" id="ncO-jR-mei"/>
+                            <constraint firstItem="VHk-rM-JCk" firstAttribute="centerX" secondItem="KFg-CA-qcI" secondAttribute="centerX" id="zdf-WM-3eT"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ivImage" destination="tCT-IU-HZL" id="k7I-Ym-TiS"/>
+                        <outlet property="lblName" destination="VHk-rM-JCk" id="LCR-fs-rif"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMF-K0-SgT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4914" y="807"/>
+            <point key="canvasLocation" x="4779.7101449275369" y="806.91964285714278"/>
         </scene>
         <!--Login-->
         <scene sceneID="qD4-s0-TmO">
