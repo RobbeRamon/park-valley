@@ -250,12 +250,6 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="egS-Jl-auv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="egS-Jl-auv" firstAttribute="bottom" secondItem="E73-9T-6xW" secondAttribute="bottom" constant="550" id="554-g5-J3A"/>
-                            <constraint firstItem="E73-9T-6xW" firstAttribute="leading" secondItem="egS-Jl-auv" secondAttribute="leading" constant="20" id="OJm-Ul-MkE"/>
-                            <constraint firstItem="E73-9T-6xW" firstAttribute="top" secondItem="egS-Jl-auv" secondAttribute="top" constant="20" id="OLT-Lb-8mW"/>
-                            <constraint firstItem="egS-Jl-auv" firstAttribute="trailing" secondItem="E73-9T-6xW" secondAttribute="trailing" constant="20" id="pNP-EN-2Xr"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search overview" id="U2t-vu-f8I">
                         <barButtonItem key="backBarButtonItem" title="Overview" id="XHl-Tn-eT8"/>
