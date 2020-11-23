@@ -11,21 +11,10 @@ class GarageModelController {
     
     func fetchGarages(searchTerm: String, token: String, completion: @escaping ([Garage]) -> Void) {
         
+        var query = [URLQueryItem]()
+        query.append(URLQueryItem(name: "city", value: searchTerm))
         
-//        var components = URLComponents()
-//        components.scheme = "http"
-//        components.host = "127.0.0.1"
-//        components.port = 8080
-//        components.path = "/garages"
-//        components.queryItems = [
-//            URLQueryItem(name: "city", value: searchTerm)
-//        ]
-//        components.queryItems = [
-//            URLQueryItem(name: "Authorization", value: "Bearer i4iGriDa+aWXCKcVlEEvpQ==")
-//        ]
-        
-        
-        let url = giveURL(path: "/garages")
+        let url = giveURL(path: "/garages", query: query)
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -49,12 +38,16 @@ class GarageModelController {
         
     }
     
-    private func giveURL(path: String) -> URL {
+    private func giveURL(path: String, query: [URLQueryItem]?) -> URL {
         var components = URLComponents()
         components.scheme = "http"
         components.host = "127.0.0.1"
         components.port = 8080
         components.path = path
+        
+        if let query = query {
+            components.queryItems = query
+        }
         
         return components.url!
     }
