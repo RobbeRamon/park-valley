@@ -17,6 +17,7 @@
 		1450D546255349B700F3079C /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1450D545255349B700F3079C /* SearchResultsTableViewController.swift */; };
 		146179D425628FD800EA86D0 /* SearchGarageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146179D325628FD800EA86D0 /* SearchGarageTableViewController.swift */; };
 		146296C7256961DA00ADDA98 /* UserTokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146296C6256961DA00ADDA98 /* UserTokenDTO.swift */; };
+		148465B3257E5136001B79F3 /* GarageShowMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148465B2257E5136001B79F3 /* GarageShowMapViewController.swift */; };
 		148699AD256020D400A674BF /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148699AC256020D400A674BF /* MainScreenViewController.swift */; };
 		148AC0DB256BF45300160711 /* GarageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AC0DA256BF45300160711 /* GarageDetailViewController.swift */; };
 		14AA388E25633282007906DC /* GarageModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AA388D25633282007906DC /* GarageModelController.swift */; };
@@ -62,6 +63,7 @@
 		1450D545255349B700F3079C /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		146179D325628FD800EA86D0 /* SearchGarageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGarageTableViewController.swift; sourceTree = "<group>"; };
 		146296C6256961DA00ADDA98 /* UserTokenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTokenDTO.swift; sourceTree = "<group>"; };
+		148465B2257E5136001B79F3 /* GarageShowMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageShowMapViewController.swift; sourceTree = "<group>"; };
 		148699AC256020D400A674BF /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		148AC0DA256BF45300160711 /* GarageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageDetailViewController.swift; sourceTree = "<group>"; };
 		14AA388D25633282007906DC /* GarageModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageModelController.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				146179D325628FD800EA86D0 /* SearchGarageTableViewController.swift */,
 				14DB262C2565E15800C53F39 /* GarageTableViewCell.swift */,
 				148AC0DA256BF45300160711 /* GarageDetailViewController.swift */,
+				148465B2257E5136001B79F3 /* GarageShowMapViewController.swift */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				144F55F52557FA18003D72B4 /* LoginViewController.swift in Sources */,
 				146296C7256961DA00ADDA98 /* UserTokenDTO.swift in Sources */,
 				1450D546255349B700F3079C /* SearchResultsTableViewController.swift in Sources */,
+				148465B3257E5136001B79F3 /* GarageShowMapViewController.swift in Sources */,
 				148AC0DB256BF45300160711 /* GarageDetailViewController.swift in Sources */,
 				14AA388E25633282007906DC /* GarageModelController.swift in Sources */,
 				146179D425628FD800EA86D0 /* SearchGarageTableViewController.swift in Sources */,

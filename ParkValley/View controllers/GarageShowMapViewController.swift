@@ -1,42 +1,26 @@
 //
-//  GarageDetailViewController.swift
+//  GarageShowMapViewController.swift
 //  ParkValley
 //
-//  Created by Robbe on 23/11/2020.
+//  Created by Robbe on 07/12/2020.
 //
 
 import UIKit
 import MapKit
 
-class GarageDetailViewController: UIViewController {
+class GarageShowMapViewController: UIViewController {
     
-    @IBOutlet var niName: UINavigationItem!
     @IBOutlet var mvMap: MKMapView!
-    
     var garage: Garage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         updateUI()
-    }
-    
-
-    
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "sgShowOnMap" {
-            let garageShowMapViewController = segue.destination as! GarageShowMapViewController
-            
-            garageShowMapViewController.garage = self.garage
-        }
     }
     
     // MARK: - Helper functions
     func updateUI() {
         if let garage = self.garage {
-            niName.title = garage.name
             
             let initialLocation = CLLocation(latitude: garage.latitude!, longitude: garage.longitude!)
             mvMap.centerToLocation(initialLocation)
@@ -44,13 +28,16 @@ class GarageDetailViewController: UIViewController {
             addAnnotationToMap(name: garage.name!, latitude: garage.latitude!, longitude: garage.longitude!)
         }
     }
-
+    
+    
     func addAnnotationToMap(name: String, latitude: Double, longitude: Double) {
         let garage = MKPointAnnotation()
         garage.title = name
         garage.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         mvMap.addAnnotation(garage)
     }
+    
+
 
 }
 
@@ -67,3 +54,4 @@ private extension MKMapView {
     setRegion(coordinateRegion, animated: true)
   }
 }
+
