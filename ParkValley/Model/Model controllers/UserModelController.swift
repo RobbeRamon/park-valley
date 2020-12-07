@@ -71,7 +71,7 @@ class UserModelController {
     private func giveURL(path: String) -> URL {
         var components = URLComponents()
         components.scheme = "https"
-        components.host = "501c98eb46a6.ngrok.io"
+        components.host = "b8ff6c4c13de.ngrok.io"
         //components.port = 8080
         components.path = path
         

@@ -64,7 +64,7 @@ class LoginViewController: UIViewController {
         
         if let bearerToken = UserDefaults.standard.string(forKey: "bearer-token") {
             
-            UserDefaults.standard.removeObject(forKey: "bearer-token")
+            //UserDefaults.standard.removeObject(forKey: "bearer-token")
             
             group.enter()
             userModelController.fetchUser(token: bearerToken, completion: {(user) in
@@ -91,9 +91,10 @@ class LoginViewController: UIViewController {
     private func createUI () {
         btnLogin.layer.cornerRadius = 10
 
-        pAnimationView = .init(name:"parking-icon")
+        pAnimationView = .init(name:"city-building")
         pAnimationView?.frame = viewAnimation.bounds
         pAnimationView?.loopMode = .autoReverse
+        pAnimationView?.animationSpeed = 0.7
         viewAnimation.addSubview(pAnimationView!)
         pAnimationView?.play()
         viewAnimation.sendSubviewToBack(pAnimationView!)

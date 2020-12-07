@@ -11,6 +11,8 @@ class GarageModelController {
     
     func fetchGarages(searchTerm: String, token: String, completion: @escaping ([Garage]) -> Void) {
         
+        print("trigger")
+        
         var query = [URLQueryItem]()
         query.append(URLQueryItem(name: "city", value: searchTerm))
         
@@ -41,7 +43,7 @@ class GarageModelController {
     private func giveURL(path: String, query: [URLQueryItem]?) -> URL {
         var components = URLComponents()
         components.scheme = "https"
-        components.host = "501c98eb46a6.ngrok.io"
+        components.host = "b8ff6c4c13de.ngrok.io"
         //components.port = 8080
         components.path = path
         
