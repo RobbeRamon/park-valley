@@ -481,9 +481,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" id="EQX-dF-ohb">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQX-dF-ohb">
                                 <rect key="frame" x="-175" y="-56" width="764" height="502"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </view>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid credentials" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRR-IO-Wn6">
                                 <rect key="frame" x="138.5" y="595.5" width="137" height="21"/>
@@ -495,18 +494,22 @@
                         <viewLayoutGuide key="safeArea" id="jLG-8e-IcL"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
+                            <constraint firstItem="EQX-dF-ohb" firstAttribute="leading" secondItem="XEK-K8-bE1" secondAttribute="leading" constant="-175" id="0y9-tt-X8f"/>
                             <constraint firstItem="am5-lg-JQa" firstAttribute="top" secondItem="GRR-IO-Wn6" secondAttribute="bottom" constant="10" id="1Sh-f3-kdy"/>
+                            <constraint firstAttribute="bottom" secondItem="EQX-dF-ohb" secondAttribute="bottom" constant="450" id="8yr-KZ-FDe"/>
                             <constraint firstItem="jbo-s7-Z1P" firstAttribute="centerX" secondItem="XEK-K8-bE1" secondAttribute="centerX" id="99N-xm-d0d"/>
                             <constraint firstItem="am5-lg-JQa" firstAttribute="leading" secondItem="jLG-8e-IcL" secondAttribute="leading" constant="20" id="CpC-xm-agR"/>
                             <constraint firstItem="3Hh-FC-WUy" firstAttribute="leading" secondItem="jLG-8e-IcL" secondAttribute="leading" constant="20" id="DE5-bM-hxf"/>
                             <constraint firstItem="GRR-IO-Wn6" firstAttribute="top" secondItem="EwU-XW-Zlb" secondAttribute="bottom" constant="5" id="J13-af-LPd"/>
                             <constraint firstItem="tv4-fw-z3o" firstAttribute="centerX" secondItem="XEK-K8-bE1" secondAttribute="centerX" id="KTy-ra-qcT"/>
+                            <constraint firstItem="EQX-dF-ohb" firstAttribute="top" secondItem="XEK-K8-bE1" secondAttribute="top" constant="-56" id="Msm-UG-5b0"/>
                             <constraint firstItem="jLG-8e-IcL" firstAttribute="trailing" secondItem="am5-lg-JQa" secondAttribute="trailing" constant="20" id="Pjw-4N-Jrg"/>
                             <constraint firstItem="GRR-IO-Wn6" firstAttribute="centerX" secondItem="XEK-K8-bE1" secondAttribute="centerX" id="Wfi-Wj-IH4"/>
                             <constraint firstItem="tv4-fw-z3o" firstAttribute="top" secondItem="am5-lg-JQa" secondAttribute="bottom" constant="10" id="Z2F-3A-jdj"/>
                             <constraint firstItem="3Hh-FC-WUy" firstAttribute="top" secondItem="jbo-s7-Z1P" secondAttribute="bottom" constant="20" id="ZHX-4s-prU"/>
                             <constraint firstItem="EwU-XW-Zlb" firstAttribute="leading" secondItem="jLG-8e-IcL" secondAttribute="leading" constant="20" id="ghl-W6-c9V"/>
                             <constraint firstItem="jLG-8e-IcL" firstAttribute="trailing" secondItem="EwU-XW-Zlb" secondAttribute="trailing" constant="20" id="j6Q-13-4Tn"/>
+                            <constraint firstItem="EQX-dF-ohb" firstAttribute="centerX" secondItem="jbo-s7-Z1P" secondAttribute="centerX" id="kDV-Yh-1wi"/>
                             <constraint firstItem="jbo-s7-Z1P" firstAttribute="top" secondItem="EQX-dF-ohb" secondAttribute="bottom" id="uSz-VC-d6F"/>
                             <constraint firstItem="jLG-8e-IcL" firstAttribute="trailing" secondItem="3Hh-FC-WUy" secondAttribute="trailing" constant="20" id="zLx-vk-5Au"/>
                             <constraint firstItem="EwU-XW-Zlb" firstAttribute="top" secondItem="3Hh-FC-WUy" secondAttribute="bottom" constant="10" id="zth-N0-EnR"/>
@@ -515,6 +518,7 @@
                     <navigationItem key="navigationItem" title="Login" id="Myz-4t-Bpk"/>
                     <connections>
                         <outlet property="btnLogin" destination="am5-lg-JQa" id="cNh-Vh-6et"/>
+                        <outlet property="cBottom" destination="8yr-KZ-FDe" id="b5e-HT-Axa"/>
                         <outlet property="lblErrorMessage" destination="GRR-IO-Wn6" id="SjV-OO-x3E"/>
                         <outlet property="txtEmail" destination="3Hh-FC-WUy" id="vaE-BI-I5P"/>
                         <outlet property="txtPassword" destination="EwU-XW-Zlb" id="087-L5-oDf"/>

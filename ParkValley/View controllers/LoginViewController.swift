@@ -9,7 +9,9 @@ import UIKit
 import Lottie
 
 class LoginViewController: UIViewController {
-
+    
+    @IBOutlet var cBottom: NSLayoutConstraint!
+    
     @IBOutlet var btnLogin: UIButton!
     @IBOutlet var viewAnimation: UIView!
     @IBOutlet var txtEmail: UITextField!
@@ -24,8 +26,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         userModelController = UserModelController()
-        
         createUI()
+        registerForKeyboardNotifications()
 
     }
     
@@ -115,6 +117,38 @@ class LoginViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
+    
+    // MARK: - shift view when keyboard is shown
+    func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(_:)), name: UIResponder.keyboardDidShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector:
+            #selector(keyboardWillBeHidden(_:)),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+    }
+    
+    @objc func keyboardWasShown(_ notificiation: NSNotification) {
+        guard let info = notificiation.userInfo,
+              let _ = info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue
+            else { return }
+        
+        viewAnimation.isHidden = true
+        cBottom.constant = 650
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    @objc func keyboardWillBeHidden(_ notification: NSNotification) {
+        viewAnimation.isHidden = false
+        
+        cBottom.constant = 450
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+        })
+    }
+    
     
     // MARK: - helper methods
     
