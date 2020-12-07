@@ -1,4 +1,4 @@
-platform :ios, '14.2'
+platform :ios, '14.0'
 
 
 target 'ParkValley' do
