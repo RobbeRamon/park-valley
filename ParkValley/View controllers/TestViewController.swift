@@ -10,6 +10,7 @@ import UIKit
 class TestViewController: UIViewController {
     @IBOutlet var tgSearchNearby: UITapGestureRecognizer!
     @IBOutlet var ivSearchNearby: UIImageView!
+    @IBOutlet var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +35,15 @@ class TestViewController: UIViewController {
 //        view2.addSubview(card)
         
         
-        //ivSearchNearby.gestureRecognizers?.append(tgSearchNearby)
+        //ivSearchNearby.gestureRecognizers?.append(tgSearchNearby)        scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, scrollView.frame.size.height);
+        
+        scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: scrollView.frame.size.height);
     }
     
     @IBAction func handleSearchNearbyClick(_ sender: UITapGestureRecognizer) {
         performSegue(withIdentifier: "sgShowSearchGarages", sender: self)
     }
+    
     
     /*
     // MARK: - Navigation

@@ -25,6 +25,8 @@ class SearchGarageTableViewController: UITableViewController {
         self.garageModelController = GarageModelController()
         //self.tableView.rowHeight = 150
         
+
+        
         updateUI()
     }
     
