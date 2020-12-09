@@ -9,30 +9,33 @@ import UIKit
 import Cards
 
 class TestViewController: UIViewController {
-    @IBOutlet var view2: UIView!
     @IBOutlet var tgSearchNearby: UITapGestureRecognizer!
+    @IBOutlet var ivSearchNearby: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Aspect Ratio of 5:6 is preferred
-        let card = CardHighlight(frame: view2.bounds)
+//        let card = CardHighlight(frame: view2.bounds)
+//
+//
+//        card.backgroundColor = UIColor(red: 0, green: 94/255, blue: 112/255, alpha: 1)
+//        card.backgroundImage = UIImage(named: "new-york-wallpaper-blurred-darkened")
+//        card.title = "Search nearby garages"
+//        card.itemSubtitle = ""
+//        card.itemTitle = ""
+//        card.buttonText = ""
+//        card.titleSize = 30
+//        card.textColor = UIColor.white
+//
+//        card.hasParallax = true
+//
+//
+//        //card.gestureRecognizers?.append(tgSearchNearby)
+//        view2.addSubview(card)
         
-
-        card.backgroundColor = UIColor(red: 0, green: 94/255, blue: 112/255, alpha: 1)
-        card.backgroundImage = UIImage(named: "new-york-wallpaper-blurred-darkened")
-        card.title = "Search nearby garages"
-        card.itemSubtitle = ""
-        card.itemTitle = ""
-        card.buttonText = ""
-        card.titleSize = 30
-        card.textColor = UIColor.white
-            
-        card.hasParallax = true
         
-            
-        card.gestureRecognizers?.append(tgSearchNearby)
-        view2.addSubview(card)
+        //ivSearchNearby.gestureRecognizers?.append(tgSearchNearby)
     }
     
     @IBAction func handleSearchNearbyClick(_ sender: UITapGestureRecognizer) {

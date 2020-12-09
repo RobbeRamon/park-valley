@@ -121,7 +121,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="jgs-rT-LHd">
-                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
@@ -241,22 +241,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="E73-9T-6xW">
-                                <rect key="frame" x="20" y="108" width="374" height="155"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <gestureRecognizers/>
-                            </view>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search_nearby" translatesAutoresizingMaskIntoConstraints="NO" id="aEX-5P-NWH">
+                                <rect key="frame" x="23" y="108" width="368" height="174"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="174" id="WOB-g0-ATy"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Ybv-Rl-yBB" appends="YES" id="GpE-Kx-UZN"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="search nearby" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCE-tI-10M">
+                                <rect key="frame" x="35" y="168" width="344" height="66"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="55"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="egS-Jl-auv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rCE-tI-10M" firstAttribute="centerX" secondItem="aEX-5P-NWH" secondAttribute="centerX" id="4Fy-3j-88Z"/>
+                            <constraint firstItem="aEX-5P-NWH" firstAttribute="leading" secondItem="egS-Jl-auv" secondAttribute="leading" constant="23" id="6xa-rV-by5"/>
+                            <constraint firstItem="aEX-5P-NWH" firstAttribute="top" secondItem="egS-Jl-auv" secondAttribute="top" constant="20" id="Xwb-WM-1FH"/>
+                            <constraint firstItem="egS-Jl-auv" firstAttribute="trailing" secondItem="aEX-5P-NWH" secondAttribute="trailing" constant="23" id="iuf-2m-BHf"/>
+                            <constraint firstItem="aEX-5P-NWH" firstAttribute="top" secondItem="egS-Jl-auv" secondAttribute="top" constant="20" id="os9-cr-VFx"/>
+                            <constraint firstItem="rCE-tI-10M" firstAttribute="top" secondItem="egS-Jl-auv" secondAttribute="top" constant="80" id="rdQ-VB-qpq"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search overview" id="U2t-vu-f8I">
                         <barButtonItem key="backBarButtonItem" title="Overview" id="XHl-Tn-eT8"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="ivSearchNearby" destination="aEX-5P-NWH" id="8IT-Oe-jks"/>
                         <outlet property="tgSearchNearby" destination="Ybv-Rl-yBB" id="FhN-9s-eaW"/>
-                        <outlet property="view2" destination="E73-9T-6xW" id="Ux3-LC-DCh"/>
                         <segue destination="9t4-tk-uCT" kind="show" identifier="sgShowSearchGarages" id="VCQ-yW-Zrl"/>
                     </connections>
                 </viewController>
@@ -278,7 +295,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="ZvZ-wm-Hr7">
-                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="56"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <scopeButtonTitles>
@@ -344,7 +361,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new-york-wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="2tQ-zK-vEK">
-                                <rect key="frame" x="0.0" y="298" width="414" height="212"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="212"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="212" id="YvE-ao-UVy"/>
                                 </constraints>
@@ -662,6 +679,7 @@
         <image name="message.fill" catalog="system" width="128" height="113"/>
         <image name="new-york-wallpaper" width="1200" height="783"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="search_nearby" width="165" height="77.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

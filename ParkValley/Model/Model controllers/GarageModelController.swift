@@ -42,9 +42,9 @@ class GarageModelController {
     
     private func giveURL(path: String, query: [URLQueryItem]?) -> URL {
         var components = URLComponents()
-        components.scheme = "https"
-        components.host = "50907f8d5709.ngrok.io"
-        //components.port = 8080
+        components.scheme = "http"
+        components.host = "127.0.0.1"
+        components.port = 8080
         components.path = path
         
         if let query = query {
