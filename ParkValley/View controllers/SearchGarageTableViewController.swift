@@ -23,7 +23,7 @@ class SearchGarageTableViewController: UITableViewController {
         sbSearch.becomeFirstResponder()
         
         self.garageModelController = GarageModelController()
-        self.tableView.rowHeight = 150
+        //self.tableView.rowHeight = 150
         
         updateUI()
     }

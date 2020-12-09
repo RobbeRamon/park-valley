@@ -10,6 +10,9 @@ import Cards
 
 class GarageTableViewCell: UITableViewCell {
     @IBOutlet var vwGarage: UIView!
+    @IBOutlet var lbGarageName: UILabel!
+    @IBOutlet var lbGarageCity: UILabel!
+    @IBOutlet var lbGarageImage: UIImageView!
     
     private var card: CardArticle!
 //    private var gestureRecognizer: UITapGestureRecognizer!
@@ -19,12 +22,12 @@ class GarageTableViewCell: UITableViewCell {
         // Initialization code
         
             
-        card = CardArticle(frame: vwGarage.bounds)
-        card.backgroundImage = UIImage(named: "new-york-wallpaper-blurred-darkened")
-        card.textColor = UIColor.white
-        card.titleSize = 35
-        card.category = ""
-        card.shadowOpacity = 0
+//        card = CardArticle(frame: vwGarage.bounds)
+//        card.backgroundImage = UIImage(named: "new-york-wallpaper-blurred-darkened")
+//        card.textColor = UIColor.white
+//        card.titleSize = 35
+//        card.category = ""
+//        card.shadowOpacity = 0
         
 //        gestureRecognizer = UITapGestureRecognizer()
         
@@ -32,12 +35,13 @@ class GarageTableViewCell: UITableViewCell {
 //        gestureRecognizer.addTarget(self, action: #selector(self.cardClicked(_:forEvent:)))
 //        card.gestureRecognizers?.append(gestureRecognizer)
         
-        card.isUserInteractionEnabled = true
+        //card.isUserInteractionEnabled = true
         
-        self.contentView.isUserInteractionEnabled = false;
+        //self.contentView.isUserInteractionEnabled = false;
         
-        vwGarage.addSubview(card)
+        //vwGarage.addSubview(card)
 
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -47,8 +51,12 @@ class GarageTableViewCell: UITableViewCell {
     }
     
     func update(with garage: Garage) {
-        card.title = garage.name!
-        card.subtitle = garage.city!
+//        card.title = garage.name!
+//        card.subtitle = garage.city!
+        lbGarageName.text = garage.name
+        lbGarageCity.text = garage.city
+        
+        
     }
     
 //    @objc func cardClicked(_ sender: Any, forEvent event: UIEvent){
