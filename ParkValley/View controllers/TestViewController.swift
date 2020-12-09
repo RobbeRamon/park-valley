@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Cards
 
 class TestViewController: UIViewController {
     @IBOutlet var tgSearchNearby: UITapGestureRecognizer!
