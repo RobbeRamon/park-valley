@@ -421,46 +421,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fac-xu-6dB">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fac-xu-6dB">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="new-york-wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="HAa-Ik-Z8h">
-                                        <rect key="frame" x="0.0" y="0.0" width="406" height="160"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnB-Yf-neU">
-                                        <rect key="frame" x="20" y="180" width="65" height="37"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G23-8U-1Mh">
-                                        <rect key="frame" x="20" y="237" width="1065.5" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemGrayColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozo-Mk-yGq">
-                                        <rect key="frame" x="20" y="278" width="126" height="37"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QwR-jz-cAf">
-                                        <rect key="frame" x="0.0" y="335" width="406" height="224"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="224" id="he0-sp-lEm"/>
-                                        </constraints>
-                                    </mapView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uuI-oW-oEB">
+                                        <rect key="frame" x="-20" y="-20" width="426" height="745"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="new-york-wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="HAa-Ik-Z8h">
+                                                <rect key="frame" x="20" y="20" width="406" height="160"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnB-Yf-neU">
+                                                <rect key="frame" x="40" y="200" width="65" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G23-8U-1Mh">
+                                                <rect key="frame" x="40" y="257" width="1065.5" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemGrayColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozo-Mk-yGq">
+                                                <rect key="frame" x="40" y="298" width="126" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QwR-jz-cAf">
+                                                <rect key="frame" x="20" y="355" width="406" height="224"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </mapView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="uuI-oW-oEB" firstAttribute="height" secondItem="0jw-sb-QMD" secondAttribute="height" multiplier="1.02759" id="77N-QY-YcS"/>
+                                    <constraint firstItem="0jw-sb-QMD" firstAttribute="trailing" secondItem="uuI-oW-oEB" secondAttribute="trailing" constant="8" id="AkN-nD-PE6"/>
+                                    <constraint firstItem="uuI-oW-oEB" firstAttribute="bottom" secondItem="0jw-sb-QMD" secondAttribute="bottom" id="Iza-gc-Zm0"/>
+                                    <constraint firstItem="uuI-oW-oEB" firstAttribute="trailing" secondItem="Fac-xu-6dB" secondAttribute="trailingMargin" id="r09-7Y-XcI"/>
+                                    <constraint firstItem="uuI-oW-oEB" firstAttribute="width" secondItem="0jw-sb-QMD" secondAttribute="width" multiplier="1.02899" id="wEr-uy-hFh"/>
+                                    <constraint firstAttribute="bottom" secondItem="uuI-oW-oEB" secondAttribute="bottom" id="y17-57-GhW"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="OPU-WT-QWk"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="0jw-sb-QMD"/>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JSF-Fo-dzh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JSF-Fo-dzh" firstAttribute="trailing" secondItem="Fac-xu-6dB" secondAttribute="trailing" id="Y3u-ov-SKY"/>
+                            <constraint firstItem="Fac-xu-6dB" firstAttribute="top" secondItem="JSF-Fo-dzh" secondAttribute="top" id="YLn-yu-8P9"/>
+                            <constraint firstItem="JSF-Fo-dzh" firstAttribute="bottom" secondItem="Fac-xu-6dB" secondAttribute="bottom" id="lRc-W6-jRZ"/>
+                            <constraint firstItem="Fac-xu-6dB" firstAttribute="leading" secondItem="JSF-Fo-dzh" secondAttribute="leading" id="ptR-Vm-5c9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lg0-In-c8W"/>
                     <connections>
