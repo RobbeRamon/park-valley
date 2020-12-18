@@ -11,12 +11,14 @@ import MapKit
 class GarageDetailViewController: UIViewController {
     
     @IBOutlet var niName: UINavigationItem!
+    @IBOutlet var scrollView: UIScrollView!
     
     var garage: Garage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: scrollView.frame.size.height);
         updateUI()
     }
     

@@ -344,7 +344,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="ZvZ-wm-Hr7">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <scopeButtonTitles>
@@ -421,43 +421,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Vd-sH-ynC">
-                                <rect key="frame" x="40" y="320" width="334" height="95.5"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rC-Ns-b8j">
-                                <rect key="frame" x="20" y="435.5" width="374" height="30"/>
-                                <state key="normal" title="Show on map"/>
-                                <connections>
-                                    <segue destination="IPo-GX-CUs" kind="presentation" identifier="sgShowOnMap" id="XTw-Of-55i"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new-york-wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="2tQ-zK-vEK">
-                                <rect key="frame" x="0.0" y="88" width="414" height="212"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="212" id="YvE-ao-UVy"/>
-                                </constraints>
-                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fac-xu-6dB">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="new-york-wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="HAa-Ik-Z8h">
+                                        <rect key="frame" x="0.0" y="0.0" width="406" height="160"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnB-Yf-neU">
+                                        <rect key="frame" x="20" y="180" width="65" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G23-8U-1Mh">
+                                        <rect key="frame" x="20" y="237" width="1065.5" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozo-Mk-yGq">
+                                        <rect key="frame" x="20" y="278" width="126" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QwR-jz-cAf">
+                                        <rect key="frame" x="0.0" y="335" width="406" height="224"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="224" id="he0-sp-lEm"/>
+                                        </constraints>
+                                    </mapView>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JSF-Fo-dzh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="2tQ-zK-vEK" firstAttribute="top" secondItem="JSF-Fo-dzh" secondAttribute="top" id="372-W4-erO"/>
-                            <constraint firstAttribute="trailing" secondItem="4Vd-sH-ynC" secondAttribute="trailing" constant="40" id="5oi-CF-lDK"/>
-                            <constraint firstItem="4Vd-sH-ynC" firstAttribute="top" secondItem="2tQ-zK-vEK" secondAttribute="bottom" constant="20" id="Rzd-lL-hzO"/>
-                            <constraint firstItem="4rC-Ns-b8j" firstAttribute="top" secondItem="4Vd-sH-ynC" secondAttribute="bottom" constant="20" id="TSE-Rh-H2m"/>
-                            <constraint firstItem="4rC-Ns-b8j" firstAttribute="leading" secondItem="JSF-Fo-dzh" secondAttribute="leading" constant="20" id="b72-LM-Dc8"/>
-                            <constraint firstItem="4rC-Ns-b8j" firstAttribute="centerX" secondItem="KFg-CA-qcI" secondAttribute="centerX" id="cIk-jg-g1r"/>
-                            <constraint firstItem="4Vd-sH-ynC" firstAttribute="leading" secondItem="KFg-CA-qcI" secondAttribute="leading" constant="40" id="eXa-Cb-xG7"/>
-                            <constraint firstItem="2tQ-zK-vEK" firstAttribute="trailing" secondItem="JSF-Fo-dzh" secondAttribute="trailing" id="lcX-Yr-573"/>
-                            <constraint firstItem="2tQ-zK-vEK" firstAttribute="leading" secondItem="JSF-Fo-dzh" secondAttribute="leading" id="owY-Zv-b9S"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lg0-In-c8W"/>
                     <connections>
                         <outlet property="niName" destination="lg0-In-c8W" id="KG7-MQ-LfX"/>
+                        <outlet property="scrollView" destination="Fac-xu-6dB" id="HmH-C2-Sve"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMF-K0-SgT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -469,14 +477,14 @@
             <objects>
                 <viewController id="IPo-GX-CUs" customClass="GarageShowMapViewController" customModule="ParkValley" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mis-np-Xdo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="mutedStandard" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fbb-tJ-jSB">
-                                <rect key="frame" x="0.0" y="54" width="414" height="754"/>
+                                <rect key="frame" x="0.0" y="98" width="414" height="764"/>
                             </mapView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bp-Yu-Zd1">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="UgW-sk-PkI"/>
                                 </constraints>
@@ -759,6 +767,9 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
