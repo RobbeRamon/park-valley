@@ -11,14 +11,16 @@ import MapKit
 class GarageDetailViewController: UIViewController {
     
     @IBOutlet var niName: UINavigationItem!
-    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var lblTitle: UILabel!
+    @IBOutlet var lblDescription: UILabel!
+    @IBOutlet var ivImage: UIImageView!
+    @IBOutlet var mvLocation: MKMapView!
     
     var garage: Garage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: scrollView.frame.size.height);
         updateUI()
     }
     
@@ -38,6 +40,7 @@ class GarageDetailViewController: UIViewController {
     func updateUI() {
         if let garage = self.garage {
             niName.title = garage.name
+            lblTitle.text = garage.name
         }
     }
 
