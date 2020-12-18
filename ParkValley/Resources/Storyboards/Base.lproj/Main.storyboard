@@ -433,48 +433,71 @@
                                                     <constraint firstAttribute="height" constant="205" id="dai-rn-4p4"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6g-wU-cVy">
-                                                <rect key="frame" x="20" y="225" width="374" height="30.5"/>
-                                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="25"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mk-aH-uzb">
-                                                <rect key="frame" x="20" y="275.5" width="374" height="83"/>
-                                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="IXm-mx-wqN">
+                                                <rect key="frame" x="20" y="225" width="374" height="118.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6g-wU-cVy">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30.5"/>
+                                                        <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mk-aH-uzb">
+                                                        <rect key="frame" x="0.0" y="35.5" width="374" height="83"/>
+                                                        <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
+                                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="JGC-Z5-hx3">
+                                                <rect key="frame" x="20" y="363.5" width="374" height="30.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vf-uB-PFk">
+                                                        <rect key="frame" x="0.0" y="0.0" width="105" height="30.5"/>
+                                                        <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tkb-Bz-Skt">
+                                                        <rect key="frame" x="279" y="0.0" width="95" height="30.5"/>
+                                                        <state key="normal" title="Open in maps"/>
+                                                        <connections>
+                                                            <action selector="btnOpenInMapsClicked:" destination="qEL-yt-n4X" eventType="touchUpInside" id="V1R-oA-xj6"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylN-AW-8Xf">
+                                                <rect key="frame" x="20" y="394" width="374" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="systemGrayColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pDI-Qi-qWA">
-                                                <rect key="frame" x="0.0" y="429" width="414" height="210"/>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pDI-Qi-qWA">
+                                                <rect key="frame" x="0.0" y="424.5" width="414" height="210"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="210" id="wTO-mS-WqF"/>
+                                                    <constraint firstAttribute="height" constant="210" id="dwi-jB-sQ4"/>
                                                 </constraints>
                                             </mapView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vf-uB-PFk">
-                                                <rect key="frame" x="20" y="378.5" width="374" height="30.5"/>
-                                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="25"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="1mk-aH-uzb" firstAttribute="top" secondItem="L6g-wU-cVy" secondAttribute="bottom" constant="20" id="At6-TQ-CU6"/>
-                                            <constraint firstItem="L6g-wU-cVy" firstAttribute="top" secondItem="45D-am-WhG" secondAttribute="bottom" constant="20" id="Bf4-Cb-odD"/>
-                                            <constraint firstAttribute="trailing" secondItem="L6g-wU-cVy" secondAttribute="trailing" constant="20" id="G5o-9b-fhm"/>
-                                            <constraint firstAttribute="trailing" secondItem="pDI-Qi-qWA" secondAttribute="trailing" id="Lpi-iI-Yec"/>
-                                            <constraint firstItem="3vf-uB-PFk" firstAttribute="top" secondItem="1mk-aH-uzb" secondAttribute="bottom" constant="20" id="NgU-qd-R1R"/>
-                                            <constraint firstItem="1mk-aH-uzb" firstAttribute="leading" secondItem="qhP-Zy-sou" secondAttribute="leading" constant="20" id="U7b-Yd-LcL"/>
-                                            <constraint firstItem="pDI-Qi-qWA" firstAttribute="top" secondItem="3vf-uB-PFk" secondAttribute="bottom" constant="20" id="VTt-Hp-LDx"/>
-                                            <constraint firstItem="pDI-Qi-qWA" firstAttribute="leading" secondItem="qhP-Zy-sou" secondAttribute="leading" id="Yt7-Xu-G4T"/>
-                                            <constraint firstItem="3vf-uB-PFk" firstAttribute="leading" secondItem="qhP-Zy-sou" secondAttribute="leading" constant="20" id="csD-9y-vWS"/>
+                                            <constraint firstAttribute="trailing" secondItem="IXm-mx-wqN" secondAttribute="trailing" constant="20" id="0IN-K8-t4v"/>
+                                            <constraint firstItem="JGC-Z5-hx3" firstAttribute="top" secondItem="IXm-mx-wqN" secondAttribute="bottom" constant="20" id="1b6-pV-mMH"/>
+                                            <constraint firstItem="JGC-Z5-hx3" firstAttribute="leading" secondItem="qhP-Zy-sou" secondAttribute="leading" constant="20" id="8Ho-2Z-UUf"/>
+                                            <constraint firstAttribute="trailing" secondItem="ylN-AW-8Xf" secondAttribute="trailing" constant="20" id="E9i-Tr-Uh5"/>
+                                            <constraint firstItem="ylN-AW-8Xf" firstAttribute="top" secondItem="JGC-Z5-hx3" secondAttribute="bottom" id="FV1-7w-g5g"/>
+                                            <constraint firstAttribute="trailing" secondItem="pDI-Qi-qWA" secondAttribute="trailing" id="ToM-1i-Ph6"/>
+                                            <constraint firstItem="IXm-mx-wqN" firstAttribute="top" secondItem="45D-am-WhG" secondAttribute="bottom" constant="20" id="cKQ-HQ-glp"/>
+                                            <constraint firstItem="IXm-mx-wqN" firstAttribute="leading" secondItem="qhP-Zy-sou" secondAttribute="leading" constant="20" id="dc1-3x-Chm"/>
+                                            <constraint firstItem="pDI-Qi-qWA" firstAttribute="top" secondItem="ylN-AW-8Xf" secondAttribute="bottom" constant="10" id="f1V-ZH-sYz"/>
+                                            <constraint firstItem="pDI-Qi-qWA" firstAttribute="leading" secondItem="qhP-Zy-sou" secondAttribute="leading" id="lJt-vw-ry6"/>
                                             <constraint firstAttribute="trailing" secondItem="45D-am-WhG" secondAttribute="trailing" id="lK2-um-j3p"/>
                                             <constraint firstItem="45D-am-WhG" firstAttribute="leading" secondItem="qhP-Zy-sou" secondAttribute="leading" id="mGW-BD-RA0"/>
-                                            <constraint firstAttribute="trailing" secondItem="1mk-aH-uzb" secondAttribute="trailing" constant="20" id="oGR-zY-x84"/>
-                                            <constraint firstItem="L6g-wU-cVy" firstAttribute="leading" secondItem="qhP-Zy-sou" secondAttribute="leading" constant="20" id="saS-G4-jwl"/>
-                                            <constraint firstAttribute="trailing" secondItem="3vf-uB-PFk" secondAttribute="trailing" constant="20" id="tDf-JL-z7c"/>
+                                            <constraint firstItem="ylN-AW-8Xf" firstAttribute="leading" secondItem="qhP-Zy-sou" secondAttribute="leading" constant="20" id="qJ4-aQ-Lad"/>
                                             <constraint firstItem="45D-am-WhG" firstAttribute="top" secondItem="qhP-Zy-sou" secondAttribute="top" id="tRE-oB-FTT"/>
+                                            <constraint firstAttribute="trailing" secondItem="JGC-Z5-hx3" secondAttribute="trailing" constant="20" id="uHL-WB-RlP"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -500,6 +523,7 @@
                     <navigationItem key="navigationItem" id="lg0-In-c8W"/>
                     <connections>
                         <outlet property="ivImage" destination="45D-am-WhG" id="4KH-xJ-Jkk"/>
+                        <outlet property="lblAddress" destination="ylN-AW-8Xf" id="UOK-Co-vBg"/>
                         <outlet property="lblDescription" destination="1mk-aH-uzb" id="qFQ-2t-r89"/>
                         <outlet property="lblTitle" destination="L6g-wU-cVy" id="nsy-Z2-heL"/>
                         <outlet property="mvLocation" destination="pDI-Qi-qWA" id="McS-q8-NR0"/>
