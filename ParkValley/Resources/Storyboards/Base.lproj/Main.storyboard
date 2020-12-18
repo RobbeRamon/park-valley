@@ -425,7 +425,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhP-Zy-sou">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1792"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="717"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new-york-wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="45D-am-WhG">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="205"/>
@@ -492,6 +492,7 @@
                                             <constraint firstItem="IXm-mx-wqN" firstAttribute="top" secondItem="45D-am-WhG" secondAttribute="bottom" constant="20" id="cKQ-HQ-glp"/>
                                             <constraint firstItem="IXm-mx-wqN" firstAttribute="leading" secondItem="qhP-Zy-sou" secondAttribute="leading" constant="20" id="dc1-3x-Chm"/>
                                             <constraint firstItem="pDI-Qi-qWA" firstAttribute="top" secondItem="ylN-AW-8Xf" secondAttribute="bottom" constant="10" id="f1V-ZH-sYz"/>
+                                            <constraint firstAttribute="height" constant="717" id="gxa-nk-cAP"/>
                                             <constraint firstItem="pDI-Qi-qWA" firstAttribute="leading" secondItem="qhP-Zy-sou" secondAttribute="leading" id="lJt-vw-ry6"/>
                                             <constraint firstAttribute="trailing" secondItem="45D-am-WhG" secondAttribute="trailing" id="lK2-um-j3p"/>
                                             <constraint firstItem="45D-am-WhG" firstAttribute="leading" secondItem="qhP-Zy-sou" secondAttribute="leading" id="mGW-BD-RA0"/>
@@ -506,7 +507,6 @@
                                     <constraint firstItem="qhP-Zy-sou" firstAttribute="top" secondItem="3Do-6w-Pu3" secondAttribute="top" id="NEs-X6-de3"/>
                                     <constraint firstItem="qhP-Zy-sou" firstAttribute="trailing" secondItem="3Do-6w-Pu3" secondAttribute="trailing" id="VTd-AC-p60"/>
                                     <constraint firstItem="qhP-Zy-sou" firstAttribute="bottom" secondItem="3Do-6w-Pu3" secondAttribute="bottom" id="Vc5-DG-5tL"/>
-                                    <constraint firstItem="qhP-Zy-sou" firstAttribute="height" secondItem="3Do-6w-Pu3" secondAttribute="height" multiplier="2" id="dMI-nk-U95"/>
                                     <constraint firstItem="qhP-Zy-sou" firstAttribute="width" secondItem="3Do-6w-Pu3" secondAttribute="width" id="uhE-Vx-mgH"/>
                                 </constraints>
                             </scrollView>

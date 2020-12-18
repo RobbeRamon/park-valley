@@ -41,6 +41,7 @@ class GarageDetailViewController: UIViewController {
         openMapForPlace()
     }
     
+    // SOURCE: https://stackoverflow.com/questions/28604429/how-to-open-maps-app-programmatically-with-coordinates-in-swift
     func openMapForPlace() {
         
         if let garage = garage {
