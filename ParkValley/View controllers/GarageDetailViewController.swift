@@ -17,6 +17,8 @@ class GarageDetailViewController: UIViewController {
     @IBOutlet var mvLocation: MKMapView!
     @IBOutlet var lblAddress: UILabel!
     
+    @IBOutlet var csViewHeight: NSLayoutConstraint!
+    
     var garage: Garage?
     let locationManager = CLLocationManager()
 
@@ -37,9 +39,20 @@ class GarageDetailViewController: UIViewController {
             garageShowMapViewController.garage = self.garage
         }
     }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        csViewHeight.isActive = false
+        
+    }
+    
+    override func viewWillLayoutSubviews() {
+        csViewHeight.isActive = true
+    }
+    
     @IBAction func btnOpenInMapsClicked(_ sender: Any) {
         openMapForPlace()
-    }
+    }    
     
     // SOURCE: https://stackoverflow.com/questions/28604429/how-to-open-maps-app-programmatically-with-coordinates-in-swift
     func openMapForPlace() {
@@ -87,7 +100,7 @@ class GarageDetailViewController: UIViewController {
                     
                     self.lblAddress.text = locationString
                     
-                    let name = "\(garage.name ?? ""): (\(locationString))"
+                    let name = "\(garage.name ?? "")"
                 
                     self.mvLocation.centerToLocation(initialLocation)
                     self.addAnnotationToMap(name: name, latitude: garage.latitude!, longitude: garage.longitude!)
@@ -122,7 +135,7 @@ class GarageDetailViewController: UIViewController {
         print("locationString" + locationString)
         return locationString
     }
-
+    
 }
 
 
