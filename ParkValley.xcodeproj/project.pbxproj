@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14135D61258E4EDD00390257 /* click.json in Resources */ = {isa = PBXBuildFile; fileRef = 14135D60258E4EDD00390257 /* click.json */; };
 		1421B783255955F000442146 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421B782255955F000442146 /* TestViewController.swift */; };
 		144F55E62557E8BC003D72B4 /* Garage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144F55E52557E8BC003D72B4 /* Garage.swift */; };
 		144F55EB2557E921003D72B4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144F55EA2557E921003D72B4 /* User.swift */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		1169580BBF9DE4C98BF6A04E /* Pods-ParkValley.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkValley.debug.xcconfig"; path = "Target Support Files/Pods-ParkValley/Pods-ParkValley.debug.xcconfig"; sourceTree = "<group>"; };
+		14135D60258E4EDD00390257 /* click.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = click.json; sourceTree = "<group>"; };
 		1421B782255955F000442146 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		144F55E52557E8BC003D72B4 /* Garage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Garage.swift; sourceTree = "<group>"; };
 		144F55EA2557E921003D72B4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		144F560125580226003D72B4 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				14135D60258E4EDD00390257 /* click.json */,
 				146692EF257E8EA80075B21E /* city-building.json */,
 				148465CD257E8503001B79F3 /* welcome-icon.json */,
 				144F562F255817A7003D72B4 /* login-background.json */,
@@ -381,6 +384,7 @@
 				148465CE257E8503001B79F3 /* welcome-icon.json in Resources */,
 				144F56062558025C003D72B4 /* parking-icon.json in Resources */,
 				14E65DFB2551E445000928A9 /* Assets.xcassets in Resources */,
+				14135D61258E4EDD00390257 /* click.json in Resources */,
 				146692F0257E8EA80075B21E /* city-building.json in Resources */,
 				14E65DF92551E444000928A9 /* Main.storyboard in Resources */,
 			);

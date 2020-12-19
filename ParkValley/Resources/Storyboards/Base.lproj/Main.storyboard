@@ -265,13 +265,20 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X1H-CL-dgK">
+                                                        <rect key="frame" x="294" y="124" width="60" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="FFc-QE-bOX"/>
+                                                            <constraint firstAttribute="width" constant="60" id="zg9-sh-ebp"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="rCE-tI-10M" firstAttribute="top" secondItem="qpZ-ut-zG8" secondAttribute="top" constant="74" id="22w-YD-DdG"/>
-                                                    <constraint firstItem="aEX-5P-NWH" firstAttribute="centerX" secondItem="rCE-tI-10M" secondAttribute="centerX" id="5i7-nV-dP3"/>
+                                                    <constraint firstAttribute="bottom" secondItem="X1H-CL-dgK" secondAttribute="bottom" constant="10" id="9LQ-tX-qbK"/>
                                                     <constraint firstItem="aEX-5P-NWH" firstAttribute="leading" secondItem="qpZ-ut-zG8" secondAttribute="leading" id="MYj-7J-VI9"/>
-                                                    <constraint firstItem="aEX-5P-NWH" firstAttribute="centerY" secondItem="rCE-tI-10M" secondAttribute="centerY" id="Nsq-6P-oid"/>
+                                                    <constraint firstAttribute="trailing" secondItem="X1H-CL-dgK" secondAttribute="trailing" constant="20" id="ND6-pv-FAT"/>
                                                     <constraint firstAttribute="bottom" secondItem="rCE-tI-10M" secondAttribute="bottom" constant="54" id="P3j-qd-Xqb"/>
                                                     <constraint firstAttribute="bottom" secondItem="aEX-5P-NWH" secondAttribute="bottom" id="Z0U-0D-bKo"/>
                                                     <constraint firstAttribute="trailing" secondItem="aEX-5P-NWH" secondAttribute="trailing" id="clV-Qe-cbr"/>
@@ -382,6 +389,7 @@
                         <outlet property="scrollView" destination="Uhu-sp-xCy" id="cRr-bQ-4A5"/>
                         <outlet property="tgSearchNearby" destination="Ybv-Rl-yBB" id="FhN-9s-eaW"/>
                         <outlet property="tvHistory" destination="aM8-X1-1qq" id="6h2-yW-643"/>
+                        <outlet property="vwAnimation" destination="X1H-CL-dgK" id="JFy-qM-KBk"/>
                         <segue destination="9t4-tk-uCT" kind="show" identifier="sgShowSearchGarages" id="VCQ-yW-Zrl"/>
                     </connections>
                 </viewController>

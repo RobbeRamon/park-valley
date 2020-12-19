@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class TestViewController: UIViewController {
     @IBOutlet var tgSearchNearby: UITapGestureRecognizer!
@@ -13,14 +14,18 @@ class TestViewController: UIViewController {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var csViewHeight: NSLayoutConstraint!
     @IBOutlet var tvHistory: UITableView!
+    @IBOutlet var vwAnimation: UIView!
     
     private var history : [Garage] = []
     private var garageModelController: GarageModelController = GarageModelController()
+    var cAnimationView: AnimationView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tvHistory.dataSource = self
+        
+        createUI()
         
         history = garageModelController.loadHistoryFromFile() ?? []
         updateUI()
@@ -78,6 +83,16 @@ class TestViewController: UIViewController {
         } else {
             tvHistory.backgroundView = nil
         }
+    }
+    
+    func createUI() {
+        cAnimationView = .init(name:"click")
+        cAnimationView?.frame = vwAnimation.bounds
+        cAnimationView?.loopMode = .loop
+        cAnimationView?.animationSpeed = 0.5
+        vwAnimation.addSubview(cAnimationView!)
+        cAnimationView?.play()
+        vwAnimation.sendSubviewToBack(cAnimationView!)
     }
 
 }
