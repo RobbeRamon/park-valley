@@ -32,7 +32,6 @@
 		14E65E092551E445000928A9 /* ParkValleyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E65E082551E445000928A9 /* ParkValleyTests.swift */; };
 		14E65E142551E445000928A9 /* ParkValleyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E65E132551E445000928A9 /* ParkValleyUITests.swift */; };
 		14E65E2A2551E675000928A9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E65E292551E675000928A9 /* SearchViewController.swift */; };
-		14EA2B9A258D653B00088820 /* TestTestTestTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EA2B99258D653B00088820 /* TestTestTestTestViewController.swift */; };
 		14F6BCD2256952B5006E5575 /* UserModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F6BCD1256952B5006E5575 /* UserModelController.swift */; };
 		5D12CCFF1523EED1B9AB0584 /* Pods_ParkValley.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9149D27A443C1452799D9BF /* Pods_ParkValley.framework */; };
 /* End PBXBuildFile section */
@@ -87,7 +86,6 @@
 		14E65E132551E445000928A9 /* ParkValleyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkValleyUITests.swift; sourceTree = "<group>"; };
 		14E65E152551E445000928A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14E65E292551E675000928A9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		14EA2B99258D653B00088820 /* TestTestTestTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTestTestTestViewController.swift; sourceTree = "<group>"; };
 		14F6BCD1256952B5006E5575 /* UserModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelController.swift; sourceTree = "<group>"; };
 		B9149D27A443C1452799D9BF /* Pods_ParkValley.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkValley.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74AF91BA4BDC2E076F59FE8 /* Pods-ParkValley.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkValley.release.xcconfig"; path = "Target Support Files/Pods-ParkValley/Pods-ParkValley.release.xcconfig"; sourceTree = "<group>"; };
@@ -215,7 +213,6 @@
 				14DB262C2565E15800C53F39 /* GarageTableViewCell.swift */,
 				148AC0DA256BF45300160711 /* GarageDetailViewController.swift */,
 				148465B2257E5136001B79F3 /* GarageShowMapViewController.swift */,
-				14EA2B99258D653B00088820 /* TestTestTestTestViewController.swift */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
@@ -468,7 +465,6 @@
 				14F6BCD2256952B5006E5575 /* UserModelController.swift in Sources */,
 				14DB262D2565E15800C53F39 /* GarageTableViewCell.swift in Sources */,
 				148699AD256020D400A674BF /* MainScreenViewController.swift in Sources */,
-				14EA2B9A258D653B00088820 /* TestTestTestTestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
