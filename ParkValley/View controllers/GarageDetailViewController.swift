@@ -40,6 +40,7 @@ class GarageDetailViewController: UIViewController {
         }
     }
     
+    /// This is necessary, otherwise a constraint error is thrown
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         csViewHeight.isActive = false
@@ -52,7 +53,7 @@ class GarageDetailViewController: UIViewController {
     
     @IBAction func btnOpenInMapsClicked(_ sender: Any) {
         openMapForPlace()
-    }    
+    }
     
     // SOURCE: https://stackoverflow.com/questions/28604429/how-to-open-maps-app-programmatically-with-coordinates-in-swift
     func openMapForPlace() {
