@@ -121,7 +121,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="jgs-rT-LHd">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
@@ -411,7 +411,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="ZvZ-wm-Hr7">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                             <scopeButtonTitles>
@@ -651,7 +651,7 @@
                                                 <rect key="frame" x="20" y="102.5" width="374" height="483"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="w8Y-R2-Cgr">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="107"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="160"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date range" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEl-00-O0d">
                                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="30.5"/>
@@ -665,6 +665,7 @@
                                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="mP5-S5-7hf">
                                                                         <rect key="frame" x="0.0" y="0.0" width="139" height="56.5"/>
                                                                         <constraints>
+                                                                            <constraint firstAttribute="height" constant="56.5" id="RA6-PS-LA4"/>
                                                                             <constraint firstAttribute="width" constant="139" id="cYB-4B-7vU"/>
                                                                         </constraints>
                                                                     </datePicker>
@@ -672,6 +673,7 @@
                                                                         <rect key="frame" x="239" y="0.0" width="135" height="56.5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="135" id="Kzf-cC-Jg1"/>
+                                                                            <constraint firstAttribute="height" constant="56.5" id="TXF-sI-tqI"/>
                                                                         </constraints>
                                                                     </datePicker>
                                                                 </subviews>
@@ -680,21 +682,27 @@
                                                                     <constraint firstItem="mP5-S5-7hf" firstAttribute="top" secondItem="5Fy-Ml-NOt" secondAttribute="top" id="uBr-gB-MVk"/>
                                                                 </constraints>
                                                             </stackView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="beS-v2-Q2e">
+                                                                <rect key="frame" x="20" y="127" width="334" height="33"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="33" id="9gF-HZ-N7M"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
+                                                                <state key="normal" title="Get results"/>
+                                                            </button>
                                                         </subviews>
                                                         <constraints>
+                                                            <constraint firstAttribute="height" constant="160" id="1kv-vx-bPj"/>
+                                                            <constraint firstAttribute="trailing" secondItem="beS-v2-Q2e" secondAttribute="trailing" constant="20" id="JNS-oR-GjQ"/>
                                                             <constraint firstAttribute="trailing" secondItem="JEl-00-O0d" secondAttribute="trailing" id="XXt-jQ-oQO"/>
+                                                            <constraint firstItem="beS-v2-Q2e" firstAttribute="leading" secondItem="w8Y-R2-Cgr" secondAttribute="leading" constant="20" id="aIm-Do-lcI"/>
                                                             <constraint firstItem="JEl-00-O0d" firstAttribute="leading" secondItem="w8Y-R2-Cgr" secondAttribute="leading" id="c1F-fL-sBN"/>
                                                             <constraint firstAttribute="trailing" secondItem="5Fy-Ml-NOt" secondAttribute="trailing" id="edk-LZ-jKo"/>
-                                                            <constraint firstAttribute="bottom" secondItem="5Fy-Ml-NOt" secondAttribute="bottom" id="sPI-cZ-2Rb"/>
+                                                            <constraint firstItem="beS-v2-Q2e" firstAttribute="top" secondItem="5Fy-Ml-NOt" secondAttribute="bottom" constant="20" id="xEH-iZ-1qM"/>
                                                             <constraint firstItem="5Fy-Ml-NOt" firstAttribute="top" secondItem="JEl-00-O0d" secondAttribute="bottom" constant="20" id="xWI-us-o74"/>
                                                             <constraint firstItem="5Fy-Ml-NOt" firstAttribute="leading" secondItem="w8Y-R2-Cgr" secondAttribute="leading" id="ziE-5x-y30"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="beS-v2-Q2e">
-                                                        <rect key="frame" x="0.0" y="127" width="374" height="33"/>
-                                                        <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
-                                                        <state key="normal" title="Get results"/>
-                                                    </button>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JjL-KX-5Gc">
                                                         <rect key="frame" x="0.0" y="180" width="374" height="303"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -703,6 +711,7 @@
                                                         </constraints>
                                                     </tableView>
                                                 </subviews>
+                                                <variation key="widthClass=regular" axis="horizontal"/>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
