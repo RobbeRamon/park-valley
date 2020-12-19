@@ -11,34 +11,37 @@ class TestViewController: UIViewController {
     @IBOutlet var tgSearchNearby: UITapGestureRecognizer!
     @IBOutlet var ivSearchNearby: UIImageView!
     @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var csViewHeight: NSLayoutConstraint!
+    @IBOutlet var tvHistory: UITableView!
+    
+    private var history : [Garage] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Aspect Ratio of 5:6 is preferred
-//        let card = CardHighlight(frame: view2.bounds)
-//
-//
-//        card.backgroundColor = UIColor(red: 0, green: 94/255, blue: 112/255, alpha: 1)
-//        card.backgroundImage = UIImage(named: "new-york-wallpaper-blurred-darkened")
-//        card.title = "Search nearby garages"
-//        card.itemSubtitle = ""
-//        card.itemTitle = ""
-//        card.buttonText = ""
-//        card.titleSize = 30
-//        card.textColor = UIColor.white
-//
-//        card.hasParallax = true
-//
-//
-//        //card.gestureRecognizers?.append(tgSearchNearby)
-//        view2.addSubview(card)
         
-        
-        //ivSearchNearby.gestureRecognizers?.append(tgSearchNearby)        scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, scrollView.frame.size.height);
-        
-        scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: scrollView.frame.size.height);
+        updateUI()
+        //scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: scrollView.frame.size.height);
     }
+    
+    /// This is necessary, otherwise a constraint error is thrown
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        if (csViewHeight != nil) {
+            csViewHeight.isActive = false
+        }
+
+
+    }
+    
+    override func viewWillLayoutSubviews() {
+       
+            csViewHeight.isActive = true
+        
+    }
+    
+
     
     @IBAction func handleSearchNearbyClick(_ sender: UITapGestureRecognizer) {
         performSegue(withIdentifier: "sgShowSearchGarages", sender: self)
@@ -54,5 +57,46 @@ class TestViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Helper methods
+    func updateUI() {
+        tvHistory.reloadData()
+        
+        
+        if self.history.isEmpty {
+            let label : UILabel = UILabel()
+            label.text = "Your history is empty"
+            label.textAlignment = .center
+            label.textColor = .gray
+            
+            tvHistory.backgroundView = label
+        } else {
+            tvHistory.backgroundView = nil
+        }
+    }
 
+}
+
+extension TestViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return history.count
+        } else {
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "garage", for: indexPath) as! GarageTableViewCell
+        
+        let garage = history[indexPath.row]
+        cell.update(with: garage)
+        
+        return cell
+    }
+    
 }
