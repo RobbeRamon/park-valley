@@ -21,10 +21,12 @@ class GarageDetailViewController: UIViewController {
     
     var garage: Garage?
     let locationManager = CLLocationManager()
+    let garageModelController = GarageModelController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addGarageToHistory()
         updateUI()
     }
     
@@ -137,6 +139,28 @@ class GarageDetailViewController: UIViewController {
         return locationString
     }
     
+    private func addGarageToHistory() {
+        if let garage = garage {
+            var history = garageModelController.loadHistoryFromFile()
+            
+            if history != nil {
+                
+                if let index = history!.firstIndex(of: garage) {
+                    history!.remove(at: index)
+                }
+                
+                history!.insert(garage, at: 0)
+                if history!.count > 5 {
+                    let slice = history![0...5]
+                    history = Array(slice)
+                }
+                
+                
+            }
+            
+            garageModelController.saveHistoryToFile(history!)
+        }
+    }
 }
 
 

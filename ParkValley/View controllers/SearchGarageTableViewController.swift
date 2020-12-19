@@ -11,7 +11,7 @@ class SearchGarageTableViewController: UITableViewController {
     
     private var results : [Garage] = []
     private var searchTerm : String = ""
-    private var garageModelController : GarageModelController!
+    private var garageModelController = GarageModelController()
     
     @IBOutlet var sbSearch: UISearchBar!
     
@@ -22,7 +22,6 @@ class SearchGarageTableViewController: UITableViewController {
         sbSearch.delegate = self
         sbSearch.becomeFirstResponder()
         
-        self.garageModelController = GarageModelController()
         //self.tableView.rowHeight = 150
         
 

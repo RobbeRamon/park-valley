@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Garage : Codable {
+class Garage : Codable, Equatable {
    var id : String?
    var name : String?
    var city : String?
@@ -24,5 +24,9 @@ class Garage : Codable {
         self.latitude = latitude
         self.longitude = longitude
         self.user = user
+    }
+    
+    static func == (lhs: Garage, rhs: Garage) -> Bool {
+        return lhs.id == rhs.id
     }
 }

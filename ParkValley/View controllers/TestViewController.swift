@@ -15,12 +15,18 @@ class TestViewController: UIViewController {
     @IBOutlet var tvHistory: UITableView!
     
     private var history : [Garage] = []
-    private var garageModelController: GarageModelController!
+    private var garageModelController: GarageModelController = GarageModelController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        garageModelController = GarageModelController()
+        tvHistory.dataSource = self
+        
+        history = garageModelController.loadHistoryFromFile() ?? []
+        updateUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         history = garageModelController.loadHistoryFromFile() ?? []
         updateUI()
     }
@@ -37,9 +43,7 @@ class TestViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
-       
-            csViewHeight.isActive = true
-        
+        csViewHeight.isActive = true
     }
     
 
