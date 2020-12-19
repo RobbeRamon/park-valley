@@ -520,14 +520,16 @@
                             <constraint firstItem="3Do-6w-Pu3" firstAttribute="top" secondItem="KFg-CA-qcI" secondAttribute="top" id="qqg-vU-8n9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="lg0-In-c8W"/>
+                    <navigationItem key="navigationItem" id="Lyz-Jt-KT3">
+                        <barButtonItem key="rightBarButtonItem" title="heart" image="heart" catalog="system" id="6gD-21-1ML"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="ivImage" destination="45D-am-WhG" id="4KH-xJ-Jkk"/>
                         <outlet property="lblAddress" destination="ylN-AW-8Xf" id="UOK-Co-vBg"/>
                         <outlet property="lblDescription" destination="1mk-aH-uzb" id="qFQ-2t-r89"/>
                         <outlet property="lblTitle" destination="L6g-wU-cVy" id="nsy-Z2-heL"/>
                         <outlet property="mvLocation" destination="pDI-Qi-qWA" id="McS-q8-NR0"/>
-                        <outlet property="niName" destination="lg0-In-c8W" id="KG7-MQ-LfX"/>
+                        <outlet property="niName" destination="Lyz-Jt-KT3" id="65U-zW-7Ty"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMF-K0-SgT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -820,6 +822,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="message.fill" catalog="system" width="128" height="113"/>
         <image name="new-york-wallpaper" width="1200" height="783"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
