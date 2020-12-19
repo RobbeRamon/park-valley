@@ -15,13 +15,14 @@ class TestViewController: UIViewController {
     @IBOutlet var tvHistory: UITableView!
     
     private var history : [Garage] = []
+    private var garageModelController: GarageModelController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        garageModelController = GarageModelController()
+        history = garageModelController.loadHistoryFromFile() ?? []
         updateUI()
-        //scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: scrollView.frame.size.height);
     }
     
     /// This is necessary, otherwise a constraint error is thrown

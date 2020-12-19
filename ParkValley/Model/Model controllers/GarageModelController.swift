@@ -53,4 +53,30 @@ class GarageModelController {
         
         return components.url!
     }
+    
+    func saveHistoryToFile (_ garages: [Garage]) {
+        
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let archiveURL = documentsDirectory.appendingPathComponent("garage_history").appendingPathExtension("plist")
+        
+        let propertyListEncoder = PropertyListEncoder()
+        let encodedGarages = try? propertyListEncoder.encode(garages)
+        
+        try? encodedGarages?.write(to: archiveURL, options: .noFileProtection)
+    }
+    
+    func loadHistoryFromFile() -> [Garage]? {
+        
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let archiveURL = documentsDirectory.appendingPathComponent("garage_history").appendingPathExtension("plist")
+        
+        let propertyListDecoder = PropertyListDecoder()
+        
+        if let retrievedNotesData = try? Data(contentsOf: archiveURL), let decodedGarages = try? propertyListDecoder.decode([Garage].self, from: retrievedNotesData) {
+            try? FileManager.default.removeItem(at: archiveURL)
+            return decodedGarages
+        }
+        
+        return []
+    }
 }
