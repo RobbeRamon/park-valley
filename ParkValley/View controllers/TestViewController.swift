@@ -27,13 +27,23 @@ class TestViewController: UIViewController {
         
         createUI()
         
-        history = garageModelController.loadHistoryFromFile() ?? []
-        updateUI()
+        //history = garageModelController.loadHistoryFromFile() ?? []
+        //updateUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         history = garageModelController.loadHistoryFromFile() ?? []
         updateUI()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sgShowDetail" {
+            let indexPath = tvHistory.indexPathForSelectedRow!
+            let garage = history[indexPath.row]
+            let garageDetailViewController = segue.destination as! GarageDetailViewController
+            
+            garageDetailViewController.garage = garage
+        }
     }
     
     /// This is necessary, otherwise a constraint error is thrown
@@ -70,6 +80,8 @@ class TestViewController: UIViewController {
     
     // MARK: - Helper methods
     func updateUI() {
+        cAnimationView?.play()
+        
         tvHistory.reloadData()
         
         
@@ -89,7 +101,7 @@ class TestViewController: UIViewController {
         cAnimationView = .init(name:"click")
         cAnimationView?.frame = vwAnimation.bounds
         cAnimationView?.loopMode = .loop
-        cAnimationView?.animationSpeed = 0.5
+        cAnimationView?.animationSpeed = 1
         vwAnimation.addSubview(cAnimationView!)
         cAnimationView?.play()
         vwAnimation.sendSubviewToBack(cAnimationView!)
