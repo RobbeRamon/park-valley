@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		14135D69258E575200390257 /* click.json in Resources */ = {isa = PBXBuildFile; fileRef = 14135D68258E575200390257 /* click.json */; };
-		1421B783255955F000442146 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421B782255955F000442146 /* TestViewController.swift */; };
+		1421B783255955F000442146 /* OverviewSearchGarageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421B782255955F000442146 /* OverviewSearchGarageController.swift */; };
 		144F55E62557E8BC003D72B4 /* Garage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144F55E52557E8BC003D72B4 /* Garage.swift */; };
 		144F55EB2557E921003D72B4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144F55EA2557E921003D72B4 /* User.swift */; };
-		144F55F02557F863003D72B4 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 144F55EF2557F863003D72B4 /* Authentication.storyboard */; };
 		144F55F52557FA18003D72B4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144F55F42557FA18003D72B4 /* LoginViewController.swift */; };
 		144F56062558025C003D72B4 /* parking-icon.json in Resources */ = {isa = PBXBuildFile; fileRef = 144F56052558025C003D72B4 /* parking-icon.json */; };
 		144F5630255817A7003D72B4 /* login-background.json in Resources */ = {isa = PBXBuildFile; fileRef = 144F562F255817A7003D72B4 /* login-background.json */; };
 		1450D546255349B700F3079C /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1450D545255349B700F3079C /* SearchResultsTableViewController.swift */; };
+		1457A527258E96200077201A /* BookGarageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1457A526258E96200077201A /* BookGarageViewController.swift */; };
 		146179D425628FD800EA86D0 /* SearchGarageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146179D325628FD800EA86D0 /* SearchGarageTableViewController.swift */; };
 		146296C7256961DA00ADDA98 /* UserTokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146296C6256961DA00ADDA98 /* UserTokenDTO.swift */; };
 		146692F0257E8EA80075B21E /* city-building.json in Resources */ = {isa = PBXBuildFile; fileRef = 146692EF257E8EA80075B21E /* city-building.json */; };
@@ -57,14 +57,14 @@
 /* Begin PBXFileReference section */
 		1169580BBF9DE4C98BF6A04E /* Pods-ParkValley.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkValley.debug.xcconfig"; path = "Target Support Files/Pods-ParkValley/Pods-ParkValley.debug.xcconfig"; sourceTree = "<group>"; };
 		14135D68258E575200390257 /* click.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = click.json; sourceTree = "<group>"; };
-		1421B782255955F000442146 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		1421B782255955F000442146 /* OverviewSearchGarageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewSearchGarageController.swift; sourceTree = "<group>"; };
 		144F55E52557E8BC003D72B4 /* Garage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Garage.swift; sourceTree = "<group>"; };
 		144F55EA2557E921003D72B4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		144F55EF2557F863003D72B4 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		144F55F42557FA18003D72B4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		144F56052558025C003D72B4 /* parking-icon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "parking-icon.json"; path = "../../../../../../../../../school/Jaar 3/Semester 1/Native Apps 2 - iOS/animations/parking-icon.json"; sourceTree = "<group>"; };
 		144F562F255817A7003D72B4 /* login-background.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "login-background.json"; path = "../../../../../../../../../school/Jaar 3/Semester 1/Native Apps 2 - iOS/animations/login-background.json"; sourceTree = "<group>"; };
 		1450D545255349B700F3079C /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
+		1457A526258E96200077201A /* BookGarageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookGarageViewController.swift; sourceTree = "<group>"; };
 		146179D325628FD800EA86D0 /* SearchGarageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGarageTableViewController.swift; sourceTree = "<group>"; };
 		146296C6256961DA00ADDA98 /* UserTokenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTokenDTO.swift; sourceTree = "<group>"; };
 		146692EF257E8EA80075B21E /* city-building.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "city-building.json"; path = "../../../../../../../../../school/Jaar 3/Semester 1/Native Apps 2 - iOS/animations/city-building.json"; sourceTree = "<group>"; };
@@ -211,11 +211,12 @@
 				144F55F42557FA18003D72B4 /* LoginViewController.swift */,
 				14E65E292551E675000928A9 /* SearchViewController.swift */,
 				1450D545255349B700F3079C /* SearchResultsTableViewController.swift */,
-				1421B782255955F000442146 /* TestViewController.swift */,
+				1421B782255955F000442146 /* OverviewSearchGarageController.swift */,
 				146179D325628FD800EA86D0 /* SearchGarageTableViewController.swift */,
 				14DB262C2565E15800C53F39 /* GarageTableViewCell.swift */,
 				148AC0DA256BF45300160711 /* GarageDetailViewController.swift */,
 				148465B2257E5136001B79F3 /* GarageShowMapViewController.swift */,
+				1457A526258E96200077201A /* BookGarageViewController.swift */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
@@ -251,7 +252,6 @@
 			children = (
 				14E65DFC2551E445000928A9 /* LaunchScreen.storyboard */,
 				14E65DF72551E444000928A9 /* Main.storyboard */,
-				144F55EF2557F863003D72B4 /* Authentication.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -338,7 +338,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1210;
-				LastUpgradeCheck = 1210;
+				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					14E65DED2551E444000928A9 = {
 						CreatedOnToolsVersion = 12.1;
@@ -378,7 +378,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				144F55F02557F863003D72B4 /* Authentication.storyboard in Resources */,
 				14E65DFE2551E445000928A9 /* LaunchScreen.storyboard in Resources */,
 				144F5630255817A7003D72B4 /* login-background.json in Resources */,
 				148465CE257E8503001B79F3 /* welcome-icon.json in Resources */,
@@ -460,9 +459,10 @@
 				148AC0DB256BF45300160711 /* GarageDetailViewController.swift in Sources */,
 				14AA388E25633282007906DC /* GarageModelController.swift in Sources */,
 				146179D425628FD800EA86D0 /* SearchGarageTableViewController.swift in Sources */,
-				1421B783255955F000442146 /* TestViewController.swift in Sources */,
+				1421B783255955F000442146 /* OverviewSearchGarageController.swift in Sources */,
 				14E65DF22551E444000928A9 /* AppDelegate.swift in Sources */,
 				144F55EB2557E921003D72B4 /* User.swift in Sources */,
+				1457A527258E96200077201A /* BookGarageViewController.swift in Sources */,
 				144F55E62557E8BC003D72B4 /* Garage.swift in Sources */,
 				14E65E2A2551E675000928A9 /* SearchViewController.swift in Sources */,
 				14E65DF42551E444000928A9 /* SceneDelegate.swift in Sources */,
@@ -645,6 +645,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5V9M5FH2HA;
 				INFOPLIST_FILE = ParkValley/Info.plist;
@@ -665,6 +666,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5V9M5FH2HA;
 				INFOPLIST_FILE = ParkValley/Info.plist;

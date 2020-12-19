@@ -8,7 +8,7 @@
 import UIKit
 import Lottie
 
-class TestViewController: UIViewController {
+class OverviewSearchGarageController: UIViewController {
     @IBOutlet var tgSearchNearby: UITapGestureRecognizer!
     @IBOutlet var ivSearchNearby: UIImageView!
     @IBOutlet var scrollView: UIScrollView!
@@ -109,7 +109,7 @@ class TestViewController: UIViewController {
 
 }
 
-extension TestViewController: UITableViewDataSource {
+extension OverviewSearchGarageController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

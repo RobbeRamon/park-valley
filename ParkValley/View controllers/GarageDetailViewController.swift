@@ -16,6 +16,7 @@ class GarageDetailViewController: UIViewController {
     @IBOutlet var ivImage: UIImageView!
     @IBOutlet var mvLocation: MKMapView!
     @IBOutlet var lblAddress: UILabel!
+    @IBOutlet var btBook: UIButton!
     
     @IBOutlet var csViewHeight: NSLayoutConstraint!
     
@@ -27,6 +28,7 @@ class GarageDetailViewController: UIViewController {
         super.viewDidLoad()
         
         addGarageToHistory()
+        createUI()
         updateUI()
     }
     
@@ -39,6 +41,10 @@ class GarageDetailViewController: UIViewController {
             let garageShowMapViewController = segue.destination as! GarageShowMapViewController
             
             garageShowMapViewController.garage = self.garage
+        }
+        
+        if segue.identifier == "sgBookGarage" {
+            
         }
     }
     
@@ -110,6 +116,12 @@ class GarageDetailViewController: UIViewController {
                 }
             })
         }
+    }
+    
+    func createUI() {
+        btBook.layer.cornerRadius = 10
+        btBook.layer.borderWidth = 0.5
+        btBook.layer.borderColor = UIColor.systemBlue.cgColor
     }
     
     func addAnnotationToMap(name: String, latitude: Double, longitude: Double) {
