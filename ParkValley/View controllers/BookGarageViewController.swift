@@ -29,12 +29,7 @@ class BookGarageViewController: UIViewController {
         updateUI()
     }
     
-    // MARK: - Helper methods
-    func createUI() {
-        btGetResults.layer.cornerRadius = 10
-        btGetResults.layer.borderWidth = 0.5
-        btGetResults.layer.borderColor = UIColor.systemBlue.cgColor
-    }
+
     
     @IBAction func btGetResultsClicked(_ sender: Any) {
         let group = DispatchGroup()
@@ -60,10 +55,37 @@ class BookGarageViewController: UIViewController {
        
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if UIDevice.current.orientation.isLandscape {
+            btGetResults.layer.borderWidth = 0
+        } else {
+            btGetResults.layer.borderWidth = 0.5
+        }
+    }
+
+    
     // MARK: - Helper functions
     private func updateUI() {
         lbTitle.text = garage?.name
         tvAvailableDates.reloadData()
+    }
+    
+    func createUI() {
+        var dateComponent = DateComponents()
+        dateComponent.day = 5
+        
+        dpFrom.minimumDate = Date()
+        dpFrom.maximumDate = Calendar.current.date(byAdding: dateComponent, to: Date())
+
+        dpTo.maximumDate = Calendar.current.date(byAdding: dateComponent, to: Date())
+        
+        dateComponent.day = 1
+        dpTo.minimumDate = Calendar.current.date(byAdding: dateComponent, to: Date())
+        
+        btGetResults.layer.cornerRadius = 10
+        btGetResults.layer.borderWidth = 0.5
+        btGetResults.layer.borderColor = UIColor.systemBlue.cgColor
     }
     
     /*
