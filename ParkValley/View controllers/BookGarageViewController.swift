@@ -92,14 +92,20 @@ extension BookGarageViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "date", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "date", for: indexPath) as! AvailableDayTableViewCell
         
-        let formatter = DateFormatter()
-        formatter.dateFormat = "d MMM y"
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "d MMM y"
         
-        cell.textLabel?.text = formatter.string(from: availableDates[indexPath.row])
+        
+        cell.update(date: availableDates[indexPath.row])
+        //cell.textLabel?.text = formatter.string(from: availableDates[indexPath.row])
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
     
 }

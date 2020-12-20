@@ -26,6 +26,7 @@
 		148AC0DB256BF45300160711 /* GarageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148AC0DA256BF45300160711 /* GarageDetailViewController.swift */; };
 		14AA388E25633282007906DC /* GarageModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AA388D25633282007906DC /* GarageModelController.swift */; };
 		14DB262D2565E15800C53F39 /* GarageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB262C2565E15800C53F39 /* GarageTableViewCell.swift */; };
+		14E53A99258FAA970054284B /* AvailableDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E53A98258FAA970054284B /* AvailableDayTableViewCell.swift */; };
 		14E65DF22551E444000928A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E65DF12551E444000928A9 /* AppDelegate.swift */; };
 		14E65DF42551E444000928A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E65DF32551E444000928A9 /* SceneDelegate.swift */; };
 		14E65DF92551E444000928A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14E65DF72551E444000928A9 /* Main.storyboard */; };
@@ -76,6 +77,7 @@
 		148AC0DA256BF45300160711 /* GarageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageDetailViewController.swift; sourceTree = "<group>"; };
 		14AA388D25633282007906DC /* GarageModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageModelController.swift; sourceTree = "<group>"; };
 		14DB262C2565E15800C53F39 /* GarageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageTableViewCell.swift; sourceTree = "<group>"; };
+		14E53A98258FAA970054284B /* AvailableDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableDayTableViewCell.swift; sourceTree = "<group>"; };
 		14E65DEE2551E444000928A9 /* ParkValley.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkValley.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14E65DF12551E444000928A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14E65DF32551E444000928A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				148AC0DA256BF45300160711 /* GarageDetailViewController.swift */,
 				148465B2257E5136001B79F3 /* GarageShowMapViewController.swift */,
 				1457A526258E96200077201A /* BookGarageViewController.swift */,
+				14E53A98258FAA970054284B /* AvailableDayTableViewCell.swift */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				148465B3257E5136001B79F3 /* GarageShowMapViewController.swift in Sources */,
 				148AC0DB256BF45300160711 /* GarageDetailViewController.swift in Sources */,
 				14AA388E25633282007906DC /* GarageModelController.swift in Sources */,
+				14E53A99258FAA970054284B /* AvailableDayTableViewCell.swift in Sources */,
 				146179D425628FD800EA86D0 /* SearchGarageTableViewController.swift in Sources */,
 				1421B783255955F000442146 /* OverviewSearchGarageController.swift in Sources */,
 				1475FE9E258F54B300A191FC /* DateRangeDTO.swift in Sources */,
