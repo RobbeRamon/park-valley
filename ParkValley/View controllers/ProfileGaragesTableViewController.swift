@@ -84,7 +84,12 @@ class ProfileGaragesTableViewController: UITableViewController {
                 switch garageListType {
                 
                 case .favorite:
-                    break;
+                    
+                    garageModelController.fetchFavouriteGarages(userId: user.id!, token: bearerToken, completion: {(garages) in
+                        self.garages = garages
+                        group.leave()
+                    })
+                    
                 case .owned:
                     
                     garageModelController.fetchOwnedGarages(userId: user.id!, token: bearerToken, completion: {(garages) in
@@ -136,7 +141,6 @@ class ProfileGaragesTableViewController: UITableViewController {
                 })
                 
             }
-
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }

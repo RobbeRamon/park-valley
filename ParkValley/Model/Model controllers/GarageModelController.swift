@@ -141,6 +141,33 @@ class GarageModelController {
         task.resume()
     }
     
+    func fetchFavouriteGarages(userId: String, token: String, completion: @escaping ([Garage]) -> Void) {
+        let query = [URLQueryItem]()
+        
+        let url = giveURL(path: "/users/\(userId)/garages/favourite", query: query)
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            let jsonDecoder = JSONDecoder()
+            
+            if let data = data,
+               let garages = try? jsonDecoder.decode(Array<Garage>.self, from: data) {
+                completion(garages)
+            } else {
+                print("Either no data was returned, or data was not properly decoded.")
+                
+                completion([])
+                return
+            }
+        }
+        
+        task.resume()
+    }
+    
+    
     func removeGarage(garage: Garage, token: String, completion: @escaping (Bool) -> Void) {
         let query = [URLQueryItem]()
         
@@ -162,7 +189,7 @@ class GarageModelController {
         
         var favorAction: String
         
-        if garage.favorite == nil || garage.favorite == false {
+        if garage.favorite == true {
             favorAction = "favor"
         } else {
             favorAction = "defavor"
