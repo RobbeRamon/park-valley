@@ -32,8 +32,12 @@ class ProfileGaragesTableViewController: UITableViewController {
             niNavbar.title = "Booked garages"
         }
         
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // can not be done in viewDidLoad for the best UX
         fetchGarages()
-        
     }
 
     // MARK: - Table view data source
