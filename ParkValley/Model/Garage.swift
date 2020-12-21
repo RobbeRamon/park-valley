@@ -15,10 +15,11 @@ class Garage : Codable, Equatable {
     var longitude : Double?
     var user : User?
     var favorite: Bool?
+    var description: String?
     
     init(){}
     
-    init(id: String, name: String, city: String, latitude: Double, longitude: Double, user: User, favorite: Bool?) {
+    init(id: String, name: String, city: String, description: String, latitude: Double, longitude: Double, user: User, favorite: Bool?) {
         self.id = id
         self.name = name
         self.city = city
@@ -26,6 +27,7 @@ class Garage : Codable, Equatable {
         self.longitude = longitude
         self.user = user
         self.favorite = false
+        self.description = description
     }
     
     static func == (lhs: Garage, rhs: Garage) -> Bool {

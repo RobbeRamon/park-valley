@@ -131,6 +131,7 @@ class GarageDetailViewController: UIViewController {
         if let garage = self.garage {
             niName.title = garage.name
             lblTitle.text = garage.name
+            lblDescription.text = garage.description
             
             let initialLocation = CLLocation(latitude: garage.latitude!, longitude: garage.longitude!)
             let geocoder: CLGeocoder = CLGeocoder()

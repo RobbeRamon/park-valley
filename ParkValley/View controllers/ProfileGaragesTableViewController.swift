@@ -26,6 +26,9 @@ class ProfileGaragesTableViewController: UITableViewController {
             niNavbar.title = "Favorite garages"
         case .owned:
             niNavbar.title = "My garages"
+            
+            niNavbar.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addGarageTapped))
+
         case .unknown:
             niNavbar.title = "Garages"
         case .booked:
@@ -38,6 +41,10 @@ class ProfileGaragesTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         // can not be done in viewDidLoad for the best UX
         fetchGarages()
+    }
+    
+    @objc private func addGarageTapped() {
+        performSegue(withIdentifier: "sgAddGarage", sender: self)
     }
 
     // MARK: - Table view data source

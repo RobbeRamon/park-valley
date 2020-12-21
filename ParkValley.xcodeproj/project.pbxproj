@@ -22,6 +22,7 @@
 		146296C7256961DA00ADDA98 /* UserTokenDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146296C6256961DA00ADDA98 /* UserTokenDTO.swift */; };
 		146692F0257E8EA80075B21E /* city-building.json in Resources */ = {isa = PBXBuildFile; fileRef = 146692EF257E8EA80075B21E /* city-building.json */; };
 		146816EE2590FC0D00F86C70 /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 146816ED2590FC0D00F86C70 /* success.json */; };
+		146816F325915AD800F86C70 /* AddGarageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146816F225915AD800F86C70 /* AddGarageTableViewController.swift */; };
 		1475FE9E258F54B300A191FC /* DateRangeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1475FE9D258F54B300A191FC /* DateRangeDTO.swift */; };
 		148465B3257E5136001B79F3 /* GarageShowMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148465B2257E5136001B79F3 /* GarageShowMapViewController.swift */; };
 		148465CE257E8503001B79F3 /* welcome-icon.json in Resources */ = {isa = PBXBuildFile; fileRef = 148465CD257E8503001B79F3 /* welcome-icon.json */; };
@@ -78,6 +79,7 @@
 		146296C6256961DA00ADDA98 /* UserTokenDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTokenDTO.swift; sourceTree = "<group>"; };
 		146692EF257E8EA80075B21E /* city-building.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "city-building.json"; path = "../../../../../../../../../school/Jaar 3/Semester 1/Native Apps 2 - iOS/animations/city-building.json"; sourceTree = "<group>"; };
 		146816ED2590FC0D00F86C70 /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
+		146816F225915AD800F86C70 /* AddGarageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGarageTableViewController.swift; sourceTree = "<group>"; };
 		1475FE9D258F54B300A191FC /* DateRangeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRangeDTO.swift; sourceTree = "<group>"; };
 		148465B2257E5136001B79F3 /* GarageShowMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageShowMapViewController.swift; sourceTree = "<group>"; };
 		148465CD257E8503001B79F3 /* welcome-icon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "welcome-icon.json"; path = "../../../../../../../../../school/Jaar 3/Semester 1/Native Apps 2 - iOS/animations/welcome-icon.json"; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				141D1226258FEF6500D94A2D /* ProfileViewController.swift */,
 				141D123B258FF62000D94A2D /* ProfileGaragesTableViewController.swift */,
 				14C3CD86259011AE00CB6012 /* ProfileOptionsTableViewController.swift */,
+				146816F225915AD800F86C70 /* AddGarageTableViewController.swift */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				14E65DF42551E444000928A9 /* SceneDelegate.swift in Sources */,
 				14C3CD87259011AE00CB6012 /* ProfileOptionsTableViewController.swift in Sources */,
 				14F6BCD2256952B5006E5575 /* UserModelController.swift in Sources */,
+				146816F325915AD800F86C70 /* AddGarageTableViewController.swift in Sources */,
 				14DB262D2565E15800C53F39 /* GarageTableViewCell.swift in Sources */,
 				148699AD256020D400A674BF /* MainScreenViewController.swift in Sources */,
 				14A0968D2590ECFF007EB3A2 /* Booking.swift in Sources */,
