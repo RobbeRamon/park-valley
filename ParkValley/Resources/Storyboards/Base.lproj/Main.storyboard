@@ -868,11 +868,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Lyz-Jt-KT3">
-                        <barButtonItem key="rightBarButtonItem" title="heart" image="heart" catalog="system" id="6gD-21-1ML"/>
+                        <barButtonItem key="rightBarButtonItem" title="heart" image="heart" catalog="system" id="6gD-21-1ML">
+                            <connections>
+                                <action selector="favorGarageClicked:" destination="qEL-yt-n4X" id="G0v-Nz-6os"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="btBook" destination="fBM-oy-Z9T" id="tom-RN-6ri"/>
                         <outlet property="csViewHeight" destination="gxa-nk-cAP" id="n2D-hy-BCJ"/>
+                        <outlet property="heartGarage" destination="6gD-21-1ML" id="WD7-sT-xrO"/>
                         <outlet property="ivImage" destination="45D-am-WhG" id="4KH-xJ-Jkk"/>
                         <outlet property="lblAddress" destination="ylN-AW-8Xf" id="UOK-Co-vBg"/>
                         <outlet property="lblDescription" destination="1mk-aH-uzb" id="qFQ-2t-r89"/>

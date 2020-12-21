@@ -19,6 +19,7 @@ class GarageDetailViewController: UIViewController {
     @IBOutlet var btBook: UIButton!
     
     @IBOutlet var csViewHeight: NSLayoutConstraint!
+    @IBOutlet var heartGarage: UIBarButtonItem!
     
     var garage: Garage?
     let locationManager = CLLocationManager()
@@ -32,6 +33,23 @@ class GarageDetailViewController: UIViewController {
         updateUI()
     }
     
+    
+    @IBAction func favorGarageClicked(_ sender: Any) {
+        
+        if garage!.favorite != nil {
+            garage!.favorite = !garage!.favorite!
+        } else {
+            garage!.favorite = true
+        }
+        
+        updateHeart()
+        
+
+    }
+    
+    @IBAction func btnOpenInMapsClicked(_ sender: Any) {
+        openMapForPlace()
+    }
 
     
     // MARK: - Navigation
@@ -58,10 +76,7 @@ class GarageDetailViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         csViewHeight.isActive = true
     }
-    
-    @IBAction func btnOpenInMapsClicked(_ sender: Any) {
-        openMapForPlace()
-    }
+
     
     // SOURCE: https://stackoverflow.com/questions/28604429/how-to-open-maps-app-programmatically-with-coordinates-in-swift
     func openMapForPlace() {
@@ -171,6 +186,14 @@ class GarageDetailViewController: UIViewController {
             }
             
             garageModelController.saveHistoryToFile(history!)
+        }
+    }
+    
+    private func updateHeart() {
+        if ((garage?.favorite) != nil) && garage?.favorite == true {
+            heartGarage.image = UIImage(systemName: "heart.fill")
+        } else {
+            heartGarage.image = UIImage(systemName: "heart")
         }
     }
 }
