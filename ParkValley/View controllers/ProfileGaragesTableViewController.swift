@@ -77,10 +77,31 @@ class ProfileGaragesTableViewController: UITableViewController {
         group.enter()
         
         if let bearerToken = UserDefaults.standard.string(forKey: "bearer-token") {
-            garageModelController.fetchGarages(searchTerm: "Ghent", token: bearerToken, completion: {(garages) in
-                self.garages = garages
-                group.leave()
-            })
+            
+            
+            if let user = User.loadFromFile() {
+                
+                switch garageListType {
+                
+                case .favorite:
+                    break;
+                case .owned:
+                    
+                    garageModelController.fetchOwnedGarages(userId: user.id!, token: bearerToken, completion: {(garages) in
+                        self.garages = garages
+                        group.leave()
+                    })
+                    
+                case .unknown:
+                    break;
+                case .booked:
+                    break;
+                    
+                }
+                
+                
+            }
+            
         }
         
         group.notify(queue: .main) {
@@ -90,6 +111,17 @@ class ProfileGaragesTableViewController: UITableViewController {
     
     private func updateUI() {
         self.tableView.reloadData()
+        
+        if self.garages.isEmpty {
+            let label : UILabel = UILabel()
+            label.text = "Nothing found"
+            label.textAlignment = .center
+            label.textColor = .gray
+            
+            tableView.backgroundView = label
+        } else {
+            self.tableView.backgroundView = nil
+        }
     }
 
     /*

@@ -39,7 +39,7 @@ class User : Codable {
         let propertyListDecoder = PropertyListDecoder()
         
         if let retrievedNotesData = try? Data(contentsOf: archiveURL), let decodedUser = try? propertyListDecoder.decode(User.self, from: retrievedNotesData) {
-            try? FileManager.default.removeItem(at: archiveURL)
+            //try? FileManager.default.removeItem(at: archiveURL)
             return decodedUser
         }
         

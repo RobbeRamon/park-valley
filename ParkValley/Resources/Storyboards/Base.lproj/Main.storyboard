@@ -751,11 +751,11 @@
             <objects>
                 <viewController id="qEL-yt-n4X" customClass="GarageDetailViewController" customModule="ParkValley" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KFg-CA-qcI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Do-6w-Pu3">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhP-Zy-sou">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="717"/>
@@ -1372,7 +1372,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xFZ-PE-aeG"/>
+        <segue reference="aPg-0C-T6L"/>
         <segue reference="KSs-LF-mKN"/>
     </inferredMetricsTieBreakers>
     <resources>
