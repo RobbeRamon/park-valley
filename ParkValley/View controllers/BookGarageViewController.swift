@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class BookGarageViewController: UIViewController {
 
@@ -14,9 +15,14 @@ class BookGarageViewController: UIViewController {
     @IBOutlet var dpTo: UIDatePicker!
     @IBOutlet var tvAvailableDates: UITableView!
     @IBOutlet var lbTitle: UILabel!
+    @IBOutlet var animationView: UIView!
+    
     
     private var garageModelController = GarageModelController()
     private var availableDates: [Date] = []
+    private var booking: Booking?
+    private var sAnimation: AnimationView?
+    
     
     var garage: Garage?
     
@@ -24,6 +30,7 @@ class BookGarageViewController: UIViewController {
         super.viewDidLoad()
 
         self.tvAvailableDates.dataSource = self
+        self.tvAvailableDates.delegate = self
         
         createUI()
         updateUI()
@@ -71,7 +78,7 @@ class BookGarageViewController: UIViewController {
         tvAvailableDates.reloadData()
     }
     
-    func createUI() {
+    private func createUI() {
         var dateComponent = DateComponents()
         dateComponent.day = 5
         
@@ -88,15 +95,19 @@ class BookGarageViewController: UIViewController {
         btGetResults.layer.borderColor = UIColor.systemBlue.cgColor
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func showSucessAnimation() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        
+        let dateString = dateFormatter.string(for: self.booking?.date)
+        
+        
+        let alert = UIAlertController(title: "Success", message: "Booking is succssfully added at \(dateString!)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
-    */
 
 }
 
@@ -116,19 +127,38 @@ extension BookGarageViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "date", for: indexPath) as! AvailableDayTableViewCell
         
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "d MMM y"
-        
-        
         cell.update(date: availableDates[indexPath.row])
-        //cell.textLabel?.text = formatter.string(from: availableDates[indexPath.row])
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+}
+
+extension BookGarageViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //println(tasks[indexPath.row])
+        let date = availableDates[indexPath.row]
+
+        let group = DispatchGroup()
+
+        if let garage = garage {
+
+            group.enter()
+
+            if let bearerToken = UserDefaults.standard.string(forKey: "bearer-token") {
+
+                garageModelController.addBooking(garage: garage, token: bearerToken, date: date, completion: {(booking) in
+                    self.booking = booking
+                    group.leave()
+                })
+            }
+
+            group.notify(queue: .main) {
+                //self.availableDates = []
+                //self.updateUI()
+                self.showSucessAnimation()
+            }
+        }
     }
-    
 }
 
