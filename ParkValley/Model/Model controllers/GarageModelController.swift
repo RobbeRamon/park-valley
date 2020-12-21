@@ -151,18 +151,30 @@ class GarageModelController {
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-//            let jsonDecoder = JSONDecoder()
-//
-//            if let data = data,
-//               let garages = try? jsonDecoder.decode(Array<Garage>.self, from: data) {
-//                completion(garages)
-//            } else {
-//                print("Either no data was returned, or data was not properly decoded.")
-//
-//                completion([])
-//                return
-//            }
-            
+            completion(error == nil)
+        }
+        
+        task.resume()
+    }
+    
+    func switchFavor(garage: Garage, token: String, completion: @escaping (Bool) -> Void) {
+        let query = [URLQueryItem]()
+        
+        var favorAction: String
+        
+        if garage.favorite == nil || garage.favorite == false {
+            favorAction = "favor"
+        } else {
+            favorAction = "defavor"
+        }
+        
+        let url = giveURL(path: "/garages/\(garage.id!)/\(favorAction)", query: query)
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             completion(error == nil)
         }
         

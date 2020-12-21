@@ -31,6 +31,7 @@ class GarageDetailViewController: UIViewController {
         addGarageToHistory()
         createUI()
         updateUI()
+        updateHeart()
     }
     
     
@@ -40,6 +41,26 @@ class GarageDetailViewController: UIViewController {
             garage!.favorite = !garage!.favorite!
         } else {
             garage!.favorite = true
+        }
+        
+        
+        if let bearerToken = UserDefaults.standard.string(forKey: "bearer-token") {
+            
+            garageModelController.switchFavor(garage: garage!, token: bearerToken, completion: {(success) in
+                
+                if !success {
+                    
+                    let alert = UIAlertController(title: "Error", message: "Could not favor the garage", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                        self.dismiss(animated: true, completion: nil)
+                    }))
+                    
+                    self.present(alert, animated: true, completion: nil)
+                    
+                }
+                
+            })
+            
         }
         
         updateHeart()
