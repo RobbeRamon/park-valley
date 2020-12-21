@@ -15,13 +15,11 @@ class BookGarageViewController: UIViewController {
     @IBOutlet var dpTo: UIDatePicker!
     @IBOutlet var tvAvailableDates: UITableView!
     @IBOutlet var lbTitle: UILabel!
-    @IBOutlet var animationView: UIView!
     
     
     private var garageModelController = GarageModelController()
     private var availableDates: [Date] = []
     private var booking: Booking?
-    private var sAnimation: AnimationView?
     
     
     var garage: Garage?
@@ -56,6 +54,17 @@ class BookGarageViewController: UIViewController {
             
             group.notify(queue: .main) {
                 self.updateUI()
+                
+                if self.availableDates.isEmpty {
+                    let label : UILabel = UILabel()
+                    label.text = "No available dates found"
+                    label.textAlignment = .center
+                    label.textColor = .gray
+                    
+                    self.tvAvailableDates.backgroundView = label
+                } else {
+                    self.tvAvailableDates.backgroundView = nil
+                }
             }
         }
         
@@ -76,6 +85,10 @@ class BookGarageViewController: UIViewController {
     private func updateUI() {
         lbTitle.text = garage?.name
         tvAvailableDates.reloadData()
+        
+        if !self.availableDates.isEmpty {
+            self.tvAvailableDates.backgroundView = nil
+        }
     }
     
     private func createUI() {
@@ -87,26 +100,30 @@ class BookGarageViewController: UIViewController {
 
         dpTo.maximumDate = Calendar.current.date(byAdding: dateComponent, to: Date())
         
-        dateComponent.day = 1
-        dpTo.minimumDate = Calendar.current.date(byAdding: dateComponent, to: Date())
+        dpTo.minimumDate = Date()
         
         btGetResults.layer.cornerRadius = 10
         btGetResults.layer.borderWidth = 0.5
         btGetResults.layer.borderColor = UIColor.systemBlue.cgColor
     }
     
-    private func showSucessAnimation() {
+    private func showSucess() {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
+        dateFormatter.dateStyle = .medium
         
         let dateString = dateFormatter.string(for: self.booking?.date)
         
-        
-        let alert = UIAlertController(title: "Success", message: "Booking is succssfully added at \(dateString!)", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-            self.dismiss(animated: true, completion: nil)
-        }))
-        self.present(alert, animated: true, completion: nil)
+        if let dateString = dateString {
+            
+            let alert = UIAlertController(title: "Success", message: "Booking is succssfully added at \(dateString)", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                self.dismiss(animated: true, completion: nil)
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        }
+
     }
 
 }
@@ -136,7 +153,6 @@ extension BookGarageViewController: UITableViewDataSource {
 
 extension BookGarageViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //println(tasks[indexPath.row])
         let date = availableDates[indexPath.row]
 
         let group = DispatchGroup()
@@ -154,9 +170,7 @@ extension BookGarageViewController : UITableViewDelegate {
             }
 
             group.notify(queue: .main) {
-                //self.availableDates = []
-                //self.updateUI()
-                self.showSucessAnimation()
+                self.showSucess()
             }
         }
     }
