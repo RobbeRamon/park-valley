@@ -109,6 +109,41 @@ class ProfileGaragesTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        
+        if editingStyle == .delete {
+            
+            let garage = garages[indexPath.row]
+            self.garages.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            if let bearerToken = UserDefaults.standard.string(forKey: "bearer-token") {
+                
+                garageModelController.removeGarage(garage: garage, token: bearerToken, completion: {(success) in
+                    
+                    if !success {
+                        
+                        let alert = UIAlertController(title: "Error", message: "Could not remove the garage", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                            self.dismiss(animated: true, completion: nil)
+                        }))
+                        
+                        self.present(alert, animated: true, completion: nil)
+                        
+                    }
+                    
+                })
+                
+            }
+
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
+        
+
+    }
+    
     private func updateUI() {
         self.tableView.reloadData()
         
