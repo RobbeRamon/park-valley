@@ -20,6 +20,9 @@ class AddGarageTableViewController: UITableViewController {
     private let imagePicker = UIImagePickerController()
     private var latitude: Double = 0.0
     private var longitude: Double = 0.0
+    private var placemark: CLPlacemark?
+    
+    private var garageModelController = GarageModelController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +43,52 @@ class AddGarageTableViewController: UITableViewController {
         
     }
     
-
+    @IBAction func save(_ sender: Any) {
+        if (allFieldsFilled() && placemark != nil) {
+            let garage = Garage(id: nil, name: tfName.text!, city: placemark!.locality!, description: tvDescription.text!, latitude: self.latitude, longitude: self.longitude, user: nil, favorite: false)
+            
+            
+            let group = DispatchGroup()
+            
+                
+            group.enter()
+            
+            if let bearerToken = UserDefaults.standard.string(forKey: "bearer-token") {
+                
+                garageModelController.addGarage(garage: garage, token: bearerToken, completion: {(garage: Garage?) -> Void in
+                    group.leave()
+                })
+            }
+            
+            group.notify(queue: .main) {
+                
+                let alert = UIAlertController(title: "Garage saved", message: "You have added a new garage", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                    self.dismiss(animated: true, completion: nil)
+                }))
+                
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+            
+            
+        } else {
+            
+            let alert = UIAlertController(title: "Empty fields", message: "Please fill every field", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        
+        
+    }
+    
+    @IBAction func cancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     // MARK: - Helper functions
     
@@ -48,9 +96,10 @@ class AddGarageTableViewController: UITableViewController {
         tvDescription.layer.borderColor = UIColor.systemGray3.cgColor
         tvDescription.layer.cornerRadius = 5
         tvDescription.layer.borderWidth = 0.5
-        
-        
-        
+    }
+    
+    private func allFieldsFilled() -> Bool {
+        return !(tfName.text!.isEmpty || tvDescription.text!.isEmpty || tfLocation.text!.isEmpty)
     }
 
 }
@@ -67,6 +116,7 @@ extension AddGarageTableViewController : CLLocationManagerDelegate {
         
         lookUpCurrentLocation(completionHandler: {(placemark: CLPlacemark?) -> Void in
             if let placemark = placemark {
+                self.placemark = placemark
                 
                 let locationString = "\(placemark.thoroughfare!) \(placemark.subThoroughfare!), \(placemark.locality!) \(placemark.postalCode!), \(placemark.country!)"
                 self.tfLocation.text = locationString
@@ -131,7 +181,6 @@ extension AddGarageTableViewController : UINavigationControllerDelegate, UIImage
             
             alertController.addAction(photoLibraryAction)
         }
-        
 
         
         alertController.addAction(cancelAction)

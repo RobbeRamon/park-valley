@@ -19,7 +19,7 @@ class Garage : Codable, Equatable {
     
     init(){}
     
-    init(id: String, name: String, city: String, description: String, latitude: Double, longitude: Double, user: User, favorite: Bool?) {
+    init(id: String?, name: String, city: String, description: String, latitude: Double, longitude: Double, user: User?, favorite: Bool?) {
         self.id = id
         self.name = name
         self.city = city

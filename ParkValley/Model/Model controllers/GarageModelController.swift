@@ -208,6 +208,42 @@ class GarageModelController {
         task.resume()
     }
     
+    func addGarage(garage: Garage, token: String, completion: @escaping (Garage?) -> Void) {
+        
+        
+        let query = [URLQueryItem]()
+        let url = giveURL(path: "/garages/\(garage.id ?? "")", query: query)
+        
+        let jsonEncoder = JSONEncoder()
+        jsonEncoder.dateEncodingStrategy = .iso8601
+        
+        let json = try? jsonEncoder.encode(garage)
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = json
+        
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            let jsonDecoder = JSONDecoder()
+            
+            if let data = data,
+               let garage = try? jsonDecoder.decode(Garage.self, from: data) {
+                completion(garage)
+            } else {
+                print("Either no data was returned, or data was not properly decoded.")
+                
+                completion(nil)
+                return
+            }
+        }
+        
+        task.resume()
+    
+    }
+    
     
     private func giveURL(path: String, query: [URLQueryItem]?) -> URL {
         var components = URLComponents()
