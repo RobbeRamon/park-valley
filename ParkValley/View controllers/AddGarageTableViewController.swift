@@ -6,22 +6,41 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class AddGarageTableViewController: UITableViewController {
     
     @IBOutlet var tvDescription: UITextView!
+    @IBOutlet var tfName: UITextField!
+    @IBOutlet var tfLocation: UITextField!
+    @IBOutlet var ivGarageImage: UIImageView!
+    
+    private let locationManager = CLLocationManager()
+    private let imagePicker = UIImagePickerController()
+    private var latitude: Double = 0.0
+    private var longitude: Double = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         createUI()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    @IBAction func tgCurrentLocationTapped(_ sender: Any) {
+        
+        // ask the user
+        locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+        
+    }
+    
+
     
     // MARK: - Helper functions
     
@@ -34,61 +53,98 @@ class AddGarageTableViewController: UITableViewController {
         
     }
 
+}
+
+extension AddGarageTableViewController : CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        
+        //print("locations = \(location.latitude) \(location.longitude)")
+        
+        self.longitude = location.longitude
+        self.latitude = location.latitude
+        
+        
+        lookUpCurrentLocation(completionHandler: {(placemark: CLPlacemark?) -> Void in
+            if let placemark = placemark {
+                
+                let locationString = "\(placemark.thoroughfare!) \(placemark.subThoroughfare!), \(placemark.locality!) \(placemark.postalCode!), \(placemark.country!)"
+                self.tfLocation.text = locationString
+            }
+            
+        })
+    }
     
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    // SOURCE: https://developer.apple.com/documentation/corelocation/converting_between_coordinates_and_user-friendly_place_names
+    func lookUpCurrentLocation(completionHandler: @escaping (CLPlacemark?)
+                    -> Void ) {
+        // Use the last reported location.
+        if let lastLocation = self.locationManager.location {
+            let geocoder = CLGeocoder()
+                
+            // Look up the location and pass it to the completion handler
+            geocoder.reverseGeocodeLocation(lastLocation,
+                        completionHandler: { (placemarks, error) in
+                if error == nil {
+                    let firstLocation = placemarks?[0]
+                    completionHandler(firstLocation)
+                }
+                else {
+                 // An error occurred during geocoding.
+                    completionHandler(nil)
+                }
+            })
+        }
+        else {
+            // No location was available.
+            completionHandler(nil)
+        }
     }
-    */
+}
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+extension AddGarageTableViewController : UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    @IBAction func tgAddPictureTapped(_ sender: UIView) {
+        imagePicker.delegate = self
+        
+        
+        let alertController = UIAlertController(title: "Choose Image Source", message: nil, preferredStyle: .actionSheet)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let cameraAction = UIAlertAction(title: "Camera", style: .default) { (action) in
+                self.imagePicker.sourceType = .camera
+                self.present(self.imagePicker, animated: true, completion: nil)
+            }
+            
+            alertController.addAction(cameraAction)
+        }
+        
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            
+            let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { (action) in
+                self.imagePicker.sourceType = .photoLibrary
+                self.present(self.imagePicker, animated: true, completion: nil)
+            }
+            
+            alertController.addAction(photoLibraryAction)
+        }
+        
+
+        
+        alertController.addAction(cancelAction)
+        alertController.popoverPresentationController?.sourceView = sender
+        
+        present(alertController, animated: true, completion: nil)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let selectedImage = info[.originalImage] as? UIImage
+        else {return}
+        
+        ivGarageImage.image = selectedImage
+        dismiss(animated: true, completion: nil)
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
