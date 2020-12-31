@@ -1407,7 +1407,7 @@
         <scene sceneID="qD4-s0-TmO">
             <objects>
                 <viewController id="XXg-jX-s1y" customClass="LoginViewController" customModule="ParkValley" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="XEK-K8-bE1">
+                    <view key="view" contentMode="scaleToFill" id="XEK-K8-bE1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1459,7 +1459,6 @@
                         <constraints>
                             <constraint firstItem="EQX-dF-ohb" firstAttribute="leading" secondItem="XEK-K8-bE1" secondAttribute="leading" id="0y9-tt-X8f"/>
                             <constraint firstItem="am5-lg-JQa" firstAttribute="top" secondItem="GRR-IO-Wn6" secondAttribute="bottom" constant="10" id="1Sh-f3-kdy"/>
-                            <constraint firstAttribute="bottom" secondItem="EQX-dF-ohb" secondAttribute="bottom" constant="450" id="8yr-KZ-FDe"/>
                             <constraint firstItem="jbo-s7-Z1P" firstAttribute="centerX" secondItem="XEK-K8-bE1" secondAttribute="centerX" id="99N-xm-d0d"/>
                             <constraint firstItem="am5-lg-JQa" firstAttribute="leading" secondItem="jLG-8e-IcL" secondAttribute="leading" constant="20" id="CpC-xm-agR"/>
                             <constraint firstItem="3Hh-FC-WUy" firstAttribute="leading" secondItem="jLG-8e-IcL" secondAttribute="leading" constant="20" id="DE5-bM-hxf"/>
@@ -1487,7 +1486,6 @@
                     <navigationItem key="navigationItem" title="Login" id="Myz-4t-Bpk"/>
                     <connections>
                         <outlet property="btnLogin" destination="am5-lg-JQa" id="cNh-Vh-6et"/>
-                        <outlet property="cBottom" destination="8yr-KZ-FDe" id="b5e-HT-Axa"/>
                         <outlet property="cTop" destination="tVW-ao-Dje" id="8fV-uh-Aq6"/>
                         <outlet property="lblErrorMessage" destination="GRR-IO-Wn6" id="SjV-OO-x3E"/>
                         <outlet property="txtEmail" destination="3Hh-FC-WUy" id="vaE-BI-I5P"/>
