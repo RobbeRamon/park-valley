@@ -1501,7 +1501,7 @@
         <!--Register-->
         <scene sceneID="nph-9g-7qO">
             <objects>
-                <tableViewController id="65T-X3-dzV" sceneMemberID="viewController">
+                <tableViewController id="65T-X3-dzV" customClass="RegisterTableViewController" customModule="ParkValley" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="gBr-cF-mrE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1509,7 +1509,7 @@
                         <sections>
                             <tableViewSection headerTitle="Email" id="4My-li-vbH">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ICX-KA-yQj">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="ICX-KA-yQj">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ICX-KA-yQj" id="WjF-3J-QYb">
@@ -1525,6 +1525,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="UNz-cf-hp4" secondAttribute="trailing" constant="20" id="1lC-4f-whU"/>
                                                 <constraint firstItem="UNz-cf-hp4" firstAttribute="leading" secondItem="WjF-3J-QYb" secondAttribute="leading" constant="20" id="PAP-ie-R9v"/>
+                                                <constraint firstItem="UNz-cf-hp4" firstAttribute="top" secondItem="WjF-3J-QYb" secondAttribute="top" constant="5" id="d98-Lt-33a"/>
                                                 <constraint firstItem="UNz-cf-hp4" firstAttribute="centerY" secondItem="WjF-3J-QYb" secondAttribute="centerY" id="qTv-ad-qO0"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1533,7 +1534,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Username" id="dvP-gh-X7A">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="NR4-gn-2t6">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="NR4-gn-2t6">
                                         <rect key="frame" x="0.0" y="155" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NR4-gn-2t6" id="FJv-w4-uY7">
@@ -1547,6 +1548,7 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="hFS-M9-w16" firstAttribute="top" secondItem="FJv-w4-uY7" secondAttribute="top" constant="5" id="FTd-Aj-eeJ"/>
                                                 <constraint firstItem="hFS-M9-w16" firstAttribute="centerY" secondItem="FJv-w4-uY7" secondAttribute="centerY" id="d2F-gy-E95"/>
                                                 <constraint firstAttribute="trailing" secondItem="hFS-M9-w16" secondAttribute="trailing" constant="20" id="f7P-hX-pdg"/>
                                                 <constraint firstItem="hFS-M9-w16" firstAttribute="leading" secondItem="FJv-w4-uY7" secondAttribute="leading" constant="20" id="vRR-tx-3aT"/>
@@ -1557,7 +1559,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Password" id="KhH-s2-riX">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Lrs-6O-kHb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Lrs-6O-kHb">
                                         <rect key="frame" x="0.0" y="254.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lrs-6O-kHb" id="pAh-fU-oam">
@@ -1571,13 +1573,14 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="vrj-ja-TsC" firstAttribute="top" secondItem="pAh-fU-oam" secondAttribute="top" constant="5" id="lEw-i2-1oO"/>
                                                 <constraint firstAttribute="trailing" secondItem="vrj-ja-TsC" secondAttribute="trailing" constant="20" id="nJF-eP-bp5"/>
                                                 <constraint firstItem="vrj-ja-TsC" firstAttribute="centerY" secondItem="pAh-fU-oam" secondAttribute="centerY" id="wME-NV-XYv"/>
                                                 <constraint firstItem="vrj-ja-TsC" firstAttribute="leading" secondItem="pAh-fU-oam" secondAttribute="leading" constant="20" id="wbi-Fn-1dG"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Cv4-dI-5h9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Cv4-dI-5h9">
                                         <rect key="frame" x="0.0" y="298" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cv4-dI-5h9" id="1jx-gf-G4i">
@@ -1592,8 +1595,34 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="T72-Pd-W26" secondAttribute="trailing" constant="20" id="DqG-9Q-Fc0"/>
+                                                <constraint firstItem="T72-Pd-W26" firstAttribute="top" secondItem="1jx-gf-G4i" secondAttribute="top" constant="5" id="H1u-V2-e05"/>
                                                 <constraint firstItem="T72-Pd-W26" firstAttribute="leading" secondItem="1jx-gf-G4i" secondAttribute="leading" constant="20" id="Xzc-TU-Fla"/>
                                                 <constraint firstItem="T72-Pd-W26" firstAttribute="centerY" secondItem="1jx-gf-G4i" secondAttribute="centerY" id="c76-dR-PtQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="VtT-3c-5tH">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="43.5" id="SoJ-8A-CgG">
+                                        <rect key="frame" x="0.0" y="377.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SoJ-8A-CgG" id="kQE-Vi-yYV">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aT-EZ-mho">
+                                                    <rect key="frame" x="20" y="10.5" width="374" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" systemColor="systemRedColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2aT-EZ-mho" firstAttribute="leading" secondItem="kQE-Vi-yYV" secondAttribute="leading" constant="20" id="1fe-W0-Oma"/>
+                                                <constraint firstAttribute="trailing" secondItem="2aT-EZ-mho" secondAttribute="trailing" constant="20" id="8v9-bX-OSE"/>
+                                                <constraint firstItem="2aT-EZ-mho" firstAttribute="top" secondItem="kQE-Vi-yYV" secondAttribute="top" constant="10.5" id="p8g-PH-F6W"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1607,8 +1636,19 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Register" id="tAz-Rv-yjP">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="OZs-Dd-NoN"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ttF-pC-BDY"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ttF-pC-BDY">
+                            <connections>
+                                <action selector="doneClicked:" destination="65T-X3-dzV" id="4Sx-y1-s6v"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="lbEmail" destination="UNz-cf-hp4" id="bHc-9F-1DD"/>
+                        <outlet property="lbErrorMessage" destination="2aT-EZ-mho" id="nNX-W5-IUX"/>
+                        <outlet property="lbPassword1" destination="vrj-ja-TsC" id="eC2-ou-0Q3"/>
+                        <outlet property="lbPassword2" destination="T72-Pd-W26" id="Kq9-Nl-sPz"/>
+                        <outlet property="lbUsername" destination="hFS-M9-w16" id="bbF-oc-rFg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asv-1K-K0W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

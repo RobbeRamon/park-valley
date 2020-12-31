@@ -56,6 +56,36 @@ class UserModelController {
         task.resume()
     }
     
+    func register(user: RegisterDTO, completion: @escaping (User?) -> Void) {
+        let url = giveURL(path: "/users")
+        
+        let jsonEncoder = JSONEncoder()
+        
+        let json = try? jsonEncoder.encode(user)
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = json
+        
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            let jsonDecoder = JSONDecoder()
+            
+            if let data = data,
+               let user = try? jsonDecoder.decode(User.self, from: data) {
+                completion(user)
+            } else {
+                print("Either no data was returned, or data was not properly decoded.")
+                
+                completion(nil)
+                return
+            }
+        }
+        
+        task.resume()
+    }
+    
     
     /**
      SOURCE: https://stackoverflow.com/questions/24379601/how-to-make-an-http-request-basic-auth-in-swift

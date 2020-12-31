@@ -12,6 +12,8 @@
 		141D123C258FF62000D94A2D /* ProfileGaragesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141D123B258FF62000D94A2D /* ProfileGaragesTableViewController.swift */; };
 		141D1242258FFBC800D94A2D /* GarageListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141D1241258FFBC800D94A2D /* GarageListType.swift */; };
 		1421B783255955F000442146 /* OverviewSearchGarageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421B782255955F000442146 /* OverviewSearchGarageController.swift */; };
+		1434394F259E334500A42CAF /* RegisterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1434394E259E334500A42CAF /* RegisterTableViewController.swift */; };
+		14343954259E3C4200A42CAF /* RegisterDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14343953259E3C4200A42CAF /* RegisterDTO.swift */; };
 		144F55E62557E8BC003D72B4 /* Garage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144F55E52557E8BC003D72B4 /* Garage.swift */; };
 		144F55EB2557E921003D72B4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144F55EA2557E921003D72B4 /* User.swift */; };
 		144F55F52557FA18003D72B4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144F55F42557FA18003D72B4 /* LoginViewController.swift */; };
@@ -69,6 +71,8 @@
 		141D123B258FF62000D94A2D /* ProfileGaragesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileGaragesTableViewController.swift; sourceTree = "<group>"; };
 		141D1241258FFBC800D94A2D /* GarageListType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageListType.swift; sourceTree = "<group>"; };
 		1421B782255955F000442146 /* OverviewSearchGarageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewSearchGarageController.swift; sourceTree = "<group>"; };
+		1434394E259E334500A42CAF /* RegisterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTableViewController.swift; sourceTree = "<group>"; };
+		14343953259E3C4200A42CAF /* RegisterDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDTO.swift; sourceTree = "<group>"; };
 		144F55E52557E8BC003D72B4 /* Garage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Garage.swift; sourceTree = "<group>"; };
 		144F55EA2557E921003D72B4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		144F55F42557FA18003D72B4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 				146296C6256961DA00ADDA98 /* UserTokenDTO.swift */,
 				1475FE9D258F54B300A191FC /* DateRangeDTO.swift */,
 				14A096872590EB3E007EB3A2 /* BookingDTO.swift */,
+				14343953259E3C4200A42CAF /* RegisterDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 				141D123B258FF62000D94A2D /* ProfileGaragesTableViewController.swift */,
 				14C3CD86259011AE00CB6012 /* ProfileOptionsTableViewController.swift */,
 				146816F225915AD800F86C70 /* AddGarageTableViewController.swift */,
+				1434394E259E334500A42CAF /* RegisterTableViewController.swift */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
@@ -497,6 +503,7 @@
 				141D1227258FEF6500D94A2D /* ProfileViewController.swift in Sources */,
 				146179D425628FD800EA86D0 /* SearchGarageTableViewController.swift in Sources */,
 				1421B783255955F000442146 /* OverviewSearchGarageController.swift in Sources */,
+				14343954259E3C4200A42CAF /* RegisterDTO.swift in Sources */,
 				1475FE9E258F54B300A191FC /* DateRangeDTO.swift in Sources */,
 				14E65DF22551E444000928A9 /* AppDelegate.swift in Sources */,
 				144F55EB2557E921003D72B4 /* User.swift in Sources */,
@@ -506,6 +513,7 @@
 				14C3CD87259011AE00CB6012 /* ProfileOptionsTableViewController.swift in Sources */,
 				14F6BCD2256952B5006E5575 /* UserModelController.swift in Sources */,
 				146816F325915AD800F86C70 /* AddGarageTableViewController.swift in Sources */,
+				1434394F259E334500A42CAF /* RegisterTableViewController.swift in Sources */,
 				14DB262D2565E15800C53F39 /* GarageTableViewCell.swift in Sources */,
 				148699AD256020D400A674BF /* MainScreenViewController.swift in Sources */,
 				14A0968D2590ECFF007EB3A2 /* Booking.swift in Sources */,
