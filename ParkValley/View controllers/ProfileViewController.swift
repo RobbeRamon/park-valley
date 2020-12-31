@@ -25,6 +25,9 @@ class ProfileViewController: UIViewController {
         ivProfilePicture.clipsToBounds = true
     }
     
-
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sgLogout" {
+            User.deleteFromFile()
+        }
+    }
 }

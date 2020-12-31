@@ -69,6 +69,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKf-FI-NdZ">
                                                 <rect key="frame" x="20" y="650" width="358" height="30"/>
                                                 <state key="normal" title="Logout"/>
+                                                <connections>
+                                                    <segue destination="XXg-jX-s1y" kind="presentation" identifier="sgLogout" modalPresentationStyle="fullScreen" id="d8D-hC-sv7"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1664,6 +1667,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="d8D-hC-sv7"/>
         <segue reference="xFZ-PE-aeG"/>
         <segue reference="KSs-LF-mKN"/>
     </inferredMetricsTieBreakers>

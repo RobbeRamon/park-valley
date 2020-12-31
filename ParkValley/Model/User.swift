@@ -46,4 +46,12 @@ class User : Codable {
         return nil
     }
     
+    static func deleteFromFile() -> Void {
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let archiveURL = documentsDirectory.appendingPathComponent("saved_user").appendingPathExtension("plist")
+        
+        try? FileManager.default.removeItem(at: archiveURL)
+    }
+    
+    
 }
