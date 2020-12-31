@@ -124,10 +124,8 @@ class LoginViewController: UIViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
             super.viewWillTransition(to: size, with: coordinator)
             if UIDevice.current.orientation.isLandscape {
-                print("Landscape")
                 cTop.constant = 100
             } else {
-                print("Portrait")
                 cTop.constant = 446
             }
     }
