@@ -28,6 +28,7 @@ class ProfileViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "sgLogout" {
             User.deleteFromFile()
+            UserDefaults.standard.removeObject(forKey: "bearer-token")
         }
     }
 }

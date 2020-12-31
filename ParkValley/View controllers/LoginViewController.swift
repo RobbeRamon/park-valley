@@ -10,7 +10,6 @@ import Lottie
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet var cBottom: NSLayoutConstraint!
     @IBOutlet var cTop: NSLayoutConstraint!
     
     @IBOutlet var btnLogin: UIButton!
@@ -64,8 +63,6 @@ class LoginViewController: UIViewController {
         let group = DispatchGroup()
         
         if let bearerToken = UserDefaults.standard.string(forKey: "bearer-token") {
-            
-            //UserDefaults.standard.removeObject(forKey: "bearer-token")
             
             group.enter()
             userModelController.fetchUser(token: bearerToken, completion: {(user) in
@@ -146,7 +143,7 @@ class LoginViewController: UIViewController {
             else { return }
         
         viewAnimation.isHidden = true
-        cBottom.constant = 650
+        cTop.constant = 10
         UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
         })
@@ -155,7 +152,7 @@ class LoginViewController: UIViewController {
     @objc func keyboardWillBeHidden(_ notification: NSNotification) {
         viewAnimation.isHidden = false
         
-        cBottom.constant = 450
+        cTop.constant = 446
         UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
         })
