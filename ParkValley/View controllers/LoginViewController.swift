@@ -11,6 +11,7 @@ import Lottie
 class LoginViewController: UIViewController {
     
     @IBOutlet var cBottom: NSLayoutConstraint!
+    @IBOutlet var cTop: NSLayoutConstraint!
     
     @IBOutlet var btnLogin: UIButton!
     @IBOutlet var viewAnimation: UIView!
@@ -119,6 +120,18 @@ class LoginViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+    /// Change constraint when screen is in landscape mode
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+            super.viewWillTransition(to: size, with: coordinator)
+            if UIDevice.current.orientation.isLandscape {
+                print("Landscape")
+                cTop.constant = 100
+            } else {
+                print("Portrait")
+                cTop.constant = 446
+            }
+    }
+    
     // MARK: - shift view when keyboard is shown
     func registerForKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(_:)), name: UIResponder.keyboardDidShowNotification, object: nil)
@@ -151,22 +164,6 @@ class LoginViewController: UIViewController {
     }
     
     
-    // MARK: - helper methods
-    
-    private func validate()  {
-        
-    }
-    
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
