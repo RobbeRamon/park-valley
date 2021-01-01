@@ -8,6 +8,31 @@
 import Foundation
 
 class UserModelController {
+    
+    
+    /// This is method that resets the backend data for EVERY user, only needed for the prototype settings
+    func resetBackend(completion: @escaping (StatusDTO?) -> Void) {
+        let url = giveURL(path: "/reset")
+        
+        let request = URLRequest(url: url)
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            let jsonDecoder = JSONDecoder()
+            if let data = data,
+               let status = try? jsonDecoder.decode(StatusDTO.self, from: data) {
+                completion(status)
+            } else {
+                print("Either no data was returned, or data was not properly decoded.")
+                
+                completion(nil)
+                return
+            }
+        }
+        
+        task.resume()
+    }
+    
+    
     func login(username: String, password: String, completion: @escaping (UserTokenDTO?) -> Void) {
         
         let url = giveURL(path: "/login")

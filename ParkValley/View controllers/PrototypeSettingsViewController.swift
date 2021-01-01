@@ -10,6 +10,8 @@ import UIKit
 class PrototypeSettingsViewController: UIViewController {
     
     let garageModelController = GarageModelController()
+    let userModelController = UserModelController()
+    var status: StatusDTO? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +20,32 @@ class PrototypeSettingsViewController: UIViewController {
     }
     
     @IBAction func resetBackendClicked(_ sender: Any) {
+        let group = DispatchGroup()
         
+
+            
+        group.enter()
+        userModelController.resetBackend(completion: {(status) in
+            
+            if let status = status {
+                self.status = status
+            }
+            
+            group.leave()
+        })
+        
+        group.notify(queue: .main) {
+            if let status = self.status {
+                if status.success {
+                    self.showPopup(title: "Backend cleared", message: "The backend is now cleared, the state has returned to the initial state with inital data.")
+                } else {
+                    self.showPopup(title: "Backend not cleared", message: "Something went wrong.")
+                }
+                
+            } else {
+                self.showPopup(title: "Backend not cleared", message: "Something went wrong.")
+            }
+        }
     }
     
     @IBAction func clearCacheClicked(_ sender: Any) {
