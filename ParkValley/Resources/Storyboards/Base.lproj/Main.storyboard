@@ -22,8 +22,8 @@
                     <connections>
                         <segue destination="XXg-jX-s1y" kind="presentation" identifier="sgShowLogin" modalPresentationStyle="fullScreen" id="IEa-fi-Dg8"/>
                         <segue destination="8TN-Nm-u9O" kind="relationship" relationship="viewControllers" id="Ad7-rA-rMn"/>
-                        <segue destination="VTc-DI-qBa" kind="relationship" relationship="viewControllers" id="sgK-UC-rRx"/>
                         <segue destination="seU-oy-0SP" kind="relationship" relationship="viewControllers" id="jms-Tx-E7m"/>
+                        <segue destination="VTc-DI-qBa" kind="relationship" relationship="viewControllers" id="sgK-UC-rRx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f1B-B2-kok" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -786,21 +786,88 @@
             </objects>
             <point key="canvasLocation" x="5053.6231884057979" y="-585.26785714285711"/>
         </scene>
-        <!--Messages-->
+        <!--Prototype options-->
         <scene sceneID="rSh-Qy-i44">
             <objects>
-                <viewController id="VTc-DI-qBa" sceneMemberID="viewController">
+                <viewController id="VTc-DI-qBa" customClass="PrototypeSettingsViewController" customModule="ParkValley" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vmu-HY-NiP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQw-2a-4ch">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R2q-FE-JoU">
+                                        <rect key="frame" x="8" y="8" width="398" height="753"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jim-Kc-FOa">
+                                                <rect key="frame" x="20" y="390" width="358" height="30"/>
+                                                <state key="normal" title="Reset backend"/>
+                                                <connections>
+                                                    <action selector="resetBackendClicked:" destination="VTc-DI-qBa" eventType="touchUpInside" id="xya-fM-dZ7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vB6-ys-k88">
+                                                <rect key="frame" x="20" y="440" width="358" height="30"/>
+                                                <state key="normal" title="Clear cache"/>
+                                                <connections>
+                                                    <action selector="clearCacheClicked:" destination="VTc-DI-qBa" eventType="touchUpInside" id="JPu-9w-8x8"/>
+                                                </connections>
+                                            </button>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Syp-y1-9DV">
+                                                <rect key="frame" x="20" y="20" width="358" height="350"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="350" id="sH7-FE-iF1"/>
+                                                </constraints>
+                                                <mutableString key="text">This is a prototype of how the app can eventually become. A number of prototype settings are useful. The backend persists only user accounts, no garages, bookings... When you restart the backend the data (except the user accounts) will disappear, this is why it is important to remove the cache after you do this. Garages will otherwise remain in "recently visited", which are no longer in the backend. Removing "recently visited" when the garage is no longer in the backend is something outside the scope of this prototype. There is also a possibility to reset the backend from within the app. This will make all garages and bookings disappear. Don't forget to clear the cache after this.
+
+For more information about the initial data and otheraspects of the prototype, read the readme on GitHub.
+
+Robbe Ramon</mutableString>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Syp-y1-9DV" firstAttribute="top" secondItem="R2q-FE-JoU" secondAttribute="top" constant="20" id="4jZ-cD-VXc"/>
+                                            <constraint firstItem="vB6-ys-k88" firstAttribute="leading" secondItem="R2q-FE-JoU" secondAttribute="leading" constant="20" id="EWs-oZ-g8g"/>
+                                            <constraint firstAttribute="trailing" secondItem="Syp-y1-9DV" secondAttribute="trailing" constant="20" id="GgI-fm-TYF"/>
+                                            <constraint firstAttribute="height" constant="753" id="Vwi-nc-pQG"/>
+                                            <constraint firstItem="vB6-ys-k88" firstAttribute="top" secondItem="Jim-Kc-FOa" secondAttribute="bottom" constant="20" id="bLU-jT-cwZ"/>
+                                            <constraint firstItem="Jim-Kc-FOa" firstAttribute="leading" secondItem="R2q-FE-JoU" secondAttribute="leading" constant="20" id="bdg-cP-6tT"/>
+                                            <constraint firstItem="Syp-y1-9DV" firstAttribute="centerX" secondItem="Jim-Kc-FOa" secondAttribute="centerX" id="er4-Sb-L3y"/>
+                                            <constraint firstItem="Jim-Kc-FOa" firstAttribute="top" secondItem="Syp-y1-9DV" secondAttribute="bottom" constant="20" id="lUg-OD-vfk"/>
+                                            <constraint firstItem="Syp-y1-9DV" firstAttribute="leading" secondItem="R2q-FE-JoU" secondAttribute="leading" constant="20" id="mgW-qM-KEC"/>
+                                            <constraint firstAttribute="trailing" secondItem="vB6-ys-k88" secondAttribute="trailing" constant="20" id="ovv-vd-fML"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="R2q-FE-JoU" firstAttribute="top" secondItem="CQw-2a-4ch" secondAttribute="topMargin" id="0NH-1z-kAk"/>
+                                    <constraint firstItem="R2q-FE-JoU" firstAttribute="bottom" secondItem="CQw-2a-4ch" secondAttribute="bottomMargin" id="AZR-w4-KOo"/>
+                                    <constraint firstItem="R2q-FE-JoU" firstAttribute="width" secondItem="CQw-2a-4ch" secondAttribute="width" multiplier="0.961353" id="Im2-tR-TTd"/>
+                                    <constraint firstItem="R2q-FE-JoU" firstAttribute="trailing" secondItem="CQw-2a-4ch" secondAttribute="trailingMargin" id="h2c-jU-J2v"/>
+                                    <constraint firstItem="R2q-FE-JoU" firstAttribute="leading" secondItem="CQw-2a-4ch" secondAttribute="leadingMargin" id="wYe-gB-vuu"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="bTQ-BI-pVZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CQw-2a-4ch" firstAttribute="top" secondItem="bTQ-BI-pVZ" secondAttribute="top" id="54y-ZA-b46"/>
+                            <constraint firstItem="CQw-2a-4ch" firstAttribute="leading" secondItem="bTQ-BI-pVZ" secondAttribute="leading" id="CH7-iR-hcE"/>
+                            <constraint firstItem="bTQ-BI-pVZ" firstAttribute="bottom" secondItem="CQw-2a-4ch" secondAttribute="bottom" id="PYr-sc-6Ls"/>
+                            <constraint firstItem="bTQ-BI-pVZ" firstAttribute="trailing" secondItem="CQw-2a-4ch" secondAttribute="trailing" id="sjQ-it-ZIc"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Messages" image="message.fill" catalog="system" id="eEH-HV-1bW"/>
+                    <tabBarItem key="tabBarItem" title="Prototype options" image="gearshape.2.fill" catalog="system" id="eEH-HV-1bW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rNQ-Lv-TYd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055" y="104"/>
+            <point key="canvasLocation" x="1053.6231884057972" y="103.79464285714285"/>
         </scene>
         <!--Search overview-->
         <scene sceneID="gJr-qb-4Xj">
@@ -1728,7 +1795,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="d8D-hC-sv7"/>
+        <segue reference="IEa-fi-Dg8"/>
         <segue reference="ZHD-ZX-qNj"/>
         <segue reference="KSs-LF-mKN"/>
     </inferredMetricsTieBreakers>
@@ -1736,10 +1803,10 @@
         <image name="book.closed.fill" catalog="system" width="115" height="128"/>
         <image name="car.2.fill" catalog="system" width="128" height="75"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="gearshape.2.fill" catalog="system" width="128" height="100"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="location.fill" catalog="system" width="128" height="121"/>
-        <image name="message.fill" catalog="system" width="128" height="113"/>
         <image name="new-york-wallpaper" width="1200" height="783"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="placeholder-image" width="600" height="450"/>

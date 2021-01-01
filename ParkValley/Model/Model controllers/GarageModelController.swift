@@ -279,6 +279,12 @@ class GarageModelController {
         return []
     }
     
+    func removeHistoryFromFile() {
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let archiveURL = documentsDirectory.appendingPathComponent("garage_history").appendingPathExtension("plist")
+        try? FileManager.default.removeItem(at: archiveURL)
+    }
+    
     func saveHistoryToFile (_ garages: [Garage]) {
         
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
