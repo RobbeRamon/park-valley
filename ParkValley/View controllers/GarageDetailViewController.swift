@@ -75,12 +75,7 @@ class GarageDetailViewController: UIViewController {
     
     // MARK: - Navigation
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "sgShowOnMap" {
-            let garageShowMapViewController = segue.destination as! GarageShowMapViewController
-            garageShowMapViewController.garage = self.garage
-        }
-        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {        
         if segue.identifier == "sgBookGarage" {
             let bookGarageViewController = segue.destination as! BookGarageViewController
             bookGarageViewController.garage = self.garage

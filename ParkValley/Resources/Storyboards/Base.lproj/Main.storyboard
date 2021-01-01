@@ -1448,47 +1448,6 @@ Robbe Ramon
             </objects>
             <point key="canvasLocation" x="5111.594202898551" y="425.89285714285711"/>
         </scene>
-        <!--Garage Show Map View Controller-->
-        <scene sceneID="RIK-JN-FTj">
-            <objects>
-                <viewController id="IPo-GX-CUs" customClass="GarageShowMapViewController" customModule="ParkValley" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mis-np-Xdo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bp-Yu-Zd1">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="UgW-sk-PkI"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Location" id="lMK-u3-hpB"/>
-                                </items>
-                            </navigationBar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="mutedStandard" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fbb-tJ-jSB">
-                                <rect key="frame" x="0.0" y="98" width="414" height="764"/>
-                            </mapView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Prw-7l-i1d"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="fbb-tJ-jSB" firstAttribute="top" secondItem="3bp-Yu-Zd1" secondAttribute="bottom" constant="10" id="29Z-an-LEz"/>
-                            <constraint firstItem="Prw-7l-i1d" firstAttribute="bottom" secondItem="fbb-tJ-jSB" secondAttribute="bottom" id="60c-Ic-bz3"/>
-                            <constraint firstItem="fbb-tJ-jSB" firstAttribute="trailing" secondItem="Prw-7l-i1d" secondAttribute="trailing" id="7mi-zm-MuF"/>
-                            <constraint firstItem="fbb-tJ-jSB" firstAttribute="leading" secondItem="Prw-7l-i1d" secondAttribute="leading" id="bxP-c5-BBt"/>
-                            <constraint firstItem="3bp-Yu-Zd1" firstAttribute="trailing" secondItem="fbb-tJ-jSB" secondAttribute="trailing" id="jZ7-du-Vlq"/>
-                            <constraint firstItem="3bp-Yu-Zd1" firstAttribute="leading" secondItem="fbb-tJ-jSB" secondAttribute="leading" id="pLL-Jj-ASz"/>
-                            <constraint firstItem="3bp-Yu-Zd1" firstAttribute="top" secondItem="Prw-7l-i1d" secondAttribute="top" id="w6n-KD-2Dj"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="mvMap" destination="fbb-tJ-jSB" id="30h-eR-fLw"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Or-MO-zXC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5886" y="1538"/>
-        </scene>
         <!--Login-->
         <scene sceneID="qD4-s0-TmO">
             <objects>
