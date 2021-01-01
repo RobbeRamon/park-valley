@@ -820,11 +820,11 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="350" id="sH7-FE-iF1"/>
                                                 </constraints>
-                                                <mutableString key="text">This is a prototype of how the app can eventually become. A number of prototype settings are useful. The backend persists only user accounts, no garages, bookings... When you restart the backend the data (except the user accounts) will disappear, this is why it is important to remove the cache after you do this. Garages will otherwise remain in "recently visited", which are no longer in the backend. Removing "recently visited" when the garage is no longer in the backend is something outside the scope of this prototype. There is also a possibility to reset the backend from within the app. This will make all garages and bookings disappear. Don't forget to clear the cache after this.
+                                                <string key="text">This is a prototype of how the app can eventually become. A number of prototype settings are useful. The backend persists only user accounts, no garages, bookings... When you restart the backend the data (except the user accounts) will disappear, this is why it is important to remove the cache after you do this. Garages will otherwise remain in "recently visited", which are no longer in the backend. Removing "recently visited" when the garage is no longer in the backend is something outside the scope of this prototype. There is also a possibility to reset the backend from within the app. This will make all garages and bookings disappear. Don't forget to clear the cache after this.
 
 For more information about the initial data and otheraspects of the prototype, read the readme on GitHub.
 
-Robbe Ramon</mutableString>
+Robbe Ramon</string>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -901,7 +901,7 @@ Robbe Ramon</mutableString>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X1H-CL-dgK">
+                                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X1H-CL-dgK">
                                                         <rect key="frame" x="162" y="134" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="FFc-QE-bOX"/>
@@ -1796,7 +1796,7 @@ Robbe Ramon</mutableString>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="IEa-fi-Dg8"/>
-        <segue reference="ZHD-ZX-qNj"/>
+        <segue reference="xFZ-PE-aeG"/>
         <segue reference="KSs-LF-mKN"/>
     </inferredMetricsTieBreakers>
     <resources>
