@@ -18,6 +18,5 @@ class Booking : Codable {
         self.date = date
     }
     
-    
 }
 

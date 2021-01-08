@@ -8,6 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		14135D69258E575200390257 /* click.json in Resources */ = {isa = PBXBuildFile; fileRef = 14135D68258E575200390257 /* click.json */; };
+		1417414625A7B609002FB8D2 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1417414525A7B609002FB8D2 /* WidgetKit.framework */; };
+		1417414825A7B609002FB8D2 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1417414725A7B609002FB8D2 /* SwiftUI.framework */; };
+		1417414B25A7B609002FB8D2 /* ParkValleyWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1417414A25A7B609002FB8D2 /* ParkValleyWidget.swift */; };
+		1417414E25A7B60C002FB8D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1417414D25A7B60C002FB8D2 /* Assets.xcassets */; };
+		1417415025A7B60C002FB8D2 /* ParkValleyWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1417414C25A7B609002FB8D2 /* ParkValleyWidget.intentdefinition */; };
+		1417415125A7B60C002FB8D2 /* ParkValleyWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1417414C25A7B609002FB8D2 /* ParkValleyWidget.intentdefinition */; };
+		1417415425A7B60C002FB8D2 /* ParkValleyWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1417414425A7B609002FB8D2 /* ParkValleyWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1417416725A7C338002FB8D2 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1417415D25A7B715002FB8D2 /* DataProvider.swift */; };
+		1417417125A7C5DA002FB8D2 /* Garage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144F55E52557E8BC003D72B4 /* Garage.swift */; };
+		1417417B25A7CB7D002FB8D2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144F55EA2557E921003D72B4 /* User.swift */; };
+		1417418025A7CB8E002FB8D2 /* DateRangeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1475FE9D258F54B300A191FC /* DateRangeDTO.swift */; };
+		1417418525A7CB97002FB8D2 /* BookingDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A096872590EB3E007EB3A2 /* BookingDTO.swift */; };
+		1417418A25A7CBA0002FB8D2 /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A0968C2590ECFF007EB3A2 /* Booking.swift */; };
+		141741B325A7CED4002FB8D2 /* GarageModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AA388D25633282007906DC /* GarageModelController.swift */; };
+		141741B825A7CED5002FB8D2 /* GarageModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AA388D25633282007906DC /* GarageModelController.swift */; };
 		141D1227258FEF6500D94A2D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141D1226258FEF6500D94A2D /* ProfileViewController.swift */; };
 		141D123C258FF62000D94A2D /* ProfileGaragesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141D123B258FF62000D94A2D /* ProfileGaragesTableViewController.swift */; };
 		141D1242258FFBC800D94A2D /* GarageListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141D1241258FFBC800D94A2D /* GarageListType.swift */; };
@@ -35,7 +50,6 @@
 		14A9DE2E259FDD8500250E58 /* welcome-icon.json in Resources */ = {isa = PBXBuildFile; fileRef = 14A9DE2D259FDD8500250E58 /* welcome-icon.json */; };
 		14A9DE36259FDD9900250E58 /* login-background.json in Resources */ = {isa = PBXBuildFile; fileRef = 14A9DE35259FDD9900250E58 /* login-background.json */; };
 		14A9DE3E259FDDA800250E58 /* parking-icon.json in Resources */ = {isa = PBXBuildFile; fileRef = 14A9DE3D259FDDA800250E58 /* parking-icon.json */; };
-		14AA388E25633282007906DC /* GarageModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AA388D25633282007906DC /* GarageModelController.swift */; };
 		14C3CD87259011AE00CB6012 /* ProfileOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3CD86259011AE00CB6012 /* ProfileOptionsTableViewController.swift */; };
 		14DB262D2565E15800C53F39 /* GarageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB262C2565E15800C53F39 /* GarageTableViewCell.swift */; };
 		14E53A99258FAA970054284B /* AvailableDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E53A98258FAA970054284B /* AvailableDayTableViewCell.swift */; };
@@ -51,6 +65,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1417415225A7B60C002FB8D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14E65DE62551E444000928A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1417414325A7B609002FB8D2;
+			remoteInfo = ParkValleyWidgetExtension;
+		};
 		14E65E052551E445000928A9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 14E65DE62551E444000928A9 /* Project object */;
@@ -67,9 +88,32 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1417415525A7B60C002FB8D2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1417415425A7B60C002FB8D2 /* ParkValleyWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1169580BBF9DE4C98BF6A04E /* Pods-ParkValley.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkValley.debug.xcconfig"; path = "Target Support Files/Pods-ParkValley/Pods-ParkValley.debug.xcconfig"; sourceTree = "<group>"; };
 		14135D68258E575200390257 /* click.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = click.json; sourceTree = "<group>"; };
+		1417414425A7B609002FB8D2 /* ParkValleyWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ParkValleyWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1417414525A7B609002FB8D2 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		1417414725A7B609002FB8D2 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		1417414A25A7B609002FB8D2 /* ParkValleyWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkValleyWidget.swift; sourceTree = "<group>"; };
+		1417414C25A7B609002FB8D2 /* ParkValleyWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = ParkValleyWidget.intentdefinition; sourceTree = "<group>"; };
+		1417414D25A7B60C002FB8D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1417414F25A7B60C002FB8D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1417415D25A7B715002FB8D2 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		141741C525A7D6B1002FB8D2 /* ParkValley.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ParkValley.entitlements; sourceTree = "<group>"; };
 		141D1226258FEF6500D94A2D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		141D123B258FF62000D94A2D /* ProfileGaragesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileGaragesTableViewController.swift; sourceTree = "<group>"; };
 		141D1241258FFBC800D94A2D /* GarageListType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageListType.swift; sourceTree = "<group>"; };
@@ -120,6 +164,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1417414125A7B609002FB8D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1417414825A7B609002FB8D2 /* SwiftUI.framework in Frameworks */,
+				1417414625A7B609002FB8D2 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		14E65DEB2551E444000928A9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -145,6 +198,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1417414925A7B609002FB8D2 /* ParkValleyWidget */ = {
+			isa = PBXGroup;
+			children = (
+				1417415D25A7B715002FB8D2 /* DataProvider.swift */,
+				1417414A25A7B609002FB8D2 /* ParkValleyWidget.swift */,
+				1417414C25A7B609002FB8D2 /* ParkValleyWidget.intentdefinition */,
+				1417414D25A7B60C002FB8D2 /* Assets.xcassets */,
+				1417414F25A7B60C002FB8D2 /* Info.plist */,
+			);
+			path = ParkValleyWidget;
+			sourceTree = "<group>";
+		};
 		141D1240258FFBB000D94A2D /* Enum */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +260,7 @@
 				14E65DF02551E444000928A9 /* ParkValley */,
 				14E65E072551E445000928A9 /* ParkValleyTests */,
 				14E65E122551E445000928A9 /* ParkValleyUITests */,
+				1417414925A7B609002FB8D2 /* ParkValleyWidget */,
 				14E65DEF2551E444000928A9 /* Products */,
 				A2D10E8C78736E0D3BEC06D7 /* Pods */,
 				7CDCBB78283963C602EC19A0 /* Frameworks */,
@@ -207,6 +273,7 @@
 				14E65DEE2551E444000928A9 /* ParkValley.app */,
 				14E65E042551E445000928A9 /* ParkValleyTests.xctest */,
 				14E65E0F2551E445000928A9 /* ParkValleyUITests.xctest */,
+				1417414425A7B609002FB8D2 /* ParkValleyWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -214,6 +281,7 @@
 		14E65DF02551E444000928A9 /* ParkValley */ = {
 			isa = PBXGroup;
 			children = (
+				141741C525A7D6B1002FB8D2 /* ParkValley.entitlements */,
 				144F560125580226003D72B4 /* Assets */,
 				14E65E322551E7C0000928A9 /* Resources */,
 				14E65E2E2551E761000928A9 /* Views */,
@@ -307,6 +375,8 @@
 			isa = PBXGroup;
 			children = (
 				B9149D27A443C1452799D9BF /* Pods_ParkValley.framework */,
+				1417414525A7B609002FB8D2 /* WidgetKit.framework */,
+				1417414725A7B609002FB8D2 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -323,6 +393,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1417414325A7B609002FB8D2 /* ParkValleyWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1417415825A7B60C002FB8D2 /* Build configuration list for PBXNativeTarget "ParkValleyWidgetExtension" */;
+			buildPhases = (
+				1417414025A7B609002FB8D2 /* Sources */,
+				1417414125A7B609002FB8D2 /* Frameworks */,
+				1417414225A7B609002FB8D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ParkValleyWidgetExtension;
+			productName = ParkValleyWidgetExtension;
+			productReference = 1417414425A7B609002FB8D2 /* ParkValleyWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		14E65DED2551E444000928A9 /* ParkValley */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14E65E182551E445000928A9 /* Build configuration list for PBXNativeTarget "ParkValley" */;
@@ -332,10 +419,12 @@
 				14E65DEB2551E444000928A9 /* Frameworks */,
 				14E65DEC2551E444000928A9 /* Resources */,
 				1686D158E97D70FF0912BC61 /* [CP] Embed Pods Frameworks */,
+				1417415525A7B60C002FB8D2 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1417415325A7B60C002FB8D2 /* PBXTargetDependency */,
 			);
 			name = ParkValley;
 			productName = ParkValley;
@@ -384,9 +473,12 @@
 		14E65DE62551E444000928A9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1210;
+				LastSwiftUpdateCheck = 1230;
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
+					1417414325A7B609002FB8D2 = {
+						CreatedOnToolsVersion = 12.3;
+					};
 					14E65DED2551E444000928A9 = {
 						CreatedOnToolsVersion = 12.1;
 					};
@@ -416,11 +508,20 @@
 				14E65DED2551E444000928A9 /* ParkValley */,
 				14E65E032551E445000928A9 /* ParkValleyTests */,
 				14E65E0E2551E445000928A9 /* ParkValleyUITests */,
+				1417414325A7B609002FB8D2 /* ParkValleyWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1417414225A7B609002FB8D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1417414E25A7B60C002FB8D2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		14E65DEC2551E444000928A9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -496,6 +597,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1417414025A7B609002FB8D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1417416725A7C338002FB8D2 /* DataProvider.swift in Sources */,
+				1417418A25A7CBA0002FB8D2 /* Booking.swift in Sources */,
+				1417414B25A7B609002FB8D2 /* ParkValleyWidget.swift in Sources */,
+				1417417B25A7CB7D002FB8D2 /* User.swift in Sources */,
+				141741B825A7CED5002FB8D2 /* GarageModelController.swift in Sources */,
+				1417418525A7CB97002FB8D2 /* BookingDTO.swift in Sources */,
+				1417417125A7C5DA002FB8D2 /* Garage.swift in Sources */,
+				1417415025A7B60C002FB8D2 /* ParkValleyWidget.intentdefinition in Sources */,
+				1417418025A7CB8E002FB8D2 /* DateRangeDTO.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		14E65DEA2551E444000928A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -504,10 +621,10 @@
 				146296C7256961DA00ADDA98 /* UserTokenDTO.swift in Sources */,
 				141D123C258FF62000D94A2D /* ProfileGaragesTableViewController.swift in Sources */,
 				146AA471259F6C050001588F /* StatusDTO.swift in Sources */,
+				141741B325A7CED4002FB8D2 /* GarageModelController.swift in Sources */,
 				14A096882590EB3E007EB3A2 /* BookingDTO.swift in Sources */,
 				141D1242258FFBC800D94A2D /* GarageListType.swift in Sources */,
 				148AC0DB256BF45300160711 /* GarageDetailViewController.swift in Sources */,
-				14AA388E25633282007906DC /* GarageModelController.swift in Sources */,
 				14E53A99258FAA970054284B /* AvailableDayTableViewCell.swift in Sources */,
 				146AA467259F436A0001588F /* BookingModelController.swift in Sources */,
 				141D1227258FEF6500D94A2D /* ProfileViewController.swift in Sources */,
@@ -527,6 +644,7 @@
 				146816F325915AD800F86C70 /* AddGarageTableViewController.swift in Sources */,
 				1434394F259E334500A42CAF /* RegisterTableViewController.swift in Sources */,
 				14DB262D2565E15800C53F39 /* GarageTableViewCell.swift in Sources */,
+				1417415125A7B60C002FB8D2 /* ParkValleyWidget.intentdefinition in Sources */,
 				148699AD256020D400A674BF /* MainScreenViewController.swift in Sources */,
 				14A0968D2590ECFF007EB3A2 /* Booking.swift in Sources */,
 			);
@@ -551,6 +669,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1417415325A7B60C002FB8D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1417414325A7B609002FB8D2 /* ParkValleyWidgetExtension */;
+			targetProxy = 1417415225A7B60C002FB8D2 /* PBXContainerItemProxy */;
+		};
 		14E65E062551E445000928A9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 14E65DED2551E444000928A9 /* ParkValley */;
@@ -583,6 +706,52 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1417415625A7B60C002FB8D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5V9M5FH2HA;
+				INFOPLIST_FILE = ParkValleyWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.robberamon.ParkValley.ParkValleyWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1417415725A7B60C002FB8D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5V9M5FH2HA;
+				INFOPLIST_FILE = ParkValleyWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.robberamon.ParkValley.ParkValleyWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		14E65E162551E445000928A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -703,8 +872,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1169580BBF9DE4C98BF6A04E /* Pods-ParkValley.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ParkValley/ParkValley.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5V9M5FH2HA;
@@ -724,8 +895,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C74AF91BA4BDC2E076F59FE8 /* Pods-ParkValley.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ParkValley/ParkValley.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5V9M5FH2HA;
@@ -828,6 +1001,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1417415825A7B60C002FB8D2 /* Build configuration list for PBXNativeTarget "ParkValleyWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1417415625A7B60C002FB8D2 /* Debug */,
+				1417415725A7B60C002FB8D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		14E65DE92551E444000928A9 /* Build configuration list for PBXProject "ParkValley" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
