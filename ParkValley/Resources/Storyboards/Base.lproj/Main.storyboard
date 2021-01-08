@@ -1769,7 +1769,7 @@ Robbe Ramon
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="location.fill" catalog="system" width="128" height="121"/>
-        <image name="new-york-wallpaper" width="1200" height="783"/>
+        <image name="new-york-wallpaper" width="600" height="391.5"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="placeholder-image" width="600" height="450"/>
         <image name="search_nearby" width="165" height="77.5"/>

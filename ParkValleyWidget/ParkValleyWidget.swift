@@ -11,40 +11,58 @@ import Intents
 
 struct Provider: IntentTimelineProvider {
     
+    @AppStorage("garage", store: UserDefaults(suiteName: "group.com.robberamon.ParkValley"))
+    var garageData: Data = Data()
+    
     // placeholder string
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationIntent(), myString: "...")
+    func placeholder(in context: Context) -> GarageEntry {
+        GarageEntry(date: Date(), configuration: ConfigurationIntent(), text: "Recently visited garage")
     }
 
     // placeholder string
-    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), configuration: configuration, myString: "...")
+    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (GarageEntry) -> ()) {
+
+        let garage = try? JSONDecoder().decode(Garage.self, from: garageData)
+        
+        var string = "..."
+        
+        if garage != nil {
+            string = garage!.name!
+        }
+        
+        let entry = GarageEntry(date: Date(), configuration: configuration, text: string)
         completion(entry)
     }
 
     // main logic
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
+        
+        
+        var entries: [GarageEntry] = []
+        
         let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            
-            // fill string here from provider
-            let entry = SimpleEntry(date: entryDate, configuration: configuration, myString: DataProvider.getString())
-            entries.append(entry)
+        
+        // fill string here from provider
+        let garage = try? JSONDecoder().decode(Garage.self, from: garageData)
+        
+        var string = "..."
+        
+        if garage != nil {
+            string = garage!.name!
         }
+        
+        let entry = GarageEntry(date: currentDate, configuration: configuration, text: string)
+        entries.append(entry)
 
-        let timeline = Timeline(entries: entries, policy: .atEnd)
+        let timeline = Timeline(entries: entries, policy: .atEnd) // this will refresh the widget every hour, documentation: https://developer.apple.com/documentation/widgetkit/keeping-a-widget-up-to-date
         completion(timeline)
     }
 }
 
-struct SimpleEntry: TimelineEntry {
+struct GarageEntry: TimelineEntry {
     let date: Date
     let configuration: ConfigurationIntent
-    let myString: String
+    let text: String
 }
 
 // widget look
@@ -57,7 +75,7 @@ struct ParkValleyWidgetEntryView : View {
         ZStack {
             //Color.black.edgesIgnoringSafeArea(.all)
             
-            Text(entry.myString)
+            Text(entry.text)
                 .foregroundColor(.white)
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)
@@ -80,15 +98,15 @@ struct ParkValleyWidget: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             ParkValleyWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("ParkValley")
+        .description("Add this widget to your phone.")
     }
 }
 
 // preview
 struct ParkValleyWidget_Previews: PreviewProvider {
     static var previews: some View {
-        ParkValleyWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), myString:"Random String"))
+        ParkValleyWidgetEntryView(entry: GarageEntry(date: Date(), configuration: ConfigurationIntent(), text:"..."))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

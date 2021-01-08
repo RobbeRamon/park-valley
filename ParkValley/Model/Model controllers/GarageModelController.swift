@@ -6,8 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
 
 class GarageModelController {
+    
+    @AppStorage("garage", store: UserDefaults(suiteName: "group.com.robberamon.ParkValley"))
+    var garageData: Data = Data()
     
     // MARK: - Server communication
     
@@ -283,6 +287,9 @@ class GarageModelController {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let archiveURL = documentsDirectory.appendingPathComponent("garage_history").appendingPathExtension("plist")
         try? FileManager.default.removeItem(at: archiveURL)
+        
+        // remove the garage for the widget
+        garageData.removeAll()
     }
     
     func saveHistoryToFile (_ garages: [Garage]) {
@@ -294,6 +301,16 @@ class GarageModelController {
         let encodedGarages = try? propertyListEncoder.encode(garages)
         
         try? encodedGarages?.write(to: archiveURL, options: .noFileProtection)
+        
+        // set the latest garage for the widget
+        garageData.removeAll()
+        
+        if garages.count > 0 {
+            guard let garageData = try? JSONEncoder().encode(garages[0]) else {return}
+            self.garageData = garageData
+        }
+        
+        
     }
     
 

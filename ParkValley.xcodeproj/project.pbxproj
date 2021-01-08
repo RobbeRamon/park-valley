@@ -114,6 +114,7 @@
 		1417414F25A7B60C002FB8D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1417415D25A7B715002FB8D2 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		141741C525A7D6B1002FB8D2 /* ParkValley.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ParkValley.entitlements; sourceTree = "<group>"; };
+		141741CA25A7E564002FB8D2 /* ParkValleyWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ParkValleyWidgetExtension.entitlements; sourceTree = "<group>"; };
 		141D1226258FEF6500D94A2D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		141D123B258FF62000D94A2D /* ProfileGaragesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileGaragesTableViewController.swift; sourceTree = "<group>"; };
 		141D1241258FFBC800D94A2D /* GarageListType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageListType.swift; sourceTree = "<group>"; };
@@ -257,6 +258,7 @@
 		14E65DE52551E444000928A9 = {
 			isa = PBXGroup;
 			children = (
+				141741CA25A7E564002FB8D2 /* ParkValleyWidgetExtension.entitlements */,
 				14E65DF02551E444000928A9 /* ParkValley */,
 				14E65E072551E445000928A9 /* ParkValleyTests */,
 				14E65E122551E445000928A9 /* ParkValleyUITests */,
@@ -711,6 +713,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = ParkValleyWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5V9M5FH2HA;
@@ -734,6 +737,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = ParkValleyWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5V9M5FH2HA;
