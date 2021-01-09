@@ -23,6 +23,8 @@ pod install
 
 ## Uitleg over app
 
+*Opmerking: de app kan zowel in landscape mode als in portrait mode gebruikt worden.*
+
 Het is de bedoeling om eerst een user te registreren via de app. Deze zal automatisch in de backend een garage toegekend krijgen in New York met de naam "Garage near city center". Dit kan je altijd nagaan bij je profiel op de app. Dit is enkel testdata.
 Je hebt uiteraard ook de mogelijkheid om garages toe te voegen en te verwijderen.  
 
