@@ -2,6 +2,8 @@
 
 ## Algemene uitleg
 
+Deze app is ontwikkeld voor het vak Native Apps 2: iOS.  
+
 Park Valley is een applicatie die je de mogelijkheid geeft om een garage te huren voor een opgegeven periode.  
 De bedoeling is dat hiermee steeds je auto op een veilige plaats kan zetten als je op reis bent.
 
