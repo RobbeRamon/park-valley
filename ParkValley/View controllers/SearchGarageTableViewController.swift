@@ -22,10 +22,6 @@ class SearchGarageTableViewController: UITableViewController {
         sbSearch.delegate = self
         sbSearch.becomeFirstResponder()
         
-        //self.tableView.rowHeight = 150
-        
-
-        
         updateUI()
     }
     
@@ -81,6 +77,7 @@ class SearchGarageTableViewController: UITableViewController {
         }
     }
     
+    /// Gets the garage from the backend using the search term
     private func search(_ searchTerm: String) {
         let group = DispatchGroup()
         

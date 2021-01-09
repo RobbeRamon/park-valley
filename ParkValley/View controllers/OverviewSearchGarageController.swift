@@ -26,17 +26,12 @@ class OverviewSearchGarageController: UIViewController {
         tvHistory.dataSource = self
         
         createUI()
-        
-        //history = garageModelController.loadHistoryFromFile() ?? []
-        //updateUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         history = garageModelController.loadHistoryFromFile() ?? []
         updateUI()
     }
-    
-
     
     /// This is necessary, otherwise a constraint error is thrown
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -49,6 +44,7 @@ class OverviewSearchGarageController: UIViewController {
 
     }
     
+    /// Set the constraint on active, it is sometimes disbaled to avoid constraint errors
     override func viewWillLayoutSubviews() {
         csViewHeight.isActive = true
     }

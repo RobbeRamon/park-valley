@@ -35,25 +35,33 @@ class PrototypeSettingsViewController: UIViewController {
         group.notify(queue: .main) {
             if let status = self.status {
                 if status.success {
-                    self.showPopup(title: "Backend cleared",
-                                   message: "The backend is now cleared, the state has returned to the initial state with inital data.")
+                    self.showPopup(
+                        title: "Backend cleared",
+                        message: "The backend is now cleared, the state has returned to the initial state with inital data.")
                 } else {
-                    self.showPopup(title: "Backend not cleared",
-                                   message: "Something went wrong.")
+                    self.showPopup(
+                        title: "Backend not cleared",
+                        message: "Something went wrong.")
                 }
                 
             } else {
-                self.showPopup(title: "Backend not cleared", message: "Something went wrong.")
+                self.showPopup(
+                    title: "Backend not cleared",
+                    message: "Something went wrong.")
             }
         }
     }
     
     @IBAction func clearCacheClicked(_ sender: Any) {
         garageModelController.removeHistoryFromFile()
-        showPopup(title: "Cache cleared", message: "Your cache is now cleared, the recently visited section should be empty now.")
+        showPopup(
+            title: "Cache cleared",
+            message: "Your cache is now cleared, the recently visited section should be empty now.")
     }
     
     // MARK: - Helper methods
+    
+    /// Show a popup with a message and a title
     private func showPopup(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         

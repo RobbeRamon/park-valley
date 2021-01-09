@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// This viewcontroller can be used for showing the favorite garages or the owned garages
 class ProfileGaragesTableViewController: UITableViewController {
     
     var garageListType: GarageListType = .unknown
@@ -73,6 +74,48 @@ class ProfileGaragesTableViewController: UITableViewController {
         return cell
     }
     
+    
+    // MARK: - Table view delegates
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        
+        if editingStyle == .delete {
+            
+            let garage = garages[indexPath.row]
+            self.garages.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            if let bearerToken = UserDefaults.standard.string(forKey: "bearer-token") {
+                
+                garageModelController.removeGarage(garage: garage, token: bearerToken, completion: {
+                    (success) in
+                    
+                    if !success {
+                        
+                        let alert = UIAlertController(
+                            title: "Error",
+                            message: "Could not remove the garage",
+                            preferredStyle: .alert)
+                        
+                        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: {
+                            _ in
+                            
+                            self.dismiss(animated: true, completion: nil)
+                        }))
+                        
+                        self.present(alert, animated: true, completion: nil)
+                        
+                    }
+                    
+                })
+                
+            }
+        } else if editingStyle == .insert {
+            // Not required in this case
+        }
+    }
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "sgShowDetail" {
@@ -132,46 +175,7 @@ class ProfileGaragesTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
-        
-        if editingStyle == .delete {
-            
-            let garage = garages[indexPath.row]
-            self.garages.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            
-            if let bearerToken = UserDefaults.standard.string(forKey: "bearer-token") {
-                
-                garageModelController.removeGarage(garage: garage, token: bearerToken, completion: {
-                    (success) in
-                    
-                    if !success {
-                        
-                        let alert = UIAlertController(
-                            title: "Error",
-                            message: "Could not remove the garage",
-                            preferredStyle: .alert)
-                        
-                        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: {
-                            _ in
-                            
-                            self.dismiss(animated: true, completion: nil)
-                        }))
-                        
-                        self.present(alert, animated: true, completion: nil)
-                        
-                    }
-                    
-                })
-                
-            }
-        } else if editingStyle == .insert {
-            // Not required in this case
-        }
-        
-
-    }
+   
     
     private func updateUI() {
         self.tableView.reloadData()

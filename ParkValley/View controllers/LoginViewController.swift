@@ -35,9 +35,7 @@ class LoginViewController: UIViewController {
         getAndSaveToken()
     }
     
-    /**
-     Get token and save to default storage followed by get user
-     */
+    /// Get token and save to default storage followed by get user
     private func getAndSaveToken() {
         let group = DispatchGroup()
         
@@ -57,9 +55,8 @@ class LoginViewController: UIViewController {
         }
     }
     
-    /**
-     Get user and save to file
-     */
+
+    /// Get user and save to file
     private func getAndSaveUser() {
         let group = DispatchGroup()
         

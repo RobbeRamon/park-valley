@@ -8,6 +8,12 @@
 import Foundation
 
 class BookingModelController {
+    
+    /// Gets all the bookings from one user from the backend
+    /// - Parameters:
+    ///     - userId: The ID of the user to fetch the bookings from
+    ///     - token: The bearer token for authentification on the backend
+    /// Returns a list of bookings
     func fetchBookings(userId: String, token: String, completion: @escaping ([BookingDTO]) -> Void) {
 
         let query = [URLQueryItem]()

@@ -32,7 +32,6 @@ class BookingTableViewController: UITableViewController {
                 
             }
             
-            
         }
         
         group.notify(queue: .main) {

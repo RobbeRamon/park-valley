@@ -34,7 +34,7 @@ class GarageDetailViewController: UIViewController {
         updateHeart()
     }
     
-    
+    /// Favors the garage and sends it to the backend
     @IBAction func favorGarageClicked(_ sender: Any) {
         
         if garage!.favorite != nil {
@@ -93,6 +93,7 @@ class GarageDetailViewController: UIViewController {
         
     }
     
+    /// Set the constraint on active, it is sometimes disbaled to avoid constraint errors
     override func viewWillLayoutSubviews() {
         csViewHeight.isActive = true
     }

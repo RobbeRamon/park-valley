@@ -13,6 +13,8 @@ class MainScreenViewController: UITabBarController {
         super.viewDidLoad()
     }
     
+    /// Checks if the user is logged in
+    /// If not, it shows the login screen
     override func viewDidAppear(_ animated: Bool) {
         let encodedUser = User.loadFromFile()
 

@@ -32,7 +32,11 @@ class UserModelController {
         task.resume()
     }
     
-    
+    /// Login the user in the backend
+    /// - Parameters:
+    ///     - username: The username of the user to login with
+    ///     - password: The password of the user to login with
+    /// Returns a UserTokenDTO
     func login(username: String, password: String, completion: @escaping (UserTokenDTO?) -> Void) {
         
         let url = giveURL(path: "/login")
@@ -57,6 +61,10 @@ class UserModelController {
         task.resume()
     }
     
+    /// Get a specific user from the backend
+    /// - Parameters:
+    ///     - token: The bearer token for authentification on the backend
+    /// Returns a User
     func fetchUser(token: String, completion: @escaping (User?) -> Void) {
         
         let url = giveURL(path: "/me")
@@ -81,6 +89,10 @@ class UserModelController {
         task.resume()
     }
     
+    /// Register a new user in the backend
+    /// - Parameters:
+    ///     - user: The new user to register on the backend
+    /// Returns a User
     func register(user: RegisterDTO, completion: @escaping (User?) -> Void) {
         let url = giveURL(path: "/users")
         

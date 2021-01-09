@@ -15,6 +15,11 @@ class GarageModelController {
     
     // MARK: - Server communication
     
+    /// Gets all the garages from the backend that have a specific city
+    /// - Parameters:
+    ///     - searchTerm: The city that needs to be given to the backend
+    ///     - token: The bearer token for authentification on the backend
+    /// Returns a list of Garages
     func fetchGarages(searchTerm: String, token: String, completion: @escaping ([Garage]) -> Void) {
 
         var query = [URLQueryItem]()
@@ -44,6 +49,12 @@ class GarageModelController {
         
     }
     
+    /// Gets the available booking days from the backend within a date range
+    /// - Parameters:
+    ///     - garage: The garage to fetch the available dates from
+    ///     - token: The bearer token for authentification on the backend
+    ///     - dateRange: The range the available dates should be in
+    /// Returns a list of Dates
     func fetchAvailableDates(garage: Garage, token: String, dateRange: DateRangeDTO, completion: @escaping ([Date]) -> Void) {
         let query = [URLQueryItem]()
         let url = giveURL(path: "/garages/\(garage.id ?? "")/availableDays", query: query)
@@ -81,6 +92,12 @@ class GarageModelController {
         task.resume()
     }
     
+    /// Add a new booking to the backend
+    /// - Parameters:
+    ///     - garage: The garage to fetch the available dates from
+    ///     - token: The bearer token for authentification on the backend
+    ///     - date: The date of the booking
+    /// Returns a Booking
     func addBooking(garage: Garage, token: String, date: Date, completion: @escaping (Booking?) -> Void) {
         let bookingDTO = BookingDTO(name: garage.name ?? "", date: date)
         
@@ -119,6 +136,11 @@ class GarageModelController {
         task.resume()
     }
     
+    /// Gets all the garages that are owned by a specific user from the backend
+    /// - Parameters:
+    ///     - userId: The ID of the user to fetch the owned garages from
+    ///     - token: The bearer token for authentification on the backend
+    /// Returns a list of Garages
     func fetchOwnedGarages(userId: String, token: String, completion: @escaping ([Garage]) -> Void) {
         let query = [URLQueryItem]()
         
@@ -145,6 +167,11 @@ class GarageModelController {
         task.resume()
     }
     
+    /// Gets all the favourite garages from a specific user from the backend
+    /// - Parameters:
+    ///     - userId: The garage to fetch the favourite garages from
+    ///     - token: The bearer token for authentification on the backend
+    /// Returns a list of Garages
     func fetchFavouriteGarages(userId: String, token: String, completion: @escaping ([Garage]) -> Void) {
         let query = [URLQueryItem]()
         
@@ -171,7 +198,11 @@ class GarageModelController {
         task.resume()
     }
     
-    
+    /// Removes a garage in the backend
+    /// - Parameters:
+    ///     - garage: The garage to fetch the available dates from
+    ///     - token: The bearer token for authentification on the backend
+    /// Returns a boolean
     func removeGarage(garage: Garage, token: String, completion: @escaping (Bool) -> Void) {
         let query = [URLQueryItem]()
         
@@ -188,6 +219,11 @@ class GarageModelController {
         task.resume()
     }
     
+    /// Switches the favor of a garage (favourite or not)
+    /// - Parameters:
+    ///     - garage: The garage to switch the favor
+    ///     - token: The bearer token for authentification on the backend
+    /// Returns a boolean
     func switchFavor(garage: Garage, token: String, completion: @escaping (Bool) -> Void) {
         let query = [URLQueryItem]()
         
@@ -212,6 +248,11 @@ class GarageModelController {
         task.resume()
     }
     
+    /// Adds a new garage to the backend
+    /// - Parameters:
+    ///     - garage: The new garage to add to the backend
+    ///     - token: The bearer token for authentification on the backend
+    /// Returns a Garage
     func addGarage(garage: Garage, token: String, completion: @escaping (Garage?) -> Void) {
         
         
@@ -266,6 +307,8 @@ class GarageModelController {
     
     // MARK: - Local communication
     
+    /// Loads the recent view history of garages from garage_history.plist
+    /// Returns a list of Garages
     func loadHistoryFromFile() -> [Garage]? {
         
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -285,6 +328,7 @@ class GarageModelController {
         return []
     }
     
+    /// Removes all the history stored in garage_history.plist
     func removeHistoryFromFile() {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let archiveURL = documentsDirectory.appendingPathComponent("garage_history").appendingPathExtension("plist")
@@ -294,6 +338,9 @@ class GarageModelController {
         garageData.removeAll()
     }
     
+    /// Saves a new list of Garages to the garage_history.plist
+    /// - Parameters:
+    ///     - garages: The list of the garages
     func saveHistoryToFile (_ garages: [Garage]) {
         
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -311,12 +358,5 @@ class GarageModelController {
             guard let garageData = try? JSONEncoder().encode(garages[0]) else {return}
             self.garageData = garageData
         }
-        
-        
     }
-    
-
-    
-    
-
 }

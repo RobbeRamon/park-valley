@@ -35,7 +35,7 @@ class BookGarageViewController: UIViewController {
     }
     
 
-    
+    /// Get the available dates from the daterange given by the user
     @IBAction func btGetResultsClicked(_ sender: Any) {
         let group = DispatchGroup()
         
@@ -73,6 +73,7 @@ class BookGarageViewController: UIViewController {
        
     }
     
+    /// Checks if the app is in landscape mode or not
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         if UIDevice.current.orientation.isLandscape {
@@ -109,6 +110,7 @@ class BookGarageViewController: UIViewController {
         btGetResults.layer.borderColor = UIColor.systemBlue.cgColor
     }
     
+    /// Alert a success message
     private func showSucess() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
