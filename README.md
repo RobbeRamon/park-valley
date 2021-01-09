@@ -14,7 +14,7 @@ De testen vonden plaats op iOS 14.3 maar de app werkt ook op lagere versies van 
 
 De backend van de applicatie is geschreven in Vapor, zie deze github link: https://github.com/RobbeRamon/park-valley-api
 
-## Uitleg over data en app
+## Uitleg over app
 
 Het is de bedoeling om eerst een user te registreren via de app. Deze zal automatisch in de backend een garage toegekend krijgen in New York met de naam "Garage near city center". Dit kan je altijd nagaan bij je profiel op de app. Dit is enkel testdata.
 Je hebt uiteraard ook de mogelijkheid om garages toe te voegen en te verwijderen.  
@@ -23,3 +23,10 @@ Je kan ook een booking maken op een garage, deze booking kan je terugvinden onde
 
 Je hebt de mogelijkheid om garages bij te houden als favoriet. Dit kan door op het hartje te drukken bij het overzicht van een garage (zie rechtsboven).
 Een overzicht van de favoriete garages vind je ook bij je profiel in de app.
+
+## Aan de slag
+De app maakt gebruik van enkele cocaopod packages.
+Deze packages kan je installeren aan de hand van volgend commando:
+```
+pod install
+```
