@@ -54,3 +54,17 @@ Je kan hier ook een afbeelding toevegen, echter wordt deze niet opgeslaan in de 
 In het prototype is het behandelen van afbeeldingen in de backend niet van toepassing. Dit vooral omdat de opdracht voornamelijk gefocust is op de app en niet zozeer op de backend. Alle afbeeldingen van garages zijn dus ook hetzelfde in de prototype. Dit kan uiteindelijk veranderd worden als de app in productie komt.
 
 ![screenshot_add_garage](https://i.imgur.com/9qTkhcr.png)
+
+### Garage verwijderen
+
+Een garage kan je verwijderen door in het overzicht van je garages naar links te swipen en op "Delete" te klikken.
+
+![screenshot_remove_garage](https://i.imgur.com/32OwchG.png)
+
+### Prototype settings
+
+Aan de hand van de prototype settings heb je de mogelijkheid de cache van de applicatie te legen en de backend te resetten.
+De bezochte garages worden gecached en getoond. Als je de backend herestart verdwijnen ze uit de backend (zie uitleg op prototyp settings pagina).
+Er is in het prototype geen manier om automatisch cache te legen indien een garage niet meer bestaat.
+
+![screenshot_prototype_settings](https://i.imgur.com/NqexWrL.png)
