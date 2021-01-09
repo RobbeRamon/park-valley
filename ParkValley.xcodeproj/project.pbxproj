@@ -15,7 +15,6 @@
 		1417415025A7B60C002FB8D2 /* ParkValleyWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1417414C25A7B609002FB8D2 /* ParkValleyWidget.intentdefinition */; };
 		1417415125A7B60C002FB8D2 /* ParkValleyWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1417414C25A7B609002FB8D2 /* ParkValleyWidget.intentdefinition */; };
 		1417415425A7B60C002FB8D2 /* ParkValleyWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1417414425A7B609002FB8D2 /* ParkValleyWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		1417416725A7C338002FB8D2 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1417415D25A7B715002FB8D2 /* DataProvider.swift */; };
 		1417417125A7C5DA002FB8D2 /* Garage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144F55E52557E8BC003D72B4 /* Garage.swift */; };
 		1417417B25A7CB7D002FB8D2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144F55EA2557E921003D72B4 /* User.swift */; };
 		1417418025A7CB8E002FB8D2 /* DateRangeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1475FE9D258F54B300A191FC /* DateRangeDTO.swift */; };
@@ -112,7 +111,6 @@
 		1417414C25A7B609002FB8D2 /* ParkValleyWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = ParkValleyWidget.intentdefinition; sourceTree = "<group>"; };
 		1417414D25A7B60C002FB8D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1417414F25A7B60C002FB8D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1417415D25A7B715002FB8D2 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		141741C525A7D6B1002FB8D2 /* ParkValley.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ParkValley.entitlements; sourceTree = "<group>"; };
 		141741CA25A7E564002FB8D2 /* ParkValleyWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ParkValleyWidgetExtension.entitlements; sourceTree = "<group>"; };
 		141D1226258FEF6500D94A2D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -202,7 +200,6 @@
 		1417414925A7B609002FB8D2 /* ParkValleyWidget */ = {
 			isa = PBXGroup;
 			children = (
-				1417415D25A7B715002FB8D2 /* DataProvider.swift */,
 				1417414A25A7B609002FB8D2 /* ParkValleyWidget.swift */,
 				1417414C25A7B609002FB8D2 /* ParkValleyWidget.intentdefinition */,
 				1417414D25A7B60C002FB8D2 /* Assets.xcassets */,
@@ -603,7 +600,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1417416725A7C338002FB8D2 /* DataProvider.swift in Sources */,
 				1417418A25A7CBA0002FB8D2 /* Booking.swift in Sources */,
 				1417414B25A7B609002FB8D2 /* ParkValleyWidget.swift in Sources */,
 				1417417B25A7CB7D002FB8D2 /* User.swift in Sources */,

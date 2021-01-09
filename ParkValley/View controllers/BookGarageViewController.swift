@@ -46,7 +46,9 @@ class BookGarageViewController: UIViewController {
             
             if let bearerToken = UserDefaults.standard.string(forKey: "bearer-token") {
                 
-                garageModelController.fetchAvailableDates(garage: self.garage!, token: bearerToken, dateRange: dateRange, completion: {(availableDates) in
+                garageModelController.fetchAvailableDates(garage: self.garage!, token: bearerToken, dateRange: dateRange, completion: {
+                    (availableDates) in
+                    
                     self.availableDates = availableDates
                     group.leave()
                 })
@@ -115,7 +117,11 @@ class BookGarageViewController: UIViewController {
         
         if let dateString = dateString {
             
-            let alert = UIAlertController(title: "Success", message: "Booking is succssfully added at \(dateString)", preferredStyle: .alert)
+            let alert = UIAlertController(
+                title: "Success",
+                message: "Booking is succssfully added at \(dateString)",
+                preferredStyle: .alert)
+            
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
                 self.dismiss(animated: true, completion: nil)
             }))
@@ -163,7 +169,9 @@ extension BookGarageViewController : UITableViewDelegate {
 
             if let bearerToken = UserDefaults.standard.string(forKey: "bearer-token") {
 
-                garageModelController.addBooking(garage: garage, token: bearerToken, date: date, completion: {(booking) in
+                garageModelController.addBooking(garage: garage, token: bearerToken, date: date, completion: {
+                    (booking) in
+                    
                     self.booking = booking
                     group.leave()
                 })

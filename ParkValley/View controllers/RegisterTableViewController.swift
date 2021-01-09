@@ -32,7 +32,9 @@ class RegisterTableViewController: UITableViewController {
             
             group.enter()
             
-            userModelController.register(user: registerDTO, completion: {(user) in
+            userModelController.register(user: registerDTO, completion: {
+                (user) in
+                
                 if user?.email == nil  {
                     self.registered = false
                     group.leave()
@@ -48,7 +50,9 @@ class RegisterTableViewController: UITableViewController {
                     
                     let alert = UIAlertController(title: "Account registered", message: "Your account is successfully registered", preferredStyle: .alert)
                     
-                    alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: {
+                        _ in
+                        
                         self.dismiss(animated: true, completion: nil)
                     }))
                     

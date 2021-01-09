@@ -45,7 +45,15 @@ class AddGarageTableViewController: UITableViewController {
     
     @IBAction func save(_ sender: Any) {
         if (allFieldsFilled() && placemark != nil) {
-            let garage = Garage(id: nil, name: tfName.text!, city: placemark!.locality!, description: tvDescription.text!, latitude: self.latitude, longitude: self.longitude, user: nil, favorite: false)
+            let garage = Garage(
+                id: nil,
+                name: tfName.text!,
+                city: placemark!.locality!,
+                description: tvDescription.text!,
+                latitude: self.latitude,
+                longitude: self.longitude,
+                user: nil,
+                favorite: false)
             
             
             let group = DispatchGroup()
@@ -55,7 +63,8 @@ class AddGarageTableViewController: UITableViewController {
             
             if let bearerToken = UserDefaults.standard.string(forKey: "bearer-token") {
                 
-                garageModelController.addGarage(garage: garage, token: bearerToken, completion: {(garage: Garage?) -> Void in
+                garageModelController.addGarage(garage: garage, token: bearerToken, completion: {(garage: Garage?) -> Void
+                    in
                     group.leave()
                 })
             }
@@ -64,7 +73,8 @@ class AddGarageTableViewController: UITableViewController {
                 
                 let alert = UIAlertController(title: "Garage saved", message: "You have added a new garage", preferredStyle: .alert)
                 
-                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: {
+                    _ in
                     self.dismiss(animated: true, completion: nil)
                 }))
                 
@@ -104,17 +114,17 @@ class AddGarageTableViewController: UITableViewController {
 
 }
 
-extension AddGarageTableViewController : CLLocationManagerDelegate {
+extension AddGarageTableViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         
-        //print("locations = \(location.latitude) \(location.longitude)")
         
         self.longitude = location.longitude
         self.latitude = location.latitude
         
         
-        lookUpCurrentLocation(completionHandler: {(placemark: CLPlacemark?) -> Void in
+        lookUpCurrentLocation(completionHandler: {(placemark: CLPlacemark?) -> Void
+            in
             if let placemark = placemark {
                 self.placemark = placemark
                 
@@ -127,8 +137,7 @@ extension AddGarageTableViewController : CLLocationManagerDelegate {
     
     
     // SOURCE: https://developer.apple.com/documentation/corelocation/converting_between_coordinates_and_user-friendly_place_names
-    func lookUpCurrentLocation(completionHandler: @escaping (CLPlacemark?)
-                    -> Void ) {
+    func lookUpCurrentLocation(completionHandler: @escaping (CLPlacemark?) -> Void ) {
         // Use the last reported location.
         if let lastLocation = self.locationManager.location {
             let geocoder = CLGeocoder()
@@ -153,7 +162,10 @@ extension AddGarageTableViewController : CLLocationManagerDelegate {
     }
 }
 
-extension AddGarageTableViewController : UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+extension AddGarageTableViewController:
+    UINavigationControllerDelegate,
+    UIImagePickerControllerDelegate
+{
     
     @IBAction func tgAddPictureTapped(_ sender: UIView) {
         imagePicker.delegate = self

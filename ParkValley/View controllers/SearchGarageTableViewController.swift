@@ -87,7 +87,9 @@ class SearchGarageTableViewController: UITableViewController {
         group.enter()
         
         if let bearerToken = UserDefaults.standard.string(forKey: "bearer-token") {
-            garageModelController.fetchGarages(searchTerm: searchTerm, token: bearerToken, completion: {(garages) in
+            garageModelController.fetchGarages(searchTerm: searchTerm, token: bearerToken, completion: {
+                (garages) in
+                
                 self.results = garages
                 group.leave()
             })

@@ -42,7 +42,8 @@ class LoginViewController: UIViewController {
         let group = DispatchGroup()
         
         group.enter()
-        userModelController.login(username: txtEmail.text!, password: txtPassword.text!, completion: {(userTokenDTO) in
+        userModelController.login(username: txtEmail.text!, password: txtPassword.text!, completion: {
+            (userTokenDTO) in
             
             if let bearerToken = userTokenDTO?.value {
                 UserDefaults.standard.set(bearerToken, forKey: "bearer-token")
@@ -65,7 +66,8 @@ class LoginViewController: UIViewController {
         if let bearerToken = UserDefaults.standard.string(forKey: "bearer-token") {
             
             group.enter()
-            userModelController.fetchUser(token: bearerToken, completion: {(user) in
+            userModelController.fetchUser(token: bearerToken, completion: {
+                (user) in
                 
                 if let user = user {
                     User.saveToFile(user)
@@ -129,12 +131,17 @@ class LoginViewController: UIViewController {
     
     // MARK: - shift view when keyboard is shown
     func registerForKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(_:)), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWasShown(_:)),
+            name: UIResponder.keyboardDidShowNotification,
+            object: nil)
         
-        NotificationCenter.default.addObserver(self, selector:
-            #selector(keyboardWillBeHidden(_:)),
-                                               name: UIResponder.keyboardWillHideNotification,
-                                               object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillBeHidden(_:)),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil)
     }
     
     @objc func keyboardWasShown(_ notificiation: NSNotification) {

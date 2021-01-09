@@ -54,7 +54,8 @@ struct Provider: IntentTimelineProvider {
         let entry = GarageEntry(date: currentDate, configuration: configuration, text: string)
         entries.append(entry)
 
-        let timeline = Timeline(entries: entries, policy: .atEnd) // this will refresh the widget every hour, documentation: https://developer.apple.com/documentation/widgetkit/keeping-a-widget-up-to-date
+        // this will refresh the widget periodically documentation: https://developer.apple.com/documentation/widgetkit/keeping-a-widget-up-to-date
+        let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
 }

@@ -274,7 +274,9 @@ class GarageModelController {
         let propertyListDecoder = PropertyListDecoder()
         
         
-        if let retrievedNotesData = try? Data(contentsOf: archiveURL), let decodedGarages = try? propertyListDecoder.decode([Garage].self, from: retrievedNotesData) {
+        if let retrievedNotesData = try? Data(contentsOf: archiveURL),
+           let decodedGarages = try? propertyListDecoder.decode([Garage].self,
+                                                                from: retrievedNotesData) {
             //try? FileManager.default.removeItem(at: archiveURL)
             return decodedGarages
         }

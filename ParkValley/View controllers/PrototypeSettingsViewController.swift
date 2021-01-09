@@ -15,8 +15,6 @@ class PrototypeSettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func resetBackendClicked(_ sender: Any) {
@@ -37,9 +35,11 @@ class PrototypeSettingsViewController: UIViewController {
         group.notify(queue: .main) {
             if let status = self.status {
                 if status.success {
-                    self.showPopup(title: "Backend cleared", message: "The backend is now cleared, the state has returned to the initial state with inital data.")
+                    self.showPopup(title: "Backend cleared",
+                                   message: "The backend is now cleared, the state has returned to the initial state with inital data.")
                 } else {
-                    self.showPopup(title: "Backend not cleared", message: "Something went wrong.")
+                    self.showPopup(title: "Backend not cleared",
+                                   message: "Something went wrong.")
                 }
                 
             } else {
@@ -63,15 +63,5 @@ class PrototypeSettingsViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
