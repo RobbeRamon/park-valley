@@ -11,10 +11,14 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet var ivProfilePicture: UIImageView!
     @IBOutlet var tvOptions: UIView!
+    @IBOutlet var lbUsername: UILabel!
+    
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        user = User.loadFromFile()
         createUI()
     }
     
@@ -23,6 +27,8 @@ class ProfileViewController: UIViewController {
         ivProfilePicture.layer.masksToBounds = false
         ivProfilePicture.layer.cornerRadius = ivProfilePicture.frame.height/2
         ivProfilePicture.clipsToBounds = true
+        
+        lbUsername.text = user.username
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -114,16 +114,17 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ivProfilePicture" destination="Hpx-Oj-5H5" id="zhU-eo-dba"/>
+                        <outlet property="lbUsername" destination="viy-w9-h6W" id="OhV-3i-dvf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3wC-Yy-gO5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1949.2753623188407" y="-585.26785714285711"/>
         </scene>
-        <!--Table View Controller-->
+        <!--User Settings Table View Controller-->
         <scene sceneID="mar-69-Q9b">
             <objects>
-                <tableViewController id="4XM-Wa-lMv" sceneMemberID="viewController">
+                <tableViewController id="4XM-Wa-lMv" customClass="UserSettingsTableViewController" customModule="ParkValley" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="roc-gn-59r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -138,7 +139,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HZ9-Oz-v1j">
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HZ9-Oz-v1j">
                                                     <rect key="frame" x="194" y="5" width="200" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="PY3-eQ-qwV"/>
@@ -199,29 +200,6 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="FbA-UH-h3c">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="43.5" id="kmQ-b4-sky">
-                                        <rect key="frame" x="0.0" y="235" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kmQ-b4-sky" id="5dO-Da-NAK">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdI-Rw-tLc">
-                                                    <rect key="frame" x="20" y="7" width="374" height="30"/>
-                                                    <state key="normal" title="Save"/>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="KdI-Rw-tLc" secondAttribute="trailing" constant="20" id="KTi-P1-3WK"/>
-                                                <constraint firstItem="KdI-Rw-tLc" firstAttribute="top" secondItem="5dO-Da-NAK" secondAttribute="top" constant="7" id="RLy-M7-r3l"/>
-                                                <constraint firstItem="KdI-Rw-tLc" firstAttribute="leading" secondItem="5dO-Da-NAK" secondAttribute="leading" constant="20" id="Yiq-tx-Osk"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="4XM-Wa-lMv" id="UCl-Pz-vMo"/>
@@ -230,6 +208,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="4Is-mD-grN"/>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="lbEmail" destination="8xn-uY-icG" id="cCr-QT-UHU"/>
+                        <outlet property="txUsername" destination="HZ9-Oz-v1j" id="KWo-TF-dyu"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MvZ-wn-vvd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -820,14 +802,14 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="400" id="sH7-FE-iF1"/>
                                                 </constraints>
-                                                <mutableString key="text">This is a prototype of how the app can eventually become. A number of prototype settings are useful. The backend persists only user accounts, no garages, bookings... When you restart the backend the data (except the user accounts) will disappear, this is why it is important to remove the cache after you do this. Garages will otherwise remain in "recently visited", which are no longer in the backend. Automaticly removing "recently visited" when the garage is no longer in the backend is something outside the scope of this prototype. There is also a possibility to reset the backend from within the app. This will make all garages and bookings disappear. Don't forget to clear the cache after this.
+                                                <string key="text">This is a prototype of how the app can eventually become. A number of prototype settings are useful. The backend persists only user accounts, no garages, bookings... When you restart the backend the data (except the user accounts) will disappear, this is why it is important to remove the cache after you do this. Garages will otherwise remain in "recently visited", which are no longer in the backend. Automaticly removing "recently visited" when the garage is no longer in the backend is something outside the scope of this prototype. There is also a possibility to reset the backend from within the app. This will make all garages and bookings disappear. Don't forget to clear the cache after this.
 
 To remove the users, that are persisted, you have to delete the db.sqlite file in the backend project.
 
 For more information about the initial data and otheraspects of the prototype, read the readme on GitHub.
 
 Robbe Ramon
-</mutableString>
+</string>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1757,7 +1739,7 @@ Robbe Ramon
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IEa-fi-Dg8"/>
+        <segue reference="d8D-hC-sv7"/>
         <segue reference="xFZ-PE-aeG"/>
         <segue reference="KSs-LF-mKN"/>
     </inferredMetricsTieBreakers>

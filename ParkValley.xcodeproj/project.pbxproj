@@ -51,6 +51,7 @@
 		14A9DE3E259FDDA800250E58 /* parking-icon.json in Resources */ = {isa = PBXBuildFile; fileRef = 14A9DE3D259FDDA800250E58 /* parking-icon.json */; };
 		14C3CD87259011AE00CB6012 /* ProfileOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3CD86259011AE00CB6012 /* ProfileOptionsTableViewController.swift */; };
 		14DB262D2565E15800C53F39 /* GarageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DB262C2565E15800C53F39 /* GarageTableViewCell.swift */; };
+		14DC89EE25AB5E9000E8551F /* UserSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DC89ED25AB5E9000E8551F /* UserSettingsTableViewController.swift */; };
 		14E53A99258FAA970054284B /* AvailableDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E53A98258FAA970054284B /* AvailableDayTableViewCell.swift */; };
 		14E65DF22551E444000928A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E65DF12551E444000928A9 /* AppDelegate.swift */; };
 		14E65DF42551E444000928A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E65DF32551E444000928A9 /* SceneDelegate.swift */; };
@@ -143,6 +144,7 @@
 		14AA388D25633282007906DC /* GarageModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageModelController.swift; sourceTree = "<group>"; };
 		14C3CD86259011AE00CB6012 /* ProfileOptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOptionsTableViewController.swift; sourceTree = "<group>"; };
 		14DB262C2565E15800C53F39 /* GarageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageTableViewCell.swift; sourceTree = "<group>"; };
+		14DC89ED25AB5E9000E8551F /* UserSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsTableViewController.swift; sourceTree = "<group>"; };
 		14E53A98258FAA970054284B /* AvailableDayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableDayTableViewCell.swift; sourceTree = "<group>"; };
 		14E65DEE2551E444000928A9 /* ParkValley.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkValley.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14E65DF12551E444000928A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				1434394E259E334500A42CAF /* RegisterTableViewController.swift */,
 				146AA461259F40990001588F /* BookingTableViewController.swift */,
 				146AA46B259F65710001588F /* PrototypeSettingsViewController.swift */,
+				14DC89ED25AB5E9000E8551F /* UserSettingsTableViewController.swift */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				144F55E62557E8BC003D72B4 /* Garage.swift in Sources */,
 				14E65DF42551E444000928A9 /* SceneDelegate.swift in Sources */,
 				14C3CD87259011AE00CB6012 /* ProfileOptionsTableViewController.swift in Sources */,
+				14DC89EE25AB5E9000E8551F /* UserSettingsTableViewController.swift in Sources */,
 				14F6BCD2256952B5006E5575 /* UserModelController.swift in Sources */,
 				146AA462259F40990001588F /* BookingTableViewController.swift in Sources */,
 				146816F325915AD800F86C70 /* AddGarageTableViewController.swift in Sources */,
